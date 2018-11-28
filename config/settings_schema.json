@@ -920,6 +920,11 @@
             "group": "Serif | Google Fonts"
           },
           {
+            "value": "Google_'Cormorant+Garamond'",
+            "label": "Cormorant Garamond",
+            "group": "Serif | Google Fonts"
+          },
+          {
             "value": "Google_'Droid+Serif'",
             "label": "Droid Serif",
             "group": "Serif | Google Fonts"
