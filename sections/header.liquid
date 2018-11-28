@@ -250,10 +250,10 @@
       </ul>
     </div>
 
-    <div class="main_nav_wrapper">
+    <div class="main_nav_wrapper cgc-main-nav">
       <div class="main_nav clearfix menu-position--{{ section.settings.menu_position }} logo-align--{{ section.settings.logo_position }}">
         {% capture logo %}
-          <div class="logo text-align--{{ section.settings.logo_alignment }}">
+          <!-- <div class="logo text-align--{{ section.settings.logo_alignment }}">
             <a href="{{ shop.url }}" title="{{ shop.name }}">
               {% if section.settings.logo_home != nil %}
                 <img src="{{ section.settings.logo_home | img_url: '410x' }}" class="secondary_logo" alt="{{ shop.name | escape }}" />
@@ -264,7 +264,7 @@
                 {{ shop.name }}
               {% endif %}
             </a>
-          </div>
+          </div> -->
         {% endcapture %}
 
         {% assign vertical_menu = section.settings.vertical_menu %}
@@ -301,8 +301,19 @@
 
         {% if section.settings.logo_position == "left" or section.settings.menu_position == "block" %}
           {{ logo }}
-          <div class="nav">
+          <div class="nav cgc-main-nav">
+            <!-- phillip logo changes -->
+            <a href="{{ shop.url }}" title="{{ shop.name | escape }}" class="mobile_logo logo">
+              {% if section.settings.logo_mobile != nil %}
+                <img src="{{ section.settings.logo_mobile | img_url: '410x' }}" alt="{{ shop.name | escape }}" />
+              {% elsif section.settings.logo != nil %}
+                <img src="{{ section.settings.logo | img_url: '410x' }}" alt="{{ shop.name | escape }}" />
+              {% else %}
+                {{ shop.name }}
+              {% endif %}
+            </a>
             <ul class="menu {{ section.settings.menu_alignment }} clearfix">
+
               {{ menu_left }}
               {{ menu_right }}
             </ul>
