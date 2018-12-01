@@ -1,0 +1,42 @@
+<div class="grid-layout-container container">
+<div class="larger-image-container" style="background-image:url({{ section.settings.larger-image-two | img_url: '2000x2000' }})">
+
+</div>
+<div class="smaller-image-container" style="background-image:url({{ section.settings.smaller-image-two | img_url: '800x800' }})">
+
+</div>
+<div class="grid-text-content">
+<p></p>
+</div>
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Grid layout Images",
+  "settings": [
+   {
+    "id": "larger-image-left",
+    "type": "image_picker",
+    "label": "Bigger image left"
+   },
+   {
+    "id": "smaller-image-left",
+    "type": "image_picker",
+    "label": "Smaller image right"
+  },
+  {
+   "id": "grid-text-content",
+   "type": "textarea",
+   "label": "Text content"
+  }
+  ],
+  "presets": [
+    {
+      "name": "Grid layout Images",
+      "category": "Grid layout Images"
+    }
+  ]
+}
+{% endschema %}
