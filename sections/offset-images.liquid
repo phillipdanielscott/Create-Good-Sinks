@@ -1,0 +1,70 @@
+<div class="offset-image-wrapper">
+  <div class="container offset-image-container">
+    <div class="image-container eight columns">
+      <div class="featured-offset-image" style="background-image:url({{ section.settings.offset-image | img_url: '1000x1000' }})">
+      </div>
+    </div>
+    <div class="text-container eight columns">
+      <h2>{{ section.settings.offset-section-title }}</h2>
+      <p>{{ section.settings.offset-section-content }}</p>
+    </div>
+    <div class="text-container eight columns">
+      <h2>{{ section.settings.offset-section-title }}</h2>
+      <p>{{ section.settings.offset-section-content }}</p>
+    </div>
+    <div class="image-container eight columns">
+      <div class="featured-offset-image-two" style="background-image:url({{ section.settings.offset-image-two | img_url: '1000x1000' }})">
+      </div>
+   </div>
+  </div>
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Offset Image and text",
+  "settings": [
+    {
+      "id": "offset-section-title",
+      "type": "text",
+      "label": "Text Title",
+      "default": "Title"
+    },
+    {
+       "id": "offset-section-content",
+       "type": "textarea",
+       "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+       "label": "Text Content"
+    },
+    {
+      "id": "offset-image",
+      "type": "image_picker",
+      "label": "Offset image"
+    },
+    {
+      "id": "offset-section-title-two",
+      "type": "text",
+      "label": "Text Title",
+      "default": "Title"
+    },
+    {
+       "id": "offset-section-content-two",
+       "type": "textarea",
+       "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+       "label": "Text Content"
+    },
+    {
+      "id": "offset-image-two",
+      "type": "image_picker",
+      "label": "Offset image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Offset Image and text",
+      "category": "Offset Image and text"
+    }
+  ]
+}
+{% endschema %}

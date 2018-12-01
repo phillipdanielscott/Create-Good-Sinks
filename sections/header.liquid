@@ -299,11 +299,13 @@
           {% endif %}
         {% endcapture %}
 
+
+
         {% if section.settings.logo_position == "left" or section.settings.menu_position == "block" %}
           {{ logo }}
           <div class="nav cgc-main-nav">
             <!-- phillip logo changes -->
-            <a href="{{ shop.url }}" title="{{ shop.name | escape }}" class="mobile_logo logo">
+            <a href="{{ shop.url }}" title="{{ shop.name | escape }}" class="CGC-logo logo">
               {% if section.settings.logo_mobile != nil %}
                 <img src="{{ section.settings.logo_mobile | img_url: '410x' }}" alt="{{ shop.name | escape }}" />
               {% elsif section.settings.logo != nil %}
@@ -349,6 +351,15 @@
       </div>
     </div>
   </div>
+  <!-- <div class="bottom-nav">
+
+    {% for link in linklists.phillip-main-nav.links %}
+    <div class="menu-item-box">
+      <a href= "{{ link.url }}">{{ link.title }}</a>
+    </div>
+    {% endfor %}
+
+  </div> -->
 </header>
 
 <style>
