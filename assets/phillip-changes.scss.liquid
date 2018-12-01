@@ -6,6 +6,7 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 $mainbrown: #EBECE4;
+$deepblue: #38373E;
 
 body{
   background-color: white;
@@ -64,7 +65,7 @@ body{
 .offset-image-wrapper{
   height: auto;
   background-color: $mainbrown;
-  margin: 50px 0px;
+  margin: 250px 0px;
 }
 
 .image-container img{
@@ -94,4 +95,115 @@ body{
 
 .text-container h2{
   margin-bottom: 5px;
+}
+
+.text-container p{
+  width: 80%;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+                IMAGE GRID LAYOUT SECTION
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+.grid-layout-container{
+  height: auto;
+  margin-top: 100px !important;
+}
+
+
+.larger-image-container , .smaller-image-container{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.smaller-image-container{
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.larger-image-container{
+  height: 600px;
+}
+
+.smaller-image-container, .grid-text-content{
+  height: 285px;
+}
+
+.grid-text-content{
+  background-color: $deepblue;
+  margin-top: 30px;
+}
+
+.grid-text-content p{
+  font-family: 'Cormorant Garamond';
+  color: white;
+  font-weight: bold;
+  font-size: 23px;
+  margin-left: 20px;
+}
+
+.grid-text-content-wrapper{
+  height: 100%;
+  padding: 28px 71px;
+}
+
+.border-line{
+  border-left: 5px solid white;
+}
+
+.quote-marks img{
+    max-width: 40px;
+}
+
+.quote-marks{
+  position: relative;
+  right: 17px;
+}
+
+
+
+
+
+/* ------------ SETTINGS ------------ */
+
+$card-image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1613479/inception.jpg";
+$card-icon: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1613479/play.svg";
+
+$white: #fff;
+$black: #000;
+
+/* ------------ CARD ------------ */
+
+// Main
+// .card {
+// 	width: 70vw;
+// 	height: calc(9/16 * 70vw);
+// 	max-width: calc(16/9 * 70vh);
+// 	max-height: 70vh;
+// 	display: flex;
+// 	position: relative;
+// 	border-radius: 6px;
+// 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+// 	overflow: hidden;
+// }
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
