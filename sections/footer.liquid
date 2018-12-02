@@ -50,16 +50,18 @@
               {% else %}
                 <div class="logo">{{ shop.name }}</div>
               {% endif %}
+              <p class="logo-text-content">{{ block.settings.logo-text-content }}</p>
             </div>
 
           {% elsif block.type == 'text' %}
             <div class="footer_content">
               {% if block.settings.title != blank %}
-                <h6>{{ block.settings.title }}<span class="right icon-down-arrow"></span></h6>
+                <!-- <h6>{{ block.settings.title }}<span class="right icon-down-arrow"></span></h6> -->
                 <div class="toggle_content">
                   {{ block.settings.content }}
                 </div>
               {% endif %}
+              <img src="{{ block.settings.text-image-icon | img_url: '100x100' }}" alt="">
             </div>
           {% elsif block.type == 'page' %}
             <div class="footer_content">
@@ -103,8 +105,11 @@
 
       <div class="sixteen columns row footer_credits">
         <div class="credits">
-         Site Made by {{ 'phillipcreates-logo.svg' | asset_url | img_tag }}
+         Site Made by <a href="http://phillipcreates.com">{{ 'phillipcreates-logo.svg' | asset_url | img_tag }}</a>
        </div>
+       <div class="patent">
+        US Patent 8214934 | CA Patent 2679883
+      </div>
 
         {% if section.settings.display_payment_methods %}
           <div class="payment_methods">
@@ -152,6 +157,12 @@
           "type": "image_picker",
           "id": "image",
           "label": "Logo"
+        },
+        {
+          "type": "textarea",
+          "id": "logo-text-content",
+          "label": "Logo text content",
+          "default":"Text Content below logo"
         },
         {
           "type": "select",
@@ -232,6 +243,11 @@
           "id": "content",
           "label": "Text",
           "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "text-image-icon",
+          "label": "Icon"
         },
         {
           "type": "checkbox",
