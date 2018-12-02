@@ -8,7 +8,30 @@
   <div class="container footer-menu-wrap">
       {% for block in section.blocks %}
         <div class="{% if forloop.length >= 5 %}three columns{% elsif forloop.length == 4 %}four columns{% elsif forloop.length == 3 %}one-third column{% elsif forloop.length == 2 %}eight columns{% endif %}" {{ block.shopify_attributes }}>
-          {% if block.type == 'logo' %}
+          {% if block.type == 'link_list' %}
+
+          <div class="footer_menu">
+            {% if block.settings.menu != blank %}
+              <h6>{{ linklists[block.settings.menu].title }}<span class="right icon-down-arrow"></span></h6>
+              <div class="toggle_content">
+                <ul>
+                  {% for link in linklists[block.settings.menu].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% else %}
+              <h6>Menu title<span class="right icon-down-arrow"></span></h6>
+              <div class="toggle_content">
+                <ul>
+                  <li><p>{{ 'homepage.onboarding.no_content' | t }}</p></li>
+                </ul>
+              </div>
+            {% endif %}
+          </div>
+
+          {% elsif block.type == 'logo' %}
+
             <div class="text-align--{{block.settings.text_align}}">
               {% if block.settings.image %}
                 <img  src="{{ block.settings.image | img_url: '100x' }}"
@@ -26,27 +49,6 @@
                    />
               {% else %}
                 <div class="logo">{{ shop.name }}</div>
-              {% endif %}
-            </div>
-
-          {% elsif block.type == 'link_list' %}
-            <div class="footer_menu">
-              {% if block.settings.menu != blank %}
-                <h6>{{ linklists[block.settings.menu].title }}<span class="right icon-down-arrow"></span></h6>
-                <div class="toggle_content">
-                  <ul>
-                    {% for link in linklists[block.settings.menu].links %}
-                      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              {% else %}
-                <h6>Menu title<span class="right icon-down-arrow"></span></h6>
-                <div class="toggle_content">
-                  <ul>
-                    <li><p>{{ 'homepage.onboarding.no_content' | t }}</p></li>
-                  </ul>
-                </div>
               {% endif %}
             </div>
 
@@ -100,14 +102,9 @@
       {% endfor %}
 
       <div class="sixteen columns row footer_credits">
-        <p class="credits">
-          &copy; {{ "now" | date: "%Y" }} {{ shop.name | link_to: '/' }}.
-          {{ section.settings.copyright_text }}
-          {% if section.settings.display_designed_by %}
-            {{ 'layout.general.designer_credits_html' | t }}
-          {% endif %}
-          {{ powered_by_link | split: '" ' | join: '?ref=out-of-the-sandbox" ' | split: '">' | join: '?ref=out-of-the-sandbox">' }}
-        </p>
+        <div class="credits">
+         Site Made by {{ 'phillipcreates-logo.svg' | asset_url | img_tag }}
+       </div>
 
         {% if section.settings.display_payment_methods %}
           <div class="payment_methods">
