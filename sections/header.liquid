@@ -351,16 +351,60 @@
       </div>
     </div>
   </div>
-  <div class="bottom-nav">
+  <div class="bottom-nav container full-width">
 
-    {% for link in linklists.phillip-main-nav.links %}
-    <div class="menu-item-box">
-      <a href= "{{ link.url }}">{{ link.title }}</a>
-      <span href="{{ link.url }}">Explore</span>
+    {% for collection in collections %}
+
+    <div class="menu-item-box four columns" style="background:
+    /* top, transparent red, faked with gradient */
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    /* bottom, image */
+    url({{ collection.image | img_url: 'large' }});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;">
+      <div id="overlay"></div>
+      <div class="submenu-text-content">
+        <a href="{{ collection.url }}">{{ collection.title }}</a>
+        <p>Explore</p>
+        <div class="explore-line"></div>
+      </div>
     </div>
     {% endfor %}
 
   </div>
+
+
+  <script type="text/javascript">
+
+
+  var timer; // This will hold a reference to the timer
+
+  function showLine() {
+
+      $('.explore-line').animate({
+       width: "50%",
+     }, 'slow', 'swing'), 300;
+  }
+
+  function hideLine(){
+    $('.explore-line').animate({
+     width: "0%",
+   }, 'slow', 'swing'), 300;
+  }
+
+  $(".menu-item-box").mouseenter(function() { //mouseenter
+  window.clearTimeout(timer);
+  showLine();
+  });
+  $("header").mouseleave(function() {
+    timer = window.setTimeout(hideLine, 300);
+  });
+
+  </script>
 </header>
 
 <style>
