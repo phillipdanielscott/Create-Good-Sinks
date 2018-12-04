@@ -1,12 +1,29 @@
 <div class="cgc-carousel-wrapper">
   <div class="owl-carousel owl-theme">
-      <div class="item"><h4>1</h4></div>
+      <div class="item">
+      <h2 style="color:{{ section.settings.slide-bg-color }}">{{ section.settings.featured-slide-title }}</h2>
+      <div class="carousel-text-underline" style="border: 2px solid {{ section.settings.slide-bg-color }}"></div>
+      <div class="featured-bg-color" style="background-color:{{ section.settings.slide-bg-color }}"></div></div>
+      <h6>{{ section.settings.details-one}}</h6>
+      <p>{{ section.settings.details-two }}</p>
+      <p>{{ section.settings.details-three }}</p>
       <div class="item"><h4>2</h4></div>
       <div class="item"><h4>3</h4></div>
 
   </div>
 </div>
 
+<!-- styling from http://fleurmoreau.fr/ -->
+<!-- position: absolute;
+right: 0;
+top: 0;
+bottom: 0;
+width: 100%;
+-webkit-transform: scaleX(.42);
+transform: scaleX(0.42);
+background-color: var(--backgroundColor);
+-webkit-transform-origin: right;
+transform-origin: right; -->
 
 <script type="text/javascript">
  $(".owl-carousel").owlCarousel({
@@ -20,8 +37,6 @@
    itemsDesktopSmall : false,
    itemsTablet: false,
    itemsMobile : false
-
-
  });
 </script>
 
@@ -33,33 +48,35 @@
   {
    "id": "featured-slide-title",
    "type": "text",
-   "label": "Featured product title"
+   "label": "Featured product title",
+   "default": "Title"
   },
   {
    "id": "featured-slide-description",
    "type": "textarea",
-   "label": "Featured product description"
+   "label": "Featured product description",
+   "default": "Featured Description"
   },
   {
-   "id": "featured-slide-details-1",
+   "id": "details-one",
    "type": "text",
    "label": "featured slide details",
    "default": "Featured Details"
   },
   {
-   "id": "featured-slide-details-2",
+   "id": "details-two",
    "type": "text",
    "label": "featured slide details",
    "default": "Featured Details"
   },
   {
-   "id": "featured-slide-details-3",
+   "id": "details-three",
    "type": "text",
    "label": "featured slide details",
    "default": "Featured Details"
   },
   {
-   "id": "featured-slide-details-4",
+   "id": "details-four",
    "type": "text",
    "label": "featured slide details",
    "default": "Featured Details"
