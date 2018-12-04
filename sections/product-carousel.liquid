@@ -1,12 +1,18 @@
 <div class="cgc-carousel-wrapper">
   <div class="owl-carousel owl-theme">
       <div class="item">
-      <h2 style="color:{{ section.settings.slide-bg-color }}">{{ section.settings.featured-slide-title }}</h2>
-      <div class="carousel-text-underline" style="border: 2px solid {{ section.settings.slide-bg-color }}"></div>
-      <div class="featured-bg-color" style="background-color:{{ section.settings.slide-bg-color }}"></div></div>
-      <h6>{{ section.settings.details-one}}</h6>
-      <p>{{ section.settings.details-two }}</p>
-      <p>{{ section.settings.details-three }}</p>
+      <div class="featured-bg-color" style="background-color:{{ section.settings.slide-bg-color }}"></div>
+
+      <div class="carousel-text-content">
+        <h2 style="color:{{ section.settings.slide-bg-color }}">{{ section.settings.featured-slide-title }}</h2>
+        <div class="carousel-text-underline" style="border: 2px solid {{ section.settings.slide-bg-color }}"></div>
+        <p style="color:{{ section.settings.slide-bg-color }}">{{ section.settings.details-one}}</p>
+        <p style="color:{{ section.settings.slide-bg-color }}">{{ section.settings.details-two }}</p>
+        <p style="color:{{ section.settings.slide-bg-color }}">{{ section.settings.details-three }}</p>
+        <p style="color:{{ section.settings.slide-bg-color }}">{{ section.settings.details-four }}</p>
+      </div>
+       <img src="{{ section.settings.product-image | img_url: '1024x' }}" alt="" class="carousel-product-image">
+      </div>
       <div class="item"><h4>2</h4></div>
       <div class="item"><h4>3</h4></div>
 
@@ -29,6 +35,9 @@ transform-origin: right; -->
  $(".owl-carousel").owlCarousel({
    lazyLoad:true,
    loop:true,
+   autoplay:true,
+   autoplayTimeout:8000,
+   autoplayHoverPause:true,
    mouseDrag:true,
    touchDrag:true,
    singleItem: true,
@@ -95,6 +104,12 @@ transform-origin: right; -->
      "type":      "color",
      "id":        "slide-bg-color",
      "label":     "Slide background color",
+     "default":   "#AAB7B4"
+  },
+  {
+     "type":      "color",
+     "id":        "text-color",
+     "label":     "Text color",
      "default":   "#AAB7B4"
   }
   ],
