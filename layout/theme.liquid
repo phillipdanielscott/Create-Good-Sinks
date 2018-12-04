@@ -16,13 +16,29 @@
       <link href="//fonts.googleapis.com/css?family=.|{% if settings.logo_font contains 'Google' %}{{ settings.logo_font | replace: 'Google_', '' | replace: "'", "" }}:light,normal,bold|{% endif %}{% if settings.headline_font contains 'Google' %}{{ settings.headline_font | replace: 'Google_', '' | replace: "'", "" }}:light,normal,bold|{% endif %}{% if settings.nav_font contains 'Google' %}{{ settings.nav_font | replace: 'Google_', '' | replace: "'", "" }}:light,normal,bold|{% endif %}{% if settings.slideshow_headline_font contains 'Google' %}{{ settings.slideshow_headline_font | replace: 'Google_', '' | replace: "'", "" }}:light,normal,bold|{% endif %}{% if settings.slideshow_subtitle_font contains 'Google' %}{{ settings.slideshow_subtitle_font | replace: 'Google_', '' | replace: "'", "" }}:light,normal,bold|{% endif %}{% if settings.regular_font contains 'Google' %}{{ settings.regular_font | replace: 'Google_', '' | replace: "'", "" }}:light,normal,bold{% endif %}" rel="stylesheet" type="text/css" />
     {% endif %}
 
+    <!-- Stylesheets for owl carousel -->
+    {{ 'owl.carousel.scss.css' | asset_url | stylesheet_tag }}
+
+    <!-- Default theme stylesheets for owl carousel -->
+    {{ 'owl.theme.default.scss.css' | asset_url | stylesheet_tag }}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
     <!-- Stylesheets for Turbo 2.2.3 -->
     {{ 'styles.scss.css' | asset_url | stylesheet_tag }}
 
-    <!-- Stylesheets for Turbo 2.2.3 -->
+    <!-- Phillip style sheet -->
     {{ 'phillip-changes.scss.css' | asset_url | stylesheet_tag }}
 
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+     <script src="{{ 'jquery.min.js' | asset_url }}" ></script>
+
+     <script src="{{ 'owl.carousel.js' | asset_url }}" ></script>
+
+     <script src="{{ 'phillip-main.js' | asset_url }}" ></script>
 
     <script>
       /*! lazysizes - v3.0.0 */
