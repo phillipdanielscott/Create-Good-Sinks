@@ -251,7 +251,7 @@
     </div>
 
     <div class="main_nav_wrapper cgc-main-nav">
-      <div class="main_nav clearfix menu-position--{{ section.settings.menu_position }} logo-align--{{ section.settings.logo_position }}">
+      <div class="main_nav clearfix menu-position--{{ section.settings.menu_position }} logo-align--{{ section.settings.logo_position }} container full-width">
         {% capture logo %}
           <!-- <div class="logo text-align--{{ section.settings.logo_alignment }}">
             <a href="{{ shop.url }}" title="{{ shop.name }}">
@@ -346,12 +346,23 @@
             </div>
           </div>
         {% endif %}
+        {% if linklist.handle == 'phillip-main-nav'%}
+        <!-- {% include 'cgc-sub-menu' with section.settings.main_linklist %}
+        {% include 'cgc-sub-menu' with section.settings.main_linklist2 %} -->
+        <script type="text/javascript">
+          console.log("YES!");
+        </script>
+        {% else %}
         {% include 'sub-menu' with section.settings.main_linklist %}
         {% include 'sub-menu' with section.settings.main_linklist2 %}
+        <script type="text/javascript">
+          console.log("No!");
+        </script>
+        {% endif %}
       </div>
     </div>
   </div>
-  <div class="bottom-nav container full-width">
+  <!-- <div class="bottom-nav container full-width hide">
 
     {% for collection in collections %}
 
@@ -375,7 +386,8 @@
     </div>
     {% endfor %}
 
-  </div>
+  </div> -->
+
 
 
   <script type="text/javascript">
@@ -403,6 +415,8 @@
   $("header").mouseleave(function() {
     timer = window.setTimeout(hideLine, 300);
   });
+
+
 
   </script>
 </header>
