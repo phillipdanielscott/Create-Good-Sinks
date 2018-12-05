@@ -36,11 +36,18 @@ body{
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 .cgc-main-nav{
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
-  display: -webkit-box;
+  display: block;
   background: white;
+  min-height: 100px;
+  float: none !important;
+  margin: 0 auto;
 }
+
+.cgc-main-nav .cgc-menu-items{
+  float: right;
+}
+
+
 
 .menu li a[href]:hover, .menu li a:focus, .menu a[href]:hover span{
   color: black;
@@ -50,9 +57,6 @@ body{
   border: 0px solid black;
 }
 .cgc-main-nav{
-  min-height: 100px;
-
-
 a.top_link{
   padding: 0px;
   }
@@ -72,10 +76,9 @@ a.top_link{
 }
 
 .menu-item-box{
-  margin: 0px 10px 10px 10px;
+  margin: 0px 10px 16px 5px;
   display: inline-block;
-  // width: 250px;
-  padding: 50px;
+  padding: 40px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -117,14 +120,27 @@ width: 60%;
 }
 
 .menu-item-box p{
-    color: white;
-    font-weight: 500;
-    display: inline;
-    padding: 0px;
+  color: white;
+  font-weight: 500;
+  display: inline;
+  padding: 0px;
 }
 
 
+.dropdown_column.menu-item-box.four.columns{
+  width: 250px !important;
+}
 
+.bottom-menu-wrapper{
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.CGC-logo{
+  display: inline;
+float: left;
+line-height: 7px;
+}
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *

@@ -253,7 +253,7 @@
     <div class="main_nav_wrapper cgc-main-nav">
       <div class="main_nav clearfix menu-position--{{ section.settings.menu_position }} logo-align--{{ section.settings.logo_position }} container full-width">
         {% capture logo %}
-          <!-- <div class="logo text-align--{{ section.settings.logo_alignment }}">
+          <div class="logo text-align--{{ section.settings.logo_alignment }}">
             <a href="{{ shop.url }}" title="{{ shop.name }}">
               {% if section.settings.logo_home != nil %}
                 <img src="{{ section.settings.logo_home | img_url: '410x' }}" class="secondary_logo" alt="{{ shop.name | escape }}" />
@@ -264,7 +264,7 @@
                 {{ shop.name }}
               {% endif %}
             </a>
-          </div> -->
+          </div>
         {% endcapture %}
 
         {% assign vertical_menu = section.settings.vertical_menu %}
@@ -302,7 +302,7 @@
 
 
         {% if section.settings.logo_position == "left" or section.settings.menu_position == "block" %}
-          {{ logo }}
+
           <div class="nav cgc-main-nav">
             <!-- phillip logo changes -->
             <a href="{{ shop.url }}" title="{{ shop.name | escape }}" class="CGC-logo logo">
@@ -314,10 +314,12 @@
                 {{ shop.name }}
               {% endif %}
             </a>
-            <ul class="menu {{ section.settings.menu_alignment }} clearfix">
-
+            <ul class="menu {{ section.settings.menu_alignment }} clearfix cgc-menu-items">
               {{ menu_left }}
               {{ menu_right }}
+              {% for link in linklists[section.settings.top_bar_menu].links %}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endfor %}
             </ul>
           </div>
         {% else %}

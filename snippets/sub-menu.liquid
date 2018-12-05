@@ -3,9 +3,9 @@
     {% assign link_count = linklists[link.handle].links | size %}
     <div class="dropdown_container" data-dropdown="{{ link.handle }}">
       <div class="dropdown menu cgc-dropdown">
-        <div class="dropdown_content {% if link_count < 4 %}dropdown_narrow{% endif %} container">
+        <div class="dropdown_content {% if link_count < 4 %}dropdown_narrow{% endif %} container full-width">
+          <div class="bottom-menu-wrapper">
           {% for sublink in linklists[link.handle].links %}
-
             <div class="dropdown_column menu-item-box four columns" style="background:
                linear-gradient(
                  rgba(0, 0, 0, 0.45),
@@ -23,29 +23,12 @@
                 <div class="explore-container"><div class="explore-line"></div></div>
                </div>
              </div>
+
             {% cycle link.handle: '', '', '', '', '<div class="dropdown_row"></div>' %}
           {% endfor %}
+            </div>
         </div>
       </div>
     </div>
   {% endif %}
 {% endfor %}
-
-<!-- <div class="menu-item-box four columns" style="background:
- /* top, transparent red, faked with gradient */
- linear-gradient(
-   rgba(0, 0, 0, 0.45),
-   rgba(0, 0, 0, 0.45)
- ),
- /* bottom, image */
- url({{ sublink.object.image | img_url: 'large' }});
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;">
-   <div id="overlay"></div>
-   <div class="submenu-text-content">
-     <a href="{{ subsublink.url }}">{{ subsublink.title }}</a>
-     <p>Explore</p>
-     <div class="explore-line"></div>
-   </div>
- </div> -->
