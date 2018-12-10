@@ -16,7 +16,7 @@
       one-seventh column {% cycle collection_group_thumb: 'alpha', '', '', '', '', '', 'omega' %}
     {% endif %} thumbnail {% cycle collection_group_mobile: 'even', 'odd' %}">
 {% endif %}
-  
+
 
   {% assign collection_handles = product.collections | map: 'handle' %}
   {% if product.featured_image.alt contains 'youtube' or image.alt contains 'vimeo' %}
