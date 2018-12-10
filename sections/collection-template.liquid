@@ -8,7 +8,7 @@
   {% capture sizes %}100x,480x,765x,1400x,2048x{% endcapture %}
   {% assign sizes = sizes | split: ',' %}
 
-  <header class="banner center page_banner dark-overlay-{{ section.settings.image_darken }}">
+  <header class="banner center page_banner dark-overlay-{{ section.settings.image_darken }} cgc-collection-banner-image">
     <img
           {% if collection.image %}
             src="{{ collection.image | img_url: sizes.first }}"
