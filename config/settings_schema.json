@@ -2417,6 +2417,11 @@
             "group": "Serif | Google Fonts"
           },
           {
+            "value": "Google_'Cormorant+Garamond'",
+            "label": "Cormorant Garamond",
+            "group": "Serif | Google Fonts"
+          },
+          {
             "value": "Google_'Droid+Serif'",
             "label": "Droid Serif",
             "group": "Serif | Google Fonts"
@@ -3726,6 +3731,472 @@
         "max": 20,
         "default": 14,
         "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Product page text"
+      },
+      {
+        "type": "select",
+        "id": "product_page_font",
+        "label": "Font",
+        "options": [
+          {
+            "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+            "label": "Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif",
+            "label": "Avant Garde",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
+            "label": "Candara",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Futura, 'Century Gothic', AppleGothic, sans-serif",
+            "label": "Futura",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Gill Sans', 'Gill Sans MT', Calibri, sans-serif",
+            "label": "Gill Sans",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'HelveticaNeue-Light', 'Helvetica Neue Light', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+            "label": "Helvetica Neue",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+            "label": "Lucida Grande",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Verdana, Geneva, Tahoma, sans-serif",
+            "label": "Verdana",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Google_'Advent+Pro'",
+            "label": "Advent Pro",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Asap",
+            "label": "Asap",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Cabin",
+            "label": "Cabin",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Dosis",
+            "label": "Dosis",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Droid+Sans'",
+            "label": "Droid Sans",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Exo+2'",
+            "label": "Exo 2",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Fjalla+One'",
+            "label": "Fjalla One",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Josefin+Sans'",
+            "label": "Josefin Sans",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Lato",
+            "label": "Lato",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Montserrat",
+            "label": "Montserrat",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Muli",
+            "label": "Muli",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Open+Sans'",
+            "label": "Open Sans",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Open+Sans+Condensed'",
+            "label": "Open Sans Condensed",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Oswald",
+            "label": "Oswald",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Poppins",
+            "label": "Poppins",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_'PT+Sans'",
+            "label": "PT Sans",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_'PT+Sans+Narrow'",
+            "label": "PT Sans Narrow",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Questrial",
+            "label": "Questrial",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Rajdhani",
+            "label": "Rajdhani",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Raleway",
+            "label": "Raleway",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Roboto",
+            "label": "Roboto",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Rubik",
+            "label": "Rubik",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Source+Sans+Pro'",
+            "label": "Source Sans Pro",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Teko",
+            "label": "Teko",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_Ubuntu",
+            "label": "Ubuntu",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Unica+One'",
+            "label": "Unica One",
+            "group": "Sans-serif | Google Fonts"
+          },
+          {
+            "value": "'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif",
+            "label": "Big Caslon",
+            "group": "Serif"
+          },
+          {
+            "value": "'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif",
+            "label": "Calisto MT",
+            "group": "Serif"
+          },
+          {
+            "value": "Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif",
+            "label": "Baskerville",
+            "group": "Serif"
+          },
+          {
+            "value": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "Google_Arvo",
+            "label": "Arvo",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Bungee+Shade'",
+            "label": "Bungee Shade",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Codystar'",
+            "label": "Codystar",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Crimson+Text'",
+            "label": "Crimson Text",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Droid+Serif'",
+            "label": "Droid Serif",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_Glegoo",
+            "label": "Glegoo",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Gravitas+One'",
+            "label": "Gravitas One",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Josefin+Slab'",
+            "label": "Josefin Slab",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_Karma",
+            "label": "Karma",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_Kreon",
+            "label": "Kreon",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_Lora",
+            "label": "Lora",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_Maitree",
+            "label": "Maitree",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_Martel",
+            "label": "Martel",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_Merriweather",
+            "label": "Merriweather",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Old+Standard+TT'",
+            "label": "Old Standard",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Playfair+Display'",
+            "label": "Playfair Display",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_'PT+Serif'",
+            "label": "PT Serif",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Roboto+Slab'",
+            "label": "Roboto Slab",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_Rokkitt",
+            "label": "Rokkitt",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_Taviraj",
+            "label": "Taviraj",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_Vollkorn",
+            "label": "Vollkorn",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Zilla+Slab+Highlight'",
+            "label": "Zilla Slab Highlight",
+            "group": "Serif | Google Fonts"
+          },
+          {
+            "value": "Google_'Amatic+SC'",
+            "label": "Amatic SC",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_'Berkshire+Swash'",
+            "label": "Berkshire Swash",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_Caveat",
+            "label": "Caveat",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_Condiment",
+            "label": "Condiment",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_'Dancing+Script'",
+            "label": "Dancing Script",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_'Homemade+Apple'",
+            "label": "Homemade Apple",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_'Just+Another+Hand'",
+            "label": "Just Another Hand",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_Kalam",
+            "label": "Kalam",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_Kristi",
+            "label": "Kristi",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_'Mrs+Saint+Delafield'",
+            "label": "Mrs Saint Delafield",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_Parisienne",
+            "label": "Parisienne",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_'Patrick+Hand+SC'",
+            "label": "Patrick Hand SC",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_'Permanent+Marker'",
+            "label": "Permanent Marker",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_'Rock+Salt'",
+            "label": "Rock Salt",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_'Shadows+Into+Light+Two'",
+            "label": "Shadows into Light Two",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_'Special+Elite'",
+            "label": "Special Elite",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_'Sue+Ellen+Francisco'",
+            "label": "Sue Ellen Francisco",
+            "group": "Handwriting | Google Fonts"
+          },
+          {
+            "value": "Google_'Cutive+Mono'",
+            "label": "Cutive Mono",
+            "group": "Monospace | Google Fonts"
+          },
+          {
+            "value": "Google_'Overpass+Mono'",
+            "label": "Overpass Mono",
+            "group": "Monospace | Google Fonts"
+          },
+          {
+            "value": "Google_'Roboto+Mono'",
+            "label": "Roboto Mono",
+            "group": "Monospace | Google Fonts"
+          },
+          {
+            "value": "'Courier New', Courier, monospace",
+            "label": "Courier New",
+            "group": "Monospace"
+          },
+          {
+            "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+            "label": "Monaco\/Lucida Console",
+            "group": "Monospace"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "product_page_font_weight",
+        "label": "Weight",
+        "options": [
+          {
+            "value": "lighter",
+            "label": "Light"
+          },
+          {
+            "value": "normal",
+            "label": "Regular"
+          },
+          {
+            "value": "bold",
+            "label": "Bold"
+          }
+        ],
+        "default": "normal"
+      },
+      {
+        "type": "select",
+        "id": "product_page_font_style",
+        "label": "Capitalization",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "uppercase",
+            "label": "Uppercase"
+          },
+          {
+            "value": "lowercase",
+            "label": "Lowercase"
+          }
+        ],
+        "default": "none"
       },
       {
         "type": "header",
