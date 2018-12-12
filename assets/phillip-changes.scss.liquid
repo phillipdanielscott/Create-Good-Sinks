@@ -79,7 +79,9 @@ a.top_link{
 
 .menu a.top_link, .menu a.dropdown_link{
   padding: 0px;
+  font-weight: 500;
 }
+
 
 .bottom-nav span{
   display: block;
@@ -111,7 +113,7 @@ a.top_link{
 
 .explore-line{
   width: 0%;
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid white;
   display: inline-block;
   position: relative;
   bottom: 4px;
@@ -186,25 +188,25 @@ a.top_link{
 
 .cgc-carousel-wrapper{
   height: 800px;
-  padding: 0px 50px;
-  margin: 40px 0px 80px 0px;
+  // padding: 0px 50px;
+  margin: 0px 0px 80px 0px;
   }
 
 .cgc-carousel-wrapper h2{
   font-size: 85px;
   margin: 0px;
+  line-height: 5rem;
+  margin-bottom: 20px;
 }
 
 .cgc-carousel-wrapper p{
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .cgc-carousel-wrapper img{
-  // position: absolute;
-  max-width: 600px;
-  // right: 26%;
+  max-width: 500px;
   position: absolute;
-  right: 15vw;
+  right: 22vw;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -213,6 +215,10 @@ a.top_link{
   perspective: 100vmin;
   -webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
 filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
+}
+
+.featured-image-container{
+ height: -webkit-fill-available;
 }
 
 .cgc-carousel-wrapper .carousel-text-underline{
@@ -228,28 +234,26 @@ filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
   right: 0;
   top: 0;
   bottom: 0;
-  width: 100%;
+  width: 90%;
   -webkit-transform: scaleX(.42);
   transform: scaleX(0.42);
   background-color: var(--backgroundColor);
   -webkit-transform-origin: right;
   transform-origin: right;
+  margin-right: 50px;
 }
 
 .carousel-text-content{
   position: absolute;
   top: 50%;
-  left: 80px;
+  left: 60px;
+  padding-left: 60px;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   width: 50vmin;
   -webkit-perspective: 100vmin;
   perspective: 100vmin;
 }
-
-
-
-
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -298,6 +302,11 @@ filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
 
 .text-container p{
   width: 80%;
+}
+
+.offset-text-content{
+  padding-left: 50px;
+  padding-top: 50px;
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -389,7 +398,7 @@ filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
     height: 100%;
 }
 .video-section-container{
-  margin: 100px 0px;
+    margin: 45px 0px;
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *

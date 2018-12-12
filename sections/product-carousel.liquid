@@ -1,20 +1,36 @@
 <div class="cgc-carousel-wrapper">
   <div class="owl-carousel owl-theme">
-      <div class="item">
-      <div class="featured-bg-color" style="background-color:{{ section.settings.slide-bg-color }}"></div>
 
-      <div class="carousel-text-content">
-        <h2 style="color:{{ section.settings.slide-bg-color }}">{{ section.settings.featured-slide-title }}</h2>
-        <div class="carousel-text-underline" style="border: 2px solid {{ section.settings.slide-bg-color }}"></div>
-        <p style="color:{{ section.settings.slide-bg-color }}">{{ section.settings.details-one}}</p>
-        <p style="color:{{ section.settings.slide-bg-color }}">{{ section.settings.details-two }}</p>
-        <p style="color:{{ section.settings.slide-bg-color }}">{{ section.settings.details-three }}</p>
-        <p style="color:{{ section.settings.slide-bg-color }}">{{ section.settings.details-four }}</p>
-      </div>
-       <img src="{{ section.settings.product-image | img_url: '1024x' }}" alt="" class="carousel-product-image">
-      </div>
-      <div class="item"><h4>2</h4></div>
-      <div class="item"><h4>3</h4></div>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'Featured-background-image' %}
+              {%- if block.settings.Featured-product-full-bg -%}
+                {%- assign featured_image = block.settings.Featured-product-full-bg | img_url: '1800x' -%}
+              {%- else -%}
+                {%- assign about_image = 'blank.svg' | asset_url -%}
+              {%- endif -%}
+              <div class="item">
+                <div class="featured-image-container" style="background-image:url({{ featured_image }}); background-position:center; background-repeat: no-repeat; background-size: cover; ">
+
+                </div>
+              </div>
+          {% when 'featured-product'  %}
+             <div class="item full-item">
+               <div class="featured-bg-color" style="background-color:{{ block.settings.slide-bg-color }}"></div>
+               <div class="carousel-text-content">
+                 <h2 style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.featured-slide-title }}</h2>
+                 <div class="carousel-text-underline" style="border: 2px solid {{ block.settings.slide-bg-color }}"></div>
+                 <p style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.details-one}}</p>
+                 <p style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.details-two }}</p>
+                 <p style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.details-three }}</p>
+                 <p style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.details-four }}</p>
+                 <i class="fas fa-arrow-right" style="color:{{ block.settings.slide-bg-color }}"></i>
+               </div>
+
+                <img src="{{ block.settings.product-image | img_url: '1024x' }}" alt="" class="carousel-product-image">
+             </div>
+        {% endcase %}
+      {% endfor %}
 
   </div>
 </div>
@@ -42,66 +58,82 @@
 {% schema %}
 {
   "name": "Product carousel slide",
+  "max_blocks": 8,
   "settings": [
+
+  ],
+  "blocks": [
   {
-   "id": "featured-slide-title",
-   "type": "text",
-   "label": "Featured product title",
-   "default": "Title"
-  },
-  {
-   "id": "featured-slide-description",
-   "type": "textarea",
-   "label": "Featured product description",
-   "default": "Featured Description"
-  },
-  {
-   "id": "details-one",
-   "type": "text",
-   "label": "featured slide details",
-   "default": "Featured Details"
-  },
-  {
-   "id": "details-two",
-   "type": "text",
-   "label": "featured slide details",
-   "default": "Featured Details"
-  },
-  {
-   "id": "details-three",
-   "type": "text",
-   "label": "featured slide details",
-   "default": "Featured Details"
-  },
-  {
-   "id": "details-four",
-   "type": "text",
-   "label": "featured slide details",
-   "default": "Featured Details"
-  },
-  {
-      "type": "image_picker",
-      "id": "product-image",
-      "label": "Product Image"
-  },
-  {
+    "type": "Featured-background-image",
+    "name": "Featured image",
+    "settings": [
+      {
       "type": "image_picker",
       "id": "Featured-product-full-bg",
-      "label": "Full background image (alternative to featured product slides)"
+      "label": "Full background image"
+     }
+    ]
   },
   {
-     "type":      "color",
-     "id":        "slide-bg-color",
-     "label":     "Slide background color",
-     "default":   "#AAB7B4"
-  },
-  {
-     "type":      "color",
-     "id":        "text-color",
-     "label":     "Text color",
-     "default":   "#AAB7B4"
+    "type": "featured-product",
+    "name": "Featured product",
+    "settings": [
+    {
+        "type": "image_picker",
+        "id": "product-image",
+        "label": "Product Image"
+    },
+    {
+     "id": "featured-slide-title",
+     "type": "text",
+     "label": "Featured product title",
+     "default": "Title"
+    },
+    {
+     "id": "featured-slide-description",
+     "type": "textarea",
+     "label": "Featured product description",
+     "default": "Featured Description"
+    },
+    {
+     "id": "details-one",
+     "type": "text",
+     "label": "featured slide details",
+     "default": "Featured Details"
+    },
+    {
+     "id": "details-two",
+     "type": "text",
+     "label": "featured slide details",
+     "default": "Featured Details"
+    },
+    {
+     "id": "details-three",
+     "type": "text",
+     "label": "featured slide details",
+     "default": "Featured Details"
+    },
+    {
+     "id": "details-four",
+     "type": "text",
+     "label": "featured slide details",
+     "default": "Featured Details"
+    },
+    {
+       "type":      "color",
+       "id":        "slide-bg-color",
+       "label":     "Slide background color",
+       "default":   "#AAB7B4"
+    },
+    {
+       "type":      "color",
+       "id":        "text-color",
+       "label":     "Text color",
+       "default":   "#AAB7B4"
+    }
+    ]
   }
-  ],
+],
   "presets": [
     {
       "name": "Product carousel slide",
