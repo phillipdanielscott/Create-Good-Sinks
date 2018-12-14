@@ -40,7 +40,7 @@
  $(".owl-carousel").owlCarousel({
    lazyLoad:true,
    loop:true,
-   autoplay:true,
+   autoplay:false,
    autoplayTimeout:4000,
    autoplayHoverPause:true,
    mouseDrag:true,
@@ -54,9 +54,19 @@
    itemsMobile : false,
    onChanged: function(e) {
     // Add in any JavaScript here to run when a slide has changed
-   //  $('.featured-bg-color').animate({
+   //  $('.carousel-text-underline').animate({
+   //   width: "60%",
+   //
+   // }, 'fast');
+
+   // $('.carousel-text-underline').css('width', '0%');
+   //
+   //  $('.carousel-text-underline').animate({
    //   width: "60%",
    // }, 'fast');
+
+
+
   }
  });
 </script>
