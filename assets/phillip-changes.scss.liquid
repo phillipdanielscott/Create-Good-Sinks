@@ -41,7 +41,10 @@ body{
   min-height: 75px;
   float: none !important;
   margin: 0 auto;
+  width: 86% !important;
 }
+
+
 
 .cgc-main-nav .cgc-menu-items{
   float: right;
@@ -191,30 +194,33 @@ a.top_link{
 
 
 .cgc-carousel-wrapper{
-  height: 800px;
+  // height: 800px;
+  // height: 975px;
+  height: 1100px;
   // padding: 0px 50px;
   margin: 0px 0px 80px 0px;
   }
 
 .cgc-carousel-wrapper h2{
-  font-size: 85px;
+  font-size: 130px;
   margin: 0px;
-  line-height: 5rem;
-  margin-bottom: 20px;
+  line-height: 7rem;
+  margin-bottom: 35px;
 }
 
 .cgc-carousel-wrapper p{
   font-weight: 500;
+  font-size: 20px;
 }
 
 .cgc-carousel-wrapper img{
-  max-width: 500px;
+  max-width: 750px;
   position: absolute;
-  right: 22vw;
+  right: 27vw;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  width: 50vmin;
+  // width: 50vmin;
   -webkit-perspective: 100vmin;
   perspective: 100vmin;
   -webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
@@ -226,7 +232,7 @@ filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
 }
 
 .cgc-carousel-wrapper .carousel-text-underline{
-  // width: 22%;
+  width: 22%;
   margin-bottom: 20px;
     transition: all 0.3s ease-in-out;
 }
@@ -234,7 +240,7 @@ filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
 .owl-carousel .owl-item .featured-bg-color{
   height: -moz-available;          /* WebKit-based browsers will ignore this. */
   height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
-  height: fill-available;
+  // height: fill-available;
   position: absolute;
   right: 0;
   top: 0;
@@ -245,13 +251,13 @@ filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
   background-color: var(--backgroundColor);
   -webkit-transform-origin: right;
   transform-origin: right;
-  margin-right: 120px;
+  margin-right: 336px;
 }
 
 .carousel-text-content{
   position: absolute;
   top: 50%;
-  left: 60px;
+  left: 278px;
   padding-left: 60px;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -260,6 +266,99 @@ filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
   perspective: 100vmin;
 }
 
+@media only screen and (max-width:1920px){
+
+  .cgc-carousel-wrapper{
+    height: 950px;
+  }
+
+  .owl-carousel .owl-item .featured-bg-color{
+    margin-right: 256px;
+  }
+
+  .carousel-text-content{
+    left: 193px;
+  }
+
+  .cgc-carousel-wrapper img{
+    max-width: 600px;
+  }
+
+  .cgc-carousel-wrapper h2{
+    font-size: 120px;
+    line-height: 6.5rem;
+    margin-bottom: 24px;
+  }
+
+  .cgc-carousel-wrapper p{
+    font-size: 18px;
+  }
+
+}
+
+@media only screen and (max-width:1680px){
+  .owl-carousel .owl-item .featured-bg-color{
+    margin-right: 223px;
+    width: 77%;
+  }
+  .cgc-carousel-wrapper img{
+    max-width: 575px;
+  }
+  .cgc-carousel-wrapper{
+    height: 900px;
+  }
+
+  .cgc-carousel-wrapper h2{
+    font-size: 105px;
+    margin-bottom: 17px;
+  }
+
+  .cgc-main-nav{
+    width: 90% !important;
+  }
+
+  .carousel-text-content{
+    padding-left: 0px;
+  }
+
+  .carousel-text-content{
+    left: 161px;
+  }
+
+  .owl-carousel .owl-item .featured-bg-color{
+  margin-right: 166px;
+  }
+}
+
+@media only screen and (max-width:1440px){
+  .cgc-carousel-wrapper{
+    height: 800px;
+  }
+
+  .carousel-text-content{
+    left: 137px;
+  }
+
+  .cgc-carousel-wrapper h2{
+    font-size: 90px;
+    margin-bottom: 5px;
+    line-height: 5rem;
+  }
+
+  .cgc-carousel-wrapper p{
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .owl-carousel .owl-item .featured-bg-color{
+    margin-right: 144px;
+  }
+
+  .cgc-carousel-wrapper img{
+   max-width: 500px;
+  }
+
+}
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
 
