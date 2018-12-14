@@ -18,7 +18,7 @@
              <div class="item full-item">
                <div class="featured-bg-color" style="background-color:{{ block.settings.slide-bg-color }}"></div>
                <div class="carousel-text-content">
-                 <h2 style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.featured-slide-title }}</h2>
+                 <h2 style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.title }}</h2>
                  <div class="carousel-text-underline" style="border: 2px solid {{ block.settings.slide-bg-color }}"></div>
                  <p style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.details-one}}</p>
                  <p style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.details-two }}</p>
@@ -40,8 +40,8 @@
  $(".owl-carousel").owlCarousel({
    lazyLoad:true,
    loop:true,
-   autoplay:false,
-   autoplayTimeout:8000,
+   autoplay:true,
+   autoplayTimeout:4000,
    autoplayHoverPause:true,
    mouseDrag:true,
    touchDrag:true,
@@ -50,7 +50,14 @@
    itemsDesktop : false,
    itemsDesktopSmall : false,
    itemsTablet: false,
-   itemsMobile : false
+   dotsData: true,
+   itemsMobile : false,
+   onChanged: function(e) {
+    // Add in any JavaScript here to run when a slide has changed
+   //  $('.featured-bg-color').animate({
+   //   width: "60%",
+   // }, 'fast');
+  }
  });
 </script>
 
@@ -79,15 +86,15 @@
     "name": "Featured product",
     "settings": [
     {
-        "type": "image_picker",
-        "id": "product-image",
-        "label": "Product Image"
-    },
-    {
-     "id": "featured-slide-title",
+     "id": "title",
      "type": "text",
      "label": "Featured product title",
      "default": "Title"
+    },
+    {
+        "type": "image_picker",
+        "id": "product-image",
+        "label": "Product Image"
     },
     {
      "id": "featured-slide-description",
