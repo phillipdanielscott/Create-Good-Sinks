@@ -58,15 +58,17 @@
 //
 // }
 
-$(window).resize(function(){
+if($(window).width() < 767)
+{
+   // change functionality for smaller screens
+   $(".owl-carousel").owlCarousel({
+     items : 4
+   });
+} else {
+   // change functionality for larger screens
+}
 
-       if ($('header').width() == 320 ){
 
-              console.log("I am working;")
-
-       }
-
-});
 </script>
 
 
