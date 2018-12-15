@@ -25,7 +25,9 @@ body{
   display: none;
 }
 
-
+#mobile_menu .sublink ul{
+  display: block;
+}
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -437,7 +439,48 @@ filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
 
 @media only screen and (max-width:425px){
   .cgc-carousel-wrapper{
-    height: 400px;
+    height: 375px;
+  }
+  .owl-carousel .owl-item .featured-bg-color{
+    margin-right: 20px;
+  }
+  .cgc-carousel-wrapper img{
+    max-width: 183px;
+    right: 8vw;
+    filter: drop-shadow(1px 6px 3px rgba(0,0,0,0.5));
+  }
+  .carousel-text-content{
+    left: 27px;
+  }
+  .cgc-carousel-wrapper h2{
+    font-size: 40px;
+    letter-spacing: normal;
+    line-height: 2.5rem;
+  }
+  .cgc-carousel-wrapper p{
+    font-size: 10px;
+    width: 69%;
+    margin-bottom: 3px;
+  }
+  .owl-carousel .owl-item .featured-bg-color{
+    width: 83%;
+  }
+  .cgc-carousel-wrapper .carousel-text-underline{
+   margin-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width:375px){
+  .cgc-carousel-wrapper{
+    height: 350px;
+  }
+  .cgc-carousel-wrapper img{
+    max-width: 150px;
+  }
+
+  .cgc-carousel-wrapper h2{
+    font-size: 35px;
+    line-height: 2rem;
   }
 }
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
