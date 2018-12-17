@@ -13,7 +13,18 @@
           <div class="footer_menu">
             {% if block.settings.menu != blank %}
               <!-- <h6>{{ linklists[block.settings.menu].title }}<span class="right icon-down-arrow"></span></h6> -->
+              {% if linklists[block.settings.menu].handle == "cgc-footer-nav-1" %}
+                <script type="text/javascript">
+                    console.log("Hello");
+                </script>
+              <div class="toggle_content cgc-footer-menu-list">
+
+              {% else %}
+
               <div class="toggle_content">
+              {% endif %}
+
+
                 <ul>
                   {% for link in linklists[block.settings.menu].links %}
                     <li><a href="{{ link.url }}">{{ link.title }}</a></li>
