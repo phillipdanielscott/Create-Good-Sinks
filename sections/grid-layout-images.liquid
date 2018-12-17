@@ -1,4 +1,4 @@
-<div class="grid-layout-container container">
+<!-- <div class="grid-layout-container container">
   <div class="sixteen columns">
 
       <div class="larger-image-container ten columns alpha"
@@ -17,6 +17,32 @@
           </div>
           </div>
         </div>
+
+  </div>
+</div> -->
+
+<div class="grid-layout-container">
+  <div class="">
+    <div class="larger-image-half">
+      <div class="larger-image-container "
+      style="background-image:url({{ section.settings.larger-image-left | img_url: '2000x2000' }})">
+
+      </div>
+    </div>
+
+      <div class="image-and-text-half">
+        <div class="smaller-image-container "
+        style="background-image:url({{ section.settings.smaller-image-right | img_url: '800x800' }})">
+        </div>
+        <div class="grid-text-content ">
+          <div class="grid-text-content-wrapper">
+          <div class="quote-marks">{{ 'quote.svg' | asset_url | img_tag }}</div>
+          <div class="border-line">
+            <p>{{ section.settings.grid-text-content }}</p>
+          </div>
+          </div>
+        </div>
+      </div>
 
   </div>
 </div>
