@@ -7,17 +7,32 @@
 <footer class="footer">
   <div class="container footer-menu-wrap">
       {% for block in section.blocks %}
-        <div class="{% if forloop.length >= 5 %}three columns{% elsif forloop.length == 4 %}four columns{% elsif forloop.length == 3 %}one-third column{% elsif forloop.length == 2 %}eight columns{% endif %}" {{ block.shopify_attributes }}>
+      <div class="{% if forloop.length >= 5 %}three columns{% elsif forloop.length == 4 %}four columns{% elsif forloop.length == 3 %}one-third column{% elsif forloop.length == 2 %}eight columns{% endif %} cgc-footer-item-wrapper" {{ block.shopify_attributes }}>
           {% if block.type == 'link_list' %}
 
-          <div class="footer_menu">
+            {% if linklists[block.settings.menu].handle == "cgc-footer-nav-1" %}
+
+            <div class="footer_menu footer-menu-1">
+
+            {% elsif linklists[block.settings.menu].handle == "cgc-footer-nav-2" %}
+
+            <div class="footer_menu footer-menu-2">
+
+            {% else %}
+
+            <div class="footer_menu">
+            {% endif %}
+
+
             {% if block.settings.menu != blank %}
               <!-- <h6>{{ linklists[block.settings.menu].title }}<span class="right icon-down-arrow"></span></h6> -->
               {% if linklists[block.settings.menu].handle == "cgc-footer-nav-1" %}
-                <script type="text/javascript">
-                    console.log("Hello");
-                </script>
-              <div class="toggle_content cgc-footer-menu-list">
+
+              <div class="toggle_content cgc-footer-menu-list-1">
+
+              {% elsif linklists[block.settings.menu].handle == "cgc-footer-nav-2" %}
+
+              <div class="toggle_content cgc-footer-menu-list-2">
 
               {% else %}
 
@@ -68,7 +83,7 @@
             <div class="footer_content">
               {% if block.settings.title != blank %}
                 <!-- <h6>{{ block.settings.title }}<span class="right icon-down-arrow"></span></h6> -->
-                <div class="toggle_content">
+                <div class="toggle_content footer-text-block">
                   {{ block.settings.content }}
                 </div>
               {% endif %}

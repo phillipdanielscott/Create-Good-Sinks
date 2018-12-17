@@ -947,8 +947,27 @@ footer .social_icons{
 }
 
 @media only screen and (max-width:768px){
-  .toggle_content{
-    display: block;
+  .cgc-footer-menu-list-1, .cgc-footer-menu-list-2, .toggle_content{
+    display: inherit;
+    padding: 0px;
+  }
+  .footer_credits{
+    text-align: center;
+  }
+  .footer-menu-1, .footer-menu-2{
+    width: 50%;
+    display: inline-block;
+  }
+  .cgc-footer-item-wrapper{
+    width: 50%;
+    display: inline-block;
+  }
+
+}
+
+@media only screen and (max-width:425px){
+  .footer .logo-text-content{
+    text-align: center;
   }
 }
 
