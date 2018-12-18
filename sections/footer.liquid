@@ -4,24 +4,18 @@
 - Uses blocks
 {% endcomment %}
 
+
+{% assign favorite_food = 'apples' %}
+
 <footer class="footer">
   <div class="container footer-menu-wrap">
       {% for block in section.blocks %}
-      <div class="{% if forloop.length >= 5 %}three columns{% elsif forloop.length == 4 %}four columns{% elsif forloop.length == 3 %}one-third column{% elsif forloop.length == 2 %}eight columns{% endif %} cgc-footer-item-wrapper" {{ block.shopify_attributes }}>
-          {% if block.type == 'link_list' %}
 
-            {% if linklists[block.settings.menu].handle == "cgc-footer-nav-1" %}
 
-            <div class="footer_menu footer-menu-1">
-
-            {% elsif linklists[block.settings.menu].handle == "cgc-footer-nav-2" %}
-
-            <div class="footer_menu footer-menu-2">
-
-            {% else %}
+      <div class="{% if forloop.length >= 5 %}three columns{% elsif forloop.length == 4 %}four columns{% elsif forloop.length == 3 %}one-third column{% elsif forloop.length == 2 %}eight columns{% endif %} cgc-footer-item-wrapper-{{ block.settings.class-input }}" {{ block.shopify_attributes }}>
 
             <div class="footer_menu">
-            {% endif %}
+
 
 
             {% if block.settings.menu != blank %}
@@ -227,6 +221,11 @@
           "id": "menu",
           "label": "Menu",
           "info": "This menu won't show dropdown items"
+        },
+        {
+          "type": "text",
+          "id": "class-input",
+          "label": "custom class (for development use)"
         },
         {
           "type": "checkbox",
