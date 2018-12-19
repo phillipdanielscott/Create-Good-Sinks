@@ -348,49 +348,18 @@
             </div>
           </div>
         {% endif %}
-        {% if linklist.handle == 'phillip-main-nav'%}
-        <!-- {% include 'cgc-sub-menu' with section.settings.main_linklist %}
-        {% include 'cgc-sub-menu' with section.settings.main_linklist2 %} -->
-        {% else %}
+
         {% include 'sub-menu' with section.settings.main_linklist %}
         {% include 'sub-menu' with section.settings.main_linklist2 %}
-        <!-- <script type="text/javascript">
-          console.log("No!");
-        </script> -->
-        {% endif %}
+
       </div>
     </div>
   </div>
-  <!-- <div class="bottom-nav container full-width hide">
 
-    {% for collection in collections %}
-
-    <div class="menu-item-box four columns" style="background:
-    /* top, transparent red, faked with gradient */
-    linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.45)
-    ),
-    /* bottom, image */
-    url({{ collection.image | img_url: 'large' }});
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;">
-      <div id="overlay"></div>
-      <div class="submenu-text-content">
-        <a href="{{ collection.url }}">{{ collection.title }}</a>
-        <p>Explore</p>
-        <div class="explore-line"></div>
-      </div>
-    </div>
-    {% endfor %}
-
-  </div> -->
 
 
 
   <script type="text/javascript">
-
 
   var timer; // This will hold a reference to the timer
 
