@@ -30,14 +30,20 @@
     {% endif %}
   </div>
 
-  <header class="banner center page_banner dark-overlay-{{ section.settings.image_darken }} cgc-collection-banner-image" >
+  {%- if section.settings.image -%}
+    {%- assign collection_banner_image = section.settings.image | img_url: '1800x' -%}
+  {%- else -%}
+    {%- assign collection_banner_image = 'blank.svg' | asset_url -%}
+  {%- endif -%}
 
-          <img
+  <header class="banner center page_banner dark-overlay-{{ section.settings.image_darken }} cgc-collection-banner-image" style="background-image:url({{collection_banner_image}})">
+
+          <!-- <img
           src="{{ section.settings.image | img_url: sizes.first }}"
           data-src="{{ section.settings.image | img_url: sizes.last }}"
           alt="{{ collection.title | escape }}"
           class="lazyload {{ settings.image_loading_style }}"
-          alt="">
+          alt=""> -->
       {% if section.settings.display_collection_title %}
         <div class="caption captionOverlay--true">
           <h1 class="headline banner-headline">{{ collection.title }}</h1>
@@ -48,7 +54,8 @@
 
 <a name="pagecontent" id="pagecontent"></a>
 
-<div class="container cgc-product-container">
+<!-- <div class="container full-cgc-product-container"> -->
+  <div class="container full-cgc-product-container">
   {% paginate collection.products by section.settings.pagination_limit %}
   {% if collection.description != blank %}
     <div class="section clearfix collection_description">
@@ -62,7 +69,9 @@
           <h1>{{ collection.title }}</h1>
         </div>
       {% endif %}
-      <div class="eight columns section_select {% unless section.settings.display_collection_title and section.settings.featured_collection_image == false %}offset-by-four{% endunless %}">
+      <!-- <div class="eight columns section_select {% unless section.settings.display_collection_title and section.settings.featured_collection_image == false %}offset-by-four{% endunless %}"> -->
+        <div class="section_select">
+
         {% if collection.handle != blank and collection.products_count > 0 %}
           {% if section.settings.collection_tags %}
             {% for tag in collection.all_tags %}
