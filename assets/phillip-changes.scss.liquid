@@ -29,6 +29,32 @@ body{
   display: block;
 }
 
+.caption.captionOverlay--true .headline, .caption.captionOverlay--true .subtitle{
+  text-shadow: 0px 0px 0px rgba(0,0,0,0.3);
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+              RESET  GRID STYLING
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+ .container .one-thirds-cgc{
+   width: 33.3%;
+   display: inline-block;
+   margin: 0px;
+ }
+
+  .container .full-width-cgc{
+    width: 100%;
+  }
+
+ .container .one-half-cgc{
+   width: 50%;
+ }
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
 
@@ -1324,14 +1350,15 @@ text-align: left;
   font-weight: 800;
 }
 
-.paginate span{
-font-family: 'Cormorant Garamond';
-font-weight: bold;
-}
+// .paginate span{
+// font-family: 'Cormorant Garamond';
+// font-weight: bold;
+// }
 
 .section_select .cgc-filter-select{
   border: 2px solid black;
   margin: 0px 10px;
+  font-weight: 600;
 }
 
 .collection_description{
@@ -1362,11 +1389,70 @@ font-weight: bold;
 }
 
 @media only screen and (max-width:798px){
-  .banner .center .page_banner .dark-overlay-true .cgc-collection-banner-image{
-    height: 250px;
-    margin-top: 20px;
+  .header-section{
+    position: unset !important;
   }
 }
+
+@media only screen and (max-width:425px){
+  .mobile_nav-fixed--false .cgc-collection-banner-image, .mobile_nav-fixed--true .cgc-collection-banner-image{
+    height: 250px;
+    margin-top: 0px;
+  }
+
+  #header .top_bar{
+    text-align: center;
+    height: 50px;
+    display: block;
+    position: unset;
+  }
+
+  .header-section{
+    position: unset !important;
+  }
+
+  .headline .banner-headline{
+
+  }
+
+  .dropdown_container .dropdown{
+    border-bottom: 5px solid #EBECE4;
+  }
+
+  .collection_description span{
+    font-size: 14px;
+  }
+
+  .caption .headline{
+    font-size: 25px;
+  }
+
+  .cgc-filter-select{
+    padding-left: 10px !important;
+    font-size: 13px !important;
+    margin-bottom: 17px !important;
+  }
+
+  .container .thumbnail.even,
+  .container .thumbnail.odd{
+    width: 100% !important;
+  }
+
+  .product-details .title, .sold_out{
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .banner-headline{
+    padding: 18px;
+  }
+
+  .container div.thumbnail.odd{
+    margin-left: 0px;
+  }
+}
+
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
 
@@ -1482,6 +1568,9 @@ footer .social_icons{
   }
   .footer_credits{
     padding-top: 15px;
+  }
+  footer .footer-social-icons--mobile.columns{
+    padding-bottom: 20px;
   }
 }
 
