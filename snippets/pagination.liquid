@@ -13,7 +13,8 @@
 
 {% endcomment %}
 
-  <div class="{% if pagination %}twelve{% else %}sixteen{% endif %} columns">
+  <!-- <div class="{% if pagination %}twelve{% else %}sixteen{% endif %} columns"> -->
+    <div class="{% if pagination %}full-width-cgc{% else %}sixteen{% endif %}">
     <div class="section clearfix">
       <div class="paginate">
         {% if paginate.pages > 1 %}
@@ -21,4 +22,4 @@
         {% endif %}
       </div>
     </div>
-  </div> 
+  </div>
