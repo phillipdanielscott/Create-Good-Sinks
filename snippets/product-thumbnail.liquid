@@ -64,7 +64,7 @@
                               {{ product.featured_image | product_img_url: '800x' }} 800w,
                               {{ product.featured_image | product_img_url: '900x' }} 900w"
               />
-            </div>
+          </div>
           {% if settings.collection_secondary_image != blank %}
             <div class="image__container" style="max-width: {% if product.images[1] != blank %}{{- product.images[1].width -}}px{% else %}{{- product.featured_image.width -}}px{% endif %}; ">
               <img src="{% if product.images[1] != blank %}{{ product.images[1] | product_img_url: '900x' }}{% else %}{{ product.featured_image | product_img_url: '900x' }}{% endif %}"
