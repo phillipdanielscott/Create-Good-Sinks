@@ -46,7 +46,16 @@
           alt=""> -->
       {% if section.settings.display_collection_title %}
         <div class="caption captionOverlay--true">
-          <h1 class="headline banner-headline">{{ collection.title }}</h1>
+
+          {% if collection.title contains "Sinks" or "sinks" %}
+           <h1 class="headline banner-headline">{{ collection.title | replace: 'Sinks', '' }}</h1>
+
+            {% else %}
+
+           <h1 class="headline banner-headline">{{ collection.title }}</h1>
+
+          {% endif %}
+
         </div>
       {% endif %}
   </header>

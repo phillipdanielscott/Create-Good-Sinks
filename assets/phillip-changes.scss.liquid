@@ -74,8 +74,6 @@ body{
   // width: 86% !important;
 }
 
-
-
 .cgc-main-nav .cgc-menu-items{
   float: right;
   margin-right: 0px;
@@ -1335,10 +1333,10 @@ text-align: left;
 }
 
 .product-details span{
-  font-family: {{ settings.product_page_font | replace: 'Google_', '' | replace: '+', ' ' }};
+  font-family: {{ settings.collection_page_font | replace: 'Google_', '' | replace: '+', ' ' }};
   // font-weight: {{ settings.product_page_font_weight }};
   font-weight: 500;
-  text-transform: {{ settings.product_page_font_style }};
+  text-transform: {{ settings.collection_page_font_style }};
   letter-spacing: normal;
   text-align: left;
 }
@@ -1351,11 +1349,6 @@ text-align: left;
 .product-details .title {
   font-weight: 800;
 }
-
-// .paginate span{
-// font-family: 'Cormorant Garamond';
-// font-weight: bold;
-// }
 
 .section_select .cgc-filter-select{
   border: 2px solid black;
@@ -1409,14 +1402,10 @@ i.fas.fa-caret-right.paginate-right{
   font-weight: 500;
 }
 
-// .product_image{
-//   min-height: 350px;
-//   overflow: hidden;
-// }
-
 .image__container{
   max-width: 80%;
 }
+
 
 @media only screen and (max-width:1920px){
   .product-wrap{
@@ -1508,6 +1497,32 @@ i.fas.fa-caret-right.paginate-right{
   .container div.thumbnail.odd{
     margin-left: 0px;
   }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+                 PRODUCT PAGE
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.product_name{
+  font-family: {{ settings.product_page_font | replace: 'Google_', '' | replace: '+', ' ' }};
+  font-weight: {{ settings.product_text_font_weight }};
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.top-product-title{
+  font-family: Poppins;
+  text-align: center;
+  font-size: 150px;
+  color: #B3C2B8;
+  opacity: 0.5;
+  font-weight: 600;
+  letter-spacing: 5px;
+  margin-bottom: 0px;
 }
 
 

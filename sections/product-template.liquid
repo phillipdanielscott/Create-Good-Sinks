@@ -5,11 +5,28 @@
 
 <a name="pagecontent" id="pagecontent"></a>
 
+
+{% if section.settings.collection-top-title %}
+  {% if collection.title contains "Sinks" or "sinks" %}
+   <h1 class="top-product-title">{{ collection.title | replace: 'Sinks', '' }}</h1>
+
+    {% else %}
+    
+   <h1 class="top-product-title">{{ collection.title }}</h1>
+
+  {% endif %}
+
+{% endif %}
+
+
+
+
+
 <div class="container main content">
   <div class="sixteen columns">
     {% if collection.previous_product or collection.next_product or section.settings.product_breadcrumb %}
       <div class="clearfix breadcrumb-collection">
-        {% if collection.previous_product or collection.next_product %}
+        <!-- {% if collection.previous_product or collection.next_product %}
           <div class="nav_arrows breadcrumb_text">
             {% if collection.previous_product %}
               <a href="{{ collection.previous_product }}" title="{{ 'products.general.previous_product_html' | t }}" class="breadcrumb_link"><span class="icon-left-arrow"> {{ 'products.general.previous_product_html' | t }}</span></a>
@@ -20,7 +37,7 @@
               <a href="{{collection.next_product}}" title="{{ 'products.general.next_product_html' | t }}" class="breadcrumb_link">{{ 'products.general.next_product_html' | t }} <span class="icon-right-arrow"></span></a>
             {% endif %}
           </div>
-        {% endif %}
+        {% endif %} -->
 
         {% if section.settings.product_breadcrumb %}
           <div class="breadcrumb_text" itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -48,7 +65,7 @@
     {% assign sidebar = false %}
   {% endif %}
 
-  <div class="product clearfix">
+  <div class="product clearfix cgc-product-wrapper">
     {% if sidebar %}
       {% include 'sidebar' %}
       <div class="twelve columns">
@@ -97,7 +114,7 @@
           {% if settings.enable_shopify_product_badges and settings.enable_shopify_review_comments %}
             <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
           {% endif %}
-          <div class="feature_divider"></div>
+          <!-- <div class="feature_divider"></div> -->
 
           {% assign product_tags = product.tags | join: ' ' %}
           {% if product_tags contains 'meta-size-chart-' %}
@@ -269,6 +286,12 @@
   "name": "Product",
   "class": "product-template",
   "settings": [
+   {
+     "type": "checkbox",
+     "id": "collection-top-title",
+     "default": true,
+     "label": "Enable top title"
+    },
     {
       "type": "header",
       "content": "Product gallery"
