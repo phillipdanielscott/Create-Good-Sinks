@@ -1,0 +1,78 @@
+<div class="meet-about-wrapper container full-width">
+  <h3 class="meet-about-title">{{ page.title }}</h3>
+  {% for block in section.blocks %}
+
+  <div class="image-text-content-wrapper container full-width" style="background-color:{{ block.settings.image-text-bg-color }}">
+
+    <div class="text-side-content one-half-cgc" >
+      <h2 style="color:{{ block.settings.text-side-color }}; border-bottom: 4px solid {{ block.settings.text-side-color}}">
+        {{ block.settings.image-text-header }}
+      </h2>
+      <div class="text-value" style="color:{{ block.settings.text-side-color }}">{{ block.settings.section-content }}</div>
+    </div>
+    <div class="image-side-content one-half-cgc" >
+      <img src="{{ block.settings.image-side-content | img_url: '500x' }}" alt="">
+    </div>
+
+  </div>
+
+  {% endfor %}
+
+</div>
+
+
+<style>
+  .custom-template{
+    width: 100%;
+   }
+</style>
+
+{% schema %}
+{
+  "name": "About Us content",
+  "blocks": [
+  {
+    "type": "image-text-side",
+    "name": "Image and Text",
+    "settings": [
+    {
+       "type":      "color",
+       "id":        "image-text-bg-color",
+       "label":     "Background color",
+       "default":   "#B3C2B8"
+    },
+    {
+       "type":      "color",
+       "id":        "text-side-color",
+       "label":     "Text color",
+       "default":   "#FBFAFA"
+    },
+    {
+       "type":      "text",
+       "id":        "image-text-header",
+       "label":     "Section Title",
+       "default":   "Title"
+    },
+    {
+       "type": "richtext",
+       "id": "section-content",
+       "label": "Section Content",
+       "default": "<p> Text Content </p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-side-content",
+      "label": "Logo image"
+    }
+    ]
+  }
+
+  ],
+  "presets": [
+    {
+      "name": "Product carousel slide",
+      "category": "Product carousel slide"
+    }
+  ]
+}
+{% endschema %}
