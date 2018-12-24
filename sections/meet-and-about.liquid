@@ -1,21 +1,41 @@
 <div class="meet-about-wrapper container full-width">
   <h3 class="meet-about-title">{{ page.title }}</h3>
   {% for block in section.blocks %}
+    {% case block.type %}
 
-  <div class="image-text-content-wrapper container full-width" style="background-color:{{ block.settings.image-text-bg-color }}">
+      {% when 'image-text-side' %}
+      <div class="image-text-content-wrapper container full-width" style="background-color:{{ block.settings.image-text-bg-color }}">
 
-    <div class="text-side-content one-half-cgc" >
-      <h2 style="color:{{ block.settings.text-side-color }}; border-bottom: 4px solid {{ block.settings.text-side-color}}">
-        {{ block.settings.image-text-header }}
-      </h2>
-      <div class="text-value" style="color:{{ block.settings.text-side-color }}">{{ block.settings.section-content }}</div>
-    </div>
-    <div class="image-side-content one-half-cgc" >
-      <img src="{{ block.settings.image-side-content | img_url: '500x' }}" alt="">
-    </div>
+        {% if block.settings.image_text_alignment == "text-left" %}
 
-  </div>
+        <div class="text-side-content one-half-cgc" >
+          <h2 style="color:{{ block.settings.text-side-color }}; border-bottom: 4px solid {{ block.settings.text-side-color}}">
+            {{ block.settings.image-text-header }}
+          </h2>
+          <div class="text-value" style="color:{{ block.settings.text-side-color }}">{{ block.settings.section-content }}</div>
+        </div>
+        <div class="image-side-content one-half-cgc" style="float: right;">
+          <img src="{{ block.settings.image-side-content | img_url: '500x' }}" alt="">
+        </div>
 
+        {% else %}
+
+        <div class="image-side-content one-half-cgc">
+          <img src="{{ block.settings.image-side-content | img_url: '500x' }}" alt="">
+        </div>
+        <div class="text-side-content one-half-cgc" style="float: right;" >
+          <h2 style="color:{{ block.settings.text-side-color }}; border-bottom: 4px solid {{ block.settings.text-side-color}}">
+            {{ block.settings.image-text-header }}
+          </h2>
+          <div class="text-value" style="color:{{ block.settings.text-side-color }}">{{ block.settings.section-content }}</div>
+        </div>
+
+        {% endif %}
+
+
+
+      </div>
+    {% endcase %}
   {% endfor %}
 
 </div>
@@ -58,6 +78,16 @@
        "id": "section-content",
        "label": "Section Content",
        "default": "<p> Text Content </p>"
+    },
+    {
+      "type": "select",
+      "id": "image_text_alignment",
+      "label": "Image and text alignment",
+      "default": "text-left",
+      "options": [
+        { "value": "text-left", "label": "Align Left"},
+        { "value": "text-right", "label": "Align Right"}
+      ]
     },
     {
       "type": "image_picker",
