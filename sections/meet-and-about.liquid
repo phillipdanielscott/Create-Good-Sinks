@@ -1,45 +1,76 @@
 <div class="meet-about-wrapper container full-width">
-  <h3 class="meet-about-title">{{ page.title }}</h3>
+  <h3 class="meet-about-title" style="color:{{ section.settings.page-text-color }}">{{ page.title }}</h3>
   {% for block in section.blocks %}
     {% case block.type %}
 
       {% when 'image-text-side' %}
       <div class="image-text-content-wrapper container full-width" style="background-color:{{ block.settings.image-text-bg-color }}">
 
-        {% if block.settings.image_text_alignment == "text-left" %}
+        {% if block.settings.image_text_alignment == "image-right" %}
 
-        <div class="text-side-content one-half-cgc" >
-          <h2 style="color:{{ block.settings.text-side-color }}; border-bottom: 4px solid {{ block.settings.text-side-color}}">
-            {{ block.settings.image-text-header }}
-          </h2>
-          <div class="text-value" style="color:{{ block.settings.text-side-color }}">{{ block.settings.section-content }}</div>
-        </div>
-        <div class="image-side-content one-half-cgc" style="float: right;">
-          <img src="{{ block.settings.image-side-content | img_url: '500x' }}" alt="">
-        </div>
+            <div class="text-side-content one-half-cgc" >
+              <h2 style="color:{{ block.settings.text-side-color }}; border-bottom: 4px solid {{ block.settings.text-side-color}}">
+                {{ block.settings.image-text-header }}
+              </h2>
+              <div class="text-value" style="color:{{ block.settings.text-side-color }}">{{ block.settings.section-content }}</div>
+            </div>
+            <div class="image-side-content one-half-cgc" style="float: right;">
+              <img src="{{ block.settings.image-side-content | img_url: '500x' }}" alt="">
+            </div>
 
         {% else %}
 
-        <div class="image-side-content one-half-cgc">
-          <img src="{{ block.settings.image-side-content | img_url: '500x' }}" alt="">
-        </div>
-        <div class="text-side-content one-half-cgc" style="float: right;" >
-          <h2 style="color:{{ block.settings.text-side-color }}; border-bottom: 4px solid {{ block.settings.text-side-color}}">
-            {{ block.settings.image-text-header }}
-          </h2>
-          <div class="text-value" style="color:{{ block.settings.text-side-color }}">{{ block.settings.section-content }}</div>
-        </div>
+            <div class="image-side-content one-half-cgc">
+              <img src="{{ block.settings.image-side-content | img_url: '500x' }}" alt="">
+            </div>
+            <div class="text-side-content one-half-cgc" style="float: right;" >
+              <h2 style="color:{{ block.settings.text-side-color }}; border-bottom: 4px solid {{ block.settings.text-side-color}}">
+                {{ block.settings.image-text-header }}
+              </h2>
+              <div class="text-value" style="color:{{ block.settings.text-side-color }}">{{ block.settings.section-content }}</div>
+            </div>
 
         {% endif %}
-
-
-
       </div>
+
+
+      {% when 'video-text-side'%}
+
+        <div class="video-section-wrapper container full-width" style="background-color:{{ block.settings.video-section-bg-color }}">
+
+        {% if block.settings.video_text_alignment == "video-right" %}
+
+          <div class="text-side-video one-half-cgc" >
+            <h2 style="color:{{ block.settings.video-side-color }}; border-bottom: 4px solid {{ block.settings.video-side-color}}">
+              {{ block.settings.video-text-header }}
+            </h2>
+            <div class="text-value" style="color:{{ block.settings.video-side-color }}">{{ block.settings.video-section-content }}</div>
+          </div>
+          <div class="video-side-content one-half-cgc" style="float: right;">
+              <!-- Copy & Pasted from YouTube -->
+              <iframe width="100%" height="" src="{{ block.settings.video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+          </div>
+
+        {% else %}
+
+        <div class="video-side-content one-half-cgc">
+            <!-- Copy & Pasted from YouTube -->
+            <iframe width="100%" height="" src="{{ block.settings.video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+        </div>
+        <div class="text-side-video one-half-cgc" style="float: right;">
+          <h2 style="color:{{ block.settings.video-side-color }}; border-bottom: 4px solid {{ block.settings.video-side-color}}">
+            {{ block.settings.video-text-header }}
+          </h2>
+          <div class="text-value" style="color:{{ block.settings.video-side-color }}">{{ block.settings.video-section-content }}</div>
+        </div>
+
+         {% endif %}
+        </div>
+
     {% endcase %}
   {% endfor %}
 
 </div>
-
 
 <style>
   .custom-template{
@@ -47,9 +78,18 @@
    }
 </style>
 
+
 {% schema %}
 {
   "name": "About Us content",
+  "settings": [
+  {
+     "type":      "color",
+     "id":        "page-text-color",
+     "label":     "Page title text color",
+     "default":   "#B3C2B8"
+  }
+  ],
   "blocks": [
   {
     "type": "image-text-side",
@@ -77,16 +117,16 @@
        "type": "richtext",
        "id": "section-content",
        "label": "Section Content",
-       "default": "<p> Text Content </p>"
+       "default": "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
     },
     {
       "type": "select",
       "id": "image_text_alignment",
       "label": "Image and text alignment",
-      "default": "text-left",
+      "default": "image-right",
       "options": [
-        { "value": "text-left", "label": "Align Left"},
-        { "value": "text-right", "label": "Align Right"}
+        { "value": "image-right", "label": "Text left image right"},
+        { "value": "image-left", "label": "Text right image left"}
       ]
     },
     {
@@ -94,6 +134,52 @@
       "id": "image-side-content",
       "label": "Logo image"
     }
+    ]
+  },
+  {
+    "type": "video-text-side",
+    "name": "Video and Text",
+    "settings": [
+    {
+       "type":      "color",
+       "id":        "video-section-bg-color",
+       "label":     "Background color",
+       "default":   "#B3C2B8"
+    },
+    {
+       "type":      "color",
+       "id":        "video-side-color",
+       "label":     "Text color",
+       "default":   "#FBFAFA"
+    },
+    {
+       "type":      "text",
+       "id":        "video-text-header",
+       "label":     "Section Title",
+       "default":   "Title"
+    },
+    {
+       "type": "richtext",
+       "id": "video-section-content",
+       "label": "Section Content",
+       "default": "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+    },
+    {
+      "type": "select",
+      "id": "video_text_alignment",
+      "label": "Image and text alignment",
+      "default": "video-right",
+      "options": [
+        { "value": "video-right", "label": "Text left video right"},
+        { "value": "video-left", "label": "Text right video left"}
+      ]
+    },
+    {
+     "id": "video-url",
+     "type": "text",
+     "label": "Video Url"
+    }
+
     ]
   }
 
