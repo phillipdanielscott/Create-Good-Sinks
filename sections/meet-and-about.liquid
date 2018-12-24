@@ -68,6 +68,29 @@
          {% endif %}
         </div>
 
+        {% when 'offset-image-text' %}
+
+        {%- if block.settings.offset_image_bg -%}
+          {%- assign offset_bg = block.settings.offset_image_bg| img_url: '1800x' -%}
+        {%- else -%}
+          {%- assign offset_bg = 'blank.svg' | asset_url -%}
+        {%- endif -%}
+
+        <div class="offset-wrapper container full-width">
+
+          <div class="offset-image-section one-half-cgc">
+            <div class="image-background-block" style="background-color:{{ block.settings.offset-bg-color }}"></div>
+            <div class="image-offset-container" style="background-image:url({{offset_bg}})"></div>
+          </div>
+          <div class="offset-text-section one-half-cgc" style="background-color:{{ block.settings.offset-bg-color }}">
+            <div class="offset-text-container">
+              <h2 style="color:{{ block.settings.offset-text-color }}; border-bottom:4px solid {{ block.settings.offset-text-color }}">{{block.settings.offset-section-title}}</h2>
+              <div class="offset-section-content" style="color:{{ block.settings.offset-text-color }};">{{ block.settings.offset-section-content }}</div>
+            </div>
+          </div>
+
+        </div>
+
     {% endcase %}
   {% endfor %}
 
@@ -181,6 +204,41 @@
      "label": "Video Url"
     }
 
+    ]
+  },
+  {
+    "type": "offset-image-text",
+    "name": "Offset image and text",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "offset_image_bg",
+      "label": "Featured image"
+    },
+    {
+       "type":    "text",
+       "id":      "offset-section-title",
+       "label":   "Section Title",
+       "default": "Title"
+    },
+    {
+       "type":      "color",
+       "id":        "offset-text-color",
+       "label":     "Text color",
+       "default":   "#38373E"
+    },
+    {
+       "type":      "color",
+       "id":        "offset-bg-color",
+       "label":     "Background color",
+       "default":   "#EBECE4"
+    },
+    {
+       "type": "richtext",
+       "id": "offset-section-content",
+       "label": "Section Content",
+       "default": "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+    }
     ]
   }
 
