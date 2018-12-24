@@ -1,5 +1,6 @@
 <div class="meet-about-wrapper container full-width">
-  <h3 class="meet-about-title" style="color:{{ section.settings.page-text-color }}">{{ page.title }}</h3>
+
+  <h3 class="meet-about-title" style="color:{{ section.settings.page-text-color }}">{{ page.title | remove: "-PHILLIP"}}</h3>
   {% for block in section.blocks %}
     {% case block.type %}
 
