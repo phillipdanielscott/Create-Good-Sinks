@@ -93,6 +93,40 @@
 
         </div>
 
+        {% when 'featured-team-section' %}
+
+          <div class="featured-team-wrapper container full-width">
+            <div class="featured-header-content">
+              <div class="offset-color-square"></div>
+              <h2 class="featured-section-title">{{ block.settings.team-bio-header }}</h2>
+              <div class="featured-section-description">
+                {{ block.settings.team-bio-description }}
+                <div class="offset-color-square-bottom"></div>
+              </div>
+            </div>
+
+
+
+
+          </div>
+
+        {% when 'team-bios' %}
+          <div class="team-member-container one-fourth-cgc">
+
+            {%- if block.settings.bio-image -%}
+              {%- assign bio-pic = block.settings.bio-image | img_url: '500x' -%}
+            {%- else -%}
+              {%- assign bio-pic = 'blank.svg' | asset_url -%}
+            {%- endif -%}
+
+            <div class="team-member-bio-pic" style="background-image:url({{ bio-pic }})">
+            </div>
+            <p class="member-position">{{ block.settings.team-member-position }}</p>
+            <h3 class="member-name">{{ block.settings.team-member-name }}</h3>
+            <span class="member-number">{{ block.settings.team-member-number }}</span>
+            <span class="member-email">{{ block.settings.team-member-email }}</span>
+            <p class="member-description">{{ block.settings.team-member-description }}</p>
+          </div>
     {% endcase %}
   {% endfor %}
 
@@ -240,6 +274,65 @@
        "id": "offset-section-content",
        "label": "Section Content",
        "default": "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+    }
+    ]
+  },
+  {
+    "type": "featured-team-section",
+    "name": "Section header",
+    "settings": [
+    {
+       "type":    "text",
+       "id":      "team-bio-header",
+       "label":   "Section Title",
+       "default": "Title"
+    },
+    {
+       "type": "richtext",
+       "id": "team-bio-description",
+       "label": "Section description",
+       "default": "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+    }
+    ]
+  },
+  {
+    "type": "team-bios",
+    "name": "Team bios",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "bio-image",
+      "label": "Team member bio image"
+    },
+    {
+       "type":    "text",
+       "id":      "team-member-position",
+       "label":   "Team member position",
+       "default": "member position"
+    },
+    {
+       "type":    "text",
+       "id":      "team-member-name",
+       "label":   "Team member name",
+       "default": "Name"
+    },
+    {
+       "type":    "text",
+       "id":      "team-member-number",
+       "label":   "Team member number",
+       "default": "888.888.8888"
+    },
+    {
+       "type":    "text",
+       "id":      "team-member-email",
+       "label":   "Team member email",
+       "default": "email@email.com"
+    },
+    {
+       "type":    "text",
+       "id":      "team-member-description",
+       "label":   "Team member description",
+       "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
     ]
   }
