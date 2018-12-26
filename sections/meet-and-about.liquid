@@ -119,13 +119,27 @@
               {%- assign bio-pic = 'blank.svg' | asset_url -%}
             {%- endif -%}
 
-            <div class="team-member-bio-pic" style="background-image:url({{ bio-pic }})">
-            </div>
+            <div class="team-member-bio-pic" style="background-image:url({{ bio-pic }})"></div>
             <p class="member-position">{{ block.settings.team-member-position }}</p>
             <h3 class="member-name">{{ block.settings.team-member-name }}</h3>
             <span class="member-number">{{ block.settings.team-member-number }}</span>
             <span class="member-email">{{ block.settings.team-member-email }}</span>
             <p class="member-description">{{ block.settings.team-member-description }}</p>
+          </div>
+
+          {% when 'group-team-photo' %}
+
+          {%- if block.settings.team-group-image -%}
+            {%- assign group-pic = block.settings.team-group-image | img_url: '1080x' -%}
+          {%- else -%}
+            {%- assign group-pic = 'blank.svg' | asset_url -%}
+          {%- endif -%}
+
+          <div class="group-team-photo-wrapper container">
+            <h2>{{ block.settings.group-photo-title }}</h2>
+            <div class="group-description">{{ block.settings.group-description }}</div>
+            <div class="group-team-photo" style="background-image:url({{ group-pic }})">
+            </div>
           </div>
     {% endcase %}
   {% endfor %}
@@ -335,7 +349,31 @@
        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
     ]
+  },
+  {
+    "type": "group-team-photo",
+    "name": "Group team photo",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "team-group-image",
+      "label": "Team group photo"
+    },
+    {
+       "type":    "text",
+       "id":      "group-photo-title",
+       "label":   "Section Title",
+       "default": "Title"
+    },
+    {
+       "type": "richtext",
+       "id": "group-description",
+       "label": "Section description",
+       "default": "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+    }
+    ]
   }
+
 
   ],
   "presets": [
