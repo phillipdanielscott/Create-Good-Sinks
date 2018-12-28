@@ -133,15 +133,16 @@
               {%- assign bio-pic-four = 'blank.svg' | asset_url -%}
             {%- endif -%}
 
-            <div class="featured-header-content">
-              <div class="offset-color-square"></div>
-              <h2 class="featured-section-title">{{ block.settings.team-bio-header }}</h2>
-              <div class="featured-section-description">
+            <div class="bio-header-content">
+              <div class="bio-section-title">
+                <h2>{{ block.settings.team-bio-header }}</h2>
+                <div class="offset-color-square"></div>
+              </div>
+              <div class="bio-section-description">
                 {{ block.settings.team-bio-description }}
-                <div class="offset-color-square-bottom"></div>
+                <!-- <div class="offset-color-square-bottom"></div> -->
               </div>
             </div>
-
 
             <div class="team-member-container one-fourth-cgc">
               <div class="team-member-bio-pic" style="background-image:url({{ bio-pic-one }})"></div>
@@ -191,7 +192,10 @@
           {%- endif -%}
 
           <div class="group-team-photo-wrapper container">
-            <h2>{{ block.settings.group-photo-title }}</h2>
+            <div class="group-section-title">
+              <h2>{{ block.settings.group-photo-title }}</h2>
+              <div class="offset-color-square-group"></div>
+            </div>
             <div class="group-description">{{ block.settings.group-description }}</div>
             <div class="group-team-photo" style="background-image:url({{ group-pic }})">
             </div>
@@ -210,7 +214,7 @@
 
 {% schema %}
 {
-  "name": "About Us content",
+  "name": "About us/ Meet the team",
   "settings": [
   {
      "type":      "color",
