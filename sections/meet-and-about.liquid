@@ -5,8 +5,8 @@
     {% case block.type %}
 
       {% when 'image-text-side' %}
-      <div class="image-text-content-wrapper container full-width" style="background-color:{{ block.settings.image-text-bg-color }}">
-
+      <div class="image-text-content-wrapper" style="background-color:{{ block.settings.image-text-bg-color }}">
+        <div class="image-text-content-container container full-width">
         {% if block.settings.image_text_alignment == "image-right" %}
 
             <div class="text-side-content one-half-cgc" >
@@ -18,13 +18,13 @@
               </div>
             </div>
             <div class="image-side-content one-half-cgc" style="float: right;">
-              <img src="{{ block.settings.image-side-content | img_url: '500x' }}" alt="">
+              <img src="{{ block.settings.image-side-content | img_url: '1000x' }}" alt="">
             </div>
 
         {% else %}
 
             <div class="image-side-content one-half-cgc">
-              <img src="{{ block.settings.image-side-content | img_url: '500x' }}" alt="">
+              <img src="{{ block.settings.image-side-content | img_url: '1000x' }}" alt="">
             </div>
             <div class="text-side-content one-half-cgc" style="float: right;" >
               <div class="meet-text-content">
@@ -36,44 +36,52 @@
             </div>
 
         {% endif %}
+         </div>
       </div>
 
 
       {% when 'video-text-side'%}
 
-        <div class="video-section-wrapper container full-width" style="background-color:{{ block.settings.video-section-bg-color }}">
+        <div class="video-section-wrapper" style="background-color:{{ block.settings.video-section-bg-color }}">
+          <div class="video-section-container container full-width">
 
-        {% if block.settings.video_text_alignment == "video-right" %}
+            {% if block.settings.video_text_alignment == "video-right" %}
 
-          <div class="text-side-video one-half-cgc" >
-            <div class="meet-text-content">
-              <h2 style="color:{{ block.settings.video-side-color }}; border-bottom: 4px solid {{ block.settings.video-side-color}}">
-                {{ block.settings.video-text-header }}
-              </h2>
-              <div class="text-value" style="color:{{ block.settings.video-side-color }}">{{ block.settings.video-section-content }}</div>
+              <div class="text-side-video one-half-cgc" >
+                <div class="meet-text-content">
+                  <h2 style="color:{{ block.settings.video-side-color }}; border-bottom: 4px solid {{ block.settings.video-side-color}}">
+                    {{ block.settings.video-text-header }}
+                  </h2>
+                  <div class="text-value" style="color:{{ block.settings.video-side-color }}">{{ block.settings.video-section-content }}</div>
+                </div>
+              </div>
+              <div class="video-side-content one-half-cgc" style="float: right;">
+                  <!-- Copy & Pasted from YouTube -->
+                  <div class="videoWrapper">
+                      <iframe width="100%" height="" src="{{ block.settings.video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+                  </div>
+              </div>
+
+            {% else %}
+
+            <div class="video-side-content one-half-cgc">
+                <!-- Copy & Pasted from YouTube -->
+                <div class="videoWrapper">
+                    <iframe width="100%" height="" src="{{ block.settings.video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+                </div>
             </div>
-          </div>
-          <div class="video-side-content one-half-cgc" style="float: right;">
-              <!-- Copy & Pasted from YouTube -->
-              <iframe width="100%" height="" src="{{ block.settings.video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
-          </div>
+            <div class="text-side-video one-half-cgc" style="float: right;">
+              <div class="meet-text-content">
+                <h2 style="color:{{ block.settings.video-side-color }}; border-bottom: 4px solid {{ block.settings.video-side-color}}">
+                  {{ block.settings.video-text-header }}
+                </h2>
+                <div class="text-value" style="color:{{ block.settings.video-side-color }}">{{ block.settings.video-section-content }}</div>
+              </div>
+            </div>
 
-        {% else %}
+             {% endif %}
 
-        <div class="video-side-content one-half-cgc">
-            <!-- Copy & Pasted from YouTube -->
-            <iframe width="100%" height="" src="{{ block.settings.video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
-        </div>
-        <div class="text-side-video one-half-cgc" style="float: right;">
-          <div class="meet-text-content">
-            <h2 style="color:{{ block.settings.video-side-color }}; border-bottom: 4px solid {{ block.settings.video-side-color}}">
-              {{ block.settings.video-text-header }}
-            </h2>
-            <div class="text-value" style="color:{{ block.settings.video-side-color }}">{{ block.settings.video-section-content }}</div>
           </div>
-        </div>
-
-         {% endif %}
         </div>
 
         {% when 'offset-image-text' %}
@@ -103,7 +111,7 @@
 
         {% when 'four-member-team-bios' %}
 
-          <div class="four-member-bio-wrapper container">
+          <div class="four-member-bio-wrapper container full-width">
 
             <!-- Team member one bio image -->
             {%- if block.settings.team-member-bio-image-one -%}
@@ -191,7 +199,7 @@
             {%- assign group-pic = 'blank.svg' | asset_url -%}
           {%- endif -%}
 
-          <div class="group-team-photo-wrapper container">
+          <div class="group-team-photo-wrapper container full-width">
             <div class="group-section-title">
               <h2>{{ block.settings.group-photo-title }}</h2>
               <div class="offset-color-square-group"></div>
