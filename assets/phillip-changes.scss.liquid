@@ -1567,7 +1567,7 @@ i.fas.fa-caret-right.paginate-right{
 }
 
 .text-value{
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 20px;
   font-size: 15px;
 }
@@ -1626,11 +1626,11 @@ i.fas.fa-caret-right.paginate-right{
 
 .video-side-content .videoWrapper iframe{
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -125px;
+  left: unset;
   right: 0;
   width: 70%;
-  height: 80%;
+  /* height: 80%; */
   margin: 0 auto;
 }
 
@@ -1646,7 +1646,7 @@ i.fas.fa-caret-right.paginate-right{
 .offset-wrapper{
   height: 550px;
   margin: 0 auto !important;
-  margin-bottom: 150px !important;
+  margin-bottom: 250px !important;
   width: 75% !important;
 }
 
@@ -1691,7 +1691,7 @@ display: inline-block;
 }
 
 .image-background-block{
-  height: 65%;
+  height: 97%;
   position: absolute;
   top: 0px;
   width: 63%;
@@ -1873,6 +1873,105 @@ display: inline-block;
   font-size: 40px;
 }
 
+.video-side-content .videoWrapper iframe{
+  top: -67px;
+  width: 75%;
+}
+
+.image-side-content img{
+  max-width: 550px;
+}
+
+.offset-wrapper, .image-text-content-container,
+.video-section-container, .four-member-bio-wrapper,
+.group-team-photo-wrapper{
+  width: 80% !important;
+}
+
+.offset-text-container{
+  width: 85%;
+}
+
+.offset-text-section h2{
+  top: -66px;
+}
+
+}
+
+@media only screen and (max-width:1680px){
+  .text-value p, .offset-section-content p{
+    line-height: 1.7em;
+  }
+
+  .video-side-content .videoWrapper iframe{
+    top: -48px;
+    width: 80%;
+  }
+
+  .image-text-content-wrapper, .video-section-wrapper{
+    height: 325px;
+  }
+
+  .text-side-content h2,
+  .text-side-video h2,
+  .offset-text-container h2{
+   font-size: 35px;
+  }
+
+  .offset-text-container{
+    padding: 50px;
+  }
+
+  .offset-section-content p, .text-value{
+    font-size: 14px;
+  }
+
+  .image-side-content img{
+    top: -60px;
+  }
+
+  .offset-wrapper{
+    height: 525px;
+  }
+
+}
+
+@media only screen and (max-width:1440px){
+
+  .image-side-content img{
+    max-width: 475px;
+  }
+
+  .offset-wrapper, .image-text-content-container,
+  .video-section-container, .four-member-bio-wrapper, .group-team-photo-wrapper{
+    width: 85% !important;
+  }
+
+  .image-background-block{
+    height: 70%;
+  }
+
+  .offset-wrapper{
+    height: 500px;
+  }
+
+  .text-side-content h2,
+  .text-side-video h2,
+  .offset-text-container h2{
+    font-size: 33px;
+  }
+
+  .offset-text-section h2{
+    top: -52px;
+  }
+
+  .image-offset-container{
+    left: 42px;
+  }
+
+  .image-text-content-wrapper{
+    margin-bottom: 100px !important;
+  }
 }
 
 @media only screen and (max-width:425px){
