@@ -1,0 +1,224 @@
+<div class="review-wrapper container full-width">
+<h1>{{ page.title }}</h1>
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'image-carousel'%}
+
+    {%- if block.settings.image-slide-1 -%}
+      {%- assign image_slide_one = block.settings.image-slide-1| img_url: '1800x' -%}
+    {%- else -%}
+      {%- assign image_slide_one = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+    {%- if block.settings.image-slide-2 -%}
+      {%- assign image_slide_two = block.settings.image-slide-2| img_url: '1800x' -%}
+    {%- else -%}
+      {%- assign image_slide_two = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+    {%- if block.settings.image-slide-3 -%}
+      {%- assign image_slide_three = block.settings.image-slide-3| img_url: '1800x' -%}
+    {%- else -%}
+      {%- assign image_slide_three = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+    {%- if block.settings.image-slide-4 -%}
+      {%- assign image_slide_four = block.settings.image-slide-4| img_url: '1800x' -%}
+    {%- else -%}
+      {%- assign image_slide_four = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+    {%- if block.settings.image-slide-5 -%}
+      {%- assign image_slide_five = block.settings.image-slide-5| img_url: '1800x' -%}
+    {%- else -%}
+      {%- assign image_slide_five = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+    <div class="owl-carousel owl-theme review-image-slider">
+        <div class="item review-slide-1" style="background-image:url( {{ image_slide_one }});"></div>
+        <div class="item review-slide-2" style="background-image:url( {{ image_slide_two }});"></div>
+        <div class="item review-slide-3" style="background-image:url( {{ image_slide_three }});"></div>
+        <div class="item review-slide-4" style="background-image:url( {{ image_slide_four }});"></div>
+        <div class="item review-slide-5" style="background-image:url( {{ image_slide_five }});"></div>
+    </div>
+
+
+    <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      lazyLoad:true,
+      loop:true,
+      autoplay:true,
+      autoplayTimeout:8000,
+      autoplayHoverPause:true,
+      dotsEach:true,
+      mouseDrag:true,
+      touchDrag:true,
+      singleItem: true,
+      items : 1,
+      itemsDesktop : false,
+      itemsDesktopSmall : false,
+      itemsTablet: false,
+      dotsData: true,
+      itemsMobile: false
+    });
+    </script>
+
+    {% when 'four-block-review'%}
+
+    {%- if block.settings.review-icon-1 -%}
+      {%- assign review_icon_one = block.settings.review-icon-1| img_url: '1000x' -%}
+    {%- else -%}
+      {%- assign review_icon_one = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+    {%- if block.settings.review-icon-2-%}
+      {%- assign review_icon_two = block.settings.review-icon-2| img_url: '1000x' -%}
+    {%- else -%}
+      {%- assign review_icon_two = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+    {%- if block.settings.review-icon-3 -%}
+      {%- assign review_icon_three = block.settings.review-icon-3| img_url: '1000x' -%}
+    {%- else -%}
+      {%- assign review_icon_three = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+    {%- if block.settings.review-icon-4 -%}
+      {%- assign review_icon_four = block.settings.review-icon-4| img_url: '1000x' -%}
+    {%- else -%}
+      {%- assign review_icon_four = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+
+    <h3>{{ block.settings.four-block-title }}</h3>
+    <div class="media-review-container container">
+
+      <div class="media-review-block one-half-cgc" style="background-color:{{ block.settings.block-bg-color }}">
+        <div class="review-wrapper">
+          <div class="review-company-icon">
+            <img src="{{ review_icon_one }}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="media-review-block one-half-cgc" style="background-color:{{ block.settings.block-bg-color }}">
+        <div class="review-wrapper">
+          <div class="review-company-icon">
+            <img src="{{ review_icon_two }}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="media-review-block one-half-cgc" style="background-color:{{ block.settings.block-bg-color }}">
+        <div class="review-wrapper">
+          <div class="review-company-icon">
+            <img src="{{ review_icon_three }}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="media-review-block one-half-cgc" style="background-color:{{ block.settings.block-bg-color }}">
+        <div class="review-wrapper">
+          <div class="review-company-icon">
+            <img src="{{ review_icon_four }}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  {% endcase %}
+{% endfor %}
+
+</div>
+
+
+
+
+
+{% schema %}
+{
+  "name": "Review page content",
+  "settings": [
+
+  ],
+  "blocks": [
+  {
+    "type": "image-carousel",
+    "name": "Image carousel",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image-slide-1",
+      "label": "Image slider one"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-slide-2",
+      "label": "Image slider two"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-slide-3",
+      "label": "Image slider three"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-slide-4",
+      "label": "Image slider four"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-slide-5",
+      "label": "Image slider five"
+    }
+    ]
+  },
+  {
+    "type": "four-block-review",
+    "name": "Four block grid",
+    "settings": [
+    {
+     "id": "four-block-title",
+     "type": "text",
+     "label": "Section Title",
+     "default": "Title"
+    },
+    {
+       "type":      "color",
+       "id":        "block-bg-color",
+       "label":     "Block background color",
+       "default":   "#EBECE4"
+    },
+    {
+      "type": "image_picker",
+      "id": "review-icon-1",
+      "label": "Icon image",
+      "info": "500 px x 500 px image size minimum"
+    },
+    {
+      "type": "image_picker",
+      "id": "review-icon-2",
+      "label": "Icon image",
+      "info": "500 px x 500 px image size minimum"
+    },
+    {
+      "type": "image_picker",
+      "id": "review-icon-3",
+      "label": "Icon image",
+      "info": "500 px x 500 px image size minimum"
+    },
+    {
+      "type": "image_picker",
+      "id": "review-icon-4",
+      "label": "Icon image",
+      "info": "500 px x 500 px image size minimum"
+    }
+
+    ]
+  }
+
+
+  ],
+  "presets": [
+
+  ]
+}
+{% endschema %}
