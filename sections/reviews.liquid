@@ -68,55 +68,59 @@
     {%- if block.settings.review-icon-1 -%}
       {%- assign review_icon_one = block.settings.review-icon-1| img_url: '1000x' -%}
     {%- else -%}
-      {%- assign review_icon_one = 'blank.svg' | asset_url -%}
+      {%- assign review_icon_one = 'image-icon.svg' | asset_url -%}
     {%- endif -%}
 
     {%- if block.settings.review-icon-2-%}
       {%- assign review_icon_two = block.settings.review-icon-2| img_url: '1000x' -%}
     {%- else -%}
-      {%- assign review_icon_two = 'blank.svg' | asset_url -%}
+      {%- assign review_icon_two = 'image-icon.svg' | asset_url -%}
     {%- endif -%}
 
     {%- if block.settings.review-icon-3 -%}
       {%- assign review_icon_three = block.settings.review-icon-3| img_url: '1000x' -%}
     {%- else -%}
-      {%- assign review_icon_three = 'blank.svg' | asset_url -%}
+      {%- assign review_icon_three = 'image-icon.svg' | asset_url -%}
     {%- endif -%}
 
     {%- if block.settings.review-icon-4 -%}
       {%- assign review_icon_four = block.settings.review-icon-4| img_url: '1000x' -%}
     {%- else -%}
-      {%- assign review_icon_four = 'blank.svg' | asset_url -%}
+      {%- assign review_icon_four = 'image-icon.svg' | asset_url -%}
     {%- endif -%}
 
 
-    <h3>{{ block.settings.four-block-title }}</h3>
-    <div class="media-review-container container">
 
-      <div class="media-review-block one-half-cgc" style="background-color:{{ block.settings.block-bg-color }}">
-        <div class="review-wrapper">
+    <div class="media-review-container container">
+    <h3>{{ block.settings.four-block-title }}</h3>
+      <div class="media-review-block one-half-cgc">
+        <div class="review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
           <div class="review-company-icon">
+            <span>AS SEEN ON</span>
             <img src="{{ review_icon_one }}" alt="">
           </div>
         </div>
       </div>
-      <div class="media-review-block one-half-cgc" style="background-color:{{ block.settings.block-bg-color }}">
-        <div class="review-wrapper">
+      <div class="media-review-block one-half-cgc">
+        <div class="review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
           <div class="review-company-icon">
+            <span>AS SEEN ON</span>
             <img src="{{ review_icon_two }}" alt="">
           </div>
         </div>
       </div>
-      <div class="media-review-block one-half-cgc" style="background-color:{{ block.settings.block-bg-color }}">
-        <div class="review-wrapper">
+      <div class="media-review-block one-half-cgc">
+        <div class="review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
           <div class="review-company-icon">
+            <span>AS SEEN ON</span>
             <img src="{{ review_icon_three }}" alt="">
           </div>
         </div>
       </div>
-      <div class="media-review-block one-half-cgc" style="background-color:{{ block.settings.block-bg-color }}">
-        <div class="review-wrapper">
+      <div class="media-review-block one-half-cgc">
+        <div class="review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
           <div class="review-company-icon">
+            <span>AS SEEN ON</span>
             <img src="{{ review_icon_four }}" alt="">
           </div>
         </div>
