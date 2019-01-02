@@ -2357,15 +2357,24 @@ display: inline-block;
 }
 
 .review-tab{
-  height: 200px;
+  height: 150px;
   width: 50%;
   float: left;
 }
 
 .review-tab img{
-  max-width: 200px;
+  max-width: 150px;
   margin: 0 auto;
   display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.review-tab-content{
+  height: 100%;
+  position: relative;
 }
 
 
