@@ -33,13 +33,14 @@
     {%- else -%}
       {%- assign image_slide_five = 'blank.svg' | asset_url -%}
     {%- endif -%}
-
-    <div class="owl-carousel owl-theme review-image-slider">
-        <div class="item review-slide-1" style="background-image:url( {{ image_slide_one }});"></div>
-        <div class="item review-slide-2" style="background-image:url( {{ image_slide_two }});"></div>
-        <div class="item review-slide-3" style="background-image:url( {{ image_slide_three }});"></div>
-        <div class="item review-slide-4" style="background-image:url( {{ image_slide_four }});"></div>
-        <div class="item review-slide-5" style="background-image:url( {{ image_slide_five }});"></div>
+    <div class="review-carousel-wrapper">
+      <div class="owl-carousel owl-theme review-image-slider">
+          <div class="item review-slide-1" style="background-image:url( {{ image_slide_one }});"></div>
+          <div class="item review-slide-2" style="background-image:url( {{ image_slide_two }});"></div>
+          <div class="item review-slide-3" style="background-image:url( {{ image_slide_three }});"></div>
+          <div class="item review-slide-4" style="background-image:url( {{ image_slide_four }});"></div>
+          <div class="item review-slide-5" style="background-image:url( {{ image_slide_five }});"></div>
+      </div>
     </div>
 
 
@@ -68,25 +69,25 @@
     {%- if block.settings.review-icon-1 -%}
       {%- assign review_icon_one = block.settings.review-icon-1| img_url: '1000x' -%}
     {%- else -%}
-      {%- assign review_icon_one = 'image-icon.svg' | asset_url -%}
+      {%- assign review_icon_one = 'blank.svg' | asset_url -%}
     {%- endif -%}
 
     {%- if block.settings.review-icon-2-%}
       {%- assign review_icon_two = block.settings.review-icon-2| img_url: '1000x' -%}
     {%- else -%}
-      {%- assign review_icon_two = 'image-icon.svg' | asset_url -%}
+      {%- assign review_icon_two = 'blank.svg' | asset_url -%}
     {%- endif -%}
 
     {%- if block.settings.review-icon-3 -%}
       {%- assign review_icon_three = block.settings.review-icon-3| img_url: '1000x' -%}
     {%- else -%}
-      {%- assign review_icon_three = 'image-icon.svg' | asset_url -%}
+      {%- assign review_icon_three = 'blank.svg' | asset_url -%}
     {%- endif -%}
 
     {%- if block.settings.review-icon-4 -%}
       {%- assign review_icon_four = block.settings.review-icon-4| img_url: '1000x' -%}
     {%- else -%}
-      {%- assign review_icon_four = 'image-icon.svg' | asset_url -%}
+      {%- assign review_icon_four = 'blank.svg' | asset_url -%}
     {%- endif -%}
 
 
@@ -95,6 +96,12 @@
     <h3>{{ block.settings.four-block-title }}</h3>
       <div class="media-review-block one-half-cgc">
         <div class="review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
+          <div class="quote-icon-wrapper">
+            <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
+          </div>
+          <div class="media-review-text-content">
+            {{ block.settings.review-quote-1 }}
+          </div>
           <div class="review-company-icon">
             <span>AS SEEN ON</span>
             <img src="{{ review_icon_one }}" alt="">
@@ -103,6 +110,12 @@
       </div>
       <div class="media-review-block one-half-cgc">
         <div class="review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
+          <div class="quote-icon-wrapper">
+            <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
+          </div>
+          <div class="media-review-text-content">
+            {{ block.settings.review-quote-2 }}
+          </div>
           <div class="review-company-icon">
             <span>AS SEEN ON</span>
             <img src="{{ review_icon_two }}" alt="">
@@ -111,6 +124,12 @@
       </div>
       <div class="media-review-block one-half-cgc">
         <div class="review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
+          <div class="quote-icon-wrapper">
+            <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
+          </div>
+          <div class="media-review-text-content">
+            {{ block.settings.review-quote-3 }}
+          </div>
           <div class="review-company-icon">
             <span>AS SEEN ON</span>
             <img src="{{ review_icon_three }}" alt="">
@@ -119,6 +138,12 @@
       </div>
       <div class="media-review-block one-half-cgc">
         <div class="review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
+          <div class="quote-icon-wrapper">
+            <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
+          </div>
+          <div class="media-review-text-content">
+            {{ block.settings.review-quote-4 }}
+          </div>
           <div class="review-company-icon">
             <span>AS SEEN ON</span>
             <img src="{{ review_icon_four }}" alt="">
@@ -127,6 +152,18 @@
       </div>
     </div>
 
+  {% when 'leave-a-review'%}
+    <div class="leave-review-container container">
+      <h3>{{ block.settings.four-block-title }}</h3>
+      <div class="leave-review-content-wrapper">
+        <div class="review-tab" style="background-color:{{ block.settings.tab-bg-color }};">
+          <img src="{{ block.settings.review-tab-icon-one | img_url: '500x' }}" alt="">
+        </div>
+        <div class="review-tab" style="background-color:{{ block.settings.tab-bg-color }};">
+          <img src="{{ block.settings.review-tab-icon-two | img_url: '500x' }}" alt="">
+        </div>
+      </div>
+    </div>
 
   {% endcase %}
 {% endfor %}
@@ -198,10 +235,22 @@
       "info": "500 px x 500 px image size minimum"
     },
     {
+       "type": "richtext",
+       "id": "review-quote-1",
+       "label": "Review quote text content",
+       "default": "<p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+    },
+    {
       "type": "image_picker",
       "id": "review-icon-2",
       "label": "Icon image",
       "info": "500 px x 500 px image size minimum"
+    },
+    {
+       "type": "richtext",
+       "id": "review-quote-2",
+       "label": "Review quote text content",
+       "default": "<p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
     },
     {
       "type": "image_picker",
@@ -210,12 +259,53 @@
       "info": "500 px x 500 px image size minimum"
     },
     {
+       "type": "richtext",
+       "id": "review-quote-3",
+       "label": "Review quote text content",
+       "default": "<p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+    },
+    {
       "type": "image_picker",
       "id": "review-icon-4",
       "label": "Icon image",
       "info": "500 px x 500 px image size minimum"
+    },
+    {
+       "type": "richtext",
+       "id": "review-quote-4",
+       "label": "Review quote text content",
+       "default": "<p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
     }
-
+    ]
+  },
+  {
+    "type": "leave-a-review",
+    "name": "Leave a review",
+    "settings": [
+    {
+       "type": "text",
+       "id": "leave-review-section-title",
+       "label": "Section Title",
+       "default": "Title"
+    },
+    {
+       "type":      "color",
+       "id":        "tab-bg-color",
+       "label":     "Review tab background color",
+       "default":   "#B3C2BF"
+    },
+    {
+      "type": "image_picker",
+      "id": "review-tab-icon-one",
+      "label": "Review icon",
+      "info": "500 px x 500 px image size minimum"
+    },
+    {
+      "type": "image_picker",
+      "id": "review-tab-icon-two",
+      "label": "Review icon",
+      "info": "500 px x 500 px image size minimum"
+    }
     ]
   }
 
