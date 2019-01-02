@@ -154,13 +154,17 @@
 
   {% when 'leave-a-review'%}
     <div class="leave-review-container container">
-      <h3>{{ block.settings.four-block-title }}</h3>
+      <h3>{{ block.settings.leave-review-section-title }}</h3>
       <div class="leave-review-content-wrapper">
-        <div class="review-tab" style="background-color:{{ block.settings.tab-bg-color }};">
-          <img src="{{ block.settings.review-tab-icon-one | img_url: '500x' }}" alt="">
+        <div class="review-tab">
+          <div class="review-tab-content" style="background-color:{{ block.settings.tab-bg-color }}; height:100%;">
+            <img src="{{ block.settings.review-tab-icon-one | img_url: '500x' }}" alt="">
+          </div>
         </div>
-        <div class="review-tab" style="background-color:{{ block.settings.tab-bg-color }};">
-          <img src="{{ block.settings.review-tab-icon-two | img_url: '500x' }}" alt="">
+        <div class="review-tab" >
+          <div class="review-tab-content" style="background-color:{{ block.settings.tab-bg-color }}; height:100%;">
+            <img src="{{ block.settings.review-tab-icon-two | img_url: '500x' }}" alt="">
+          </div>
         </div>
       </div>
     </div>
