@@ -34,7 +34,7 @@
       {%- assign image_slide_five = 'blank.svg' | asset_url -%}
     {%- endif -%}
     <div class="review-carousel-wrapper">
-      <div class="owl-carousel owl-theme review-image-slider">
+      <div class="owl-carousel owl-theme owl-loaded owl-drag review-image-slider">
           <div class="item review-slide-1" style="background-image:url( {{ image_slide_one }});"></div>
           <div class="item review-slide-2" style="background-image:url( {{ image_slide_two }});"></div>
           <div class="item review-slide-3" style="background-image:url( {{ image_slide_three }});"></div>
@@ -51,16 +51,12 @@
       autoplay:true,
       autoplayTimeout:8000,
       autoplayHoverPause:true,
-      dotsEach:true,
       mouseDrag:true,
       touchDrag:true,
       singleItem: true,
       items : 1,
-      itemsDesktop : false,
-      itemsDesktopSmall : false,
-      itemsTablet: false,
-      dotsData: true,
-      itemsMobile: false
+      pagination:false,
+      navigation:true
     });
     </script>
 
@@ -90,7 +86,12 @@
       {%- assign review_icon_four = 'blank.svg' | asset_url -%}
     {%- endif -%}
 
+    {% if block.settings.border-line-media %}
 
+      <div class="border-line">
+      </div>
+
+    {% endif %}
 
     <div class="media-review-container container">
     <h3>{{ block.settings.four-block-title }}</h3>
@@ -153,6 +154,13 @@
     </div>
 
   {% when 'leave-a-review'%}
+
+  {% if block.settings.border-line-review %}
+
+    <div class="border-line">
+    </div>
+
+  {% endif %}
     <div class="leave-review-container container">
       <h3>{{ block.settings.leave-review-section-title }}</h3>
       <div class="leave-review-content-wrapper">
@@ -221,6 +229,13 @@
     "name": "Four block grid",
     "settings": [
     {
+     "type":      "checkbox",
+     "id":        "border-line-media",
+     "label":     "Border divide line",
+     "default":   true,
+     "info":      "borderline above section"
+    },
+    {
      "id": "four-block-title",
      "type": "text",
      "label": "Section Title",
@@ -286,6 +301,13 @@
     "type": "leave-a-review",
     "name": "Leave a review",
     "settings": [
+    {
+     "type":      "checkbox",
+     "id":        "border-line-review",
+     "label":     "Border divide line",
+     "default":   true,
+     "info":      "borderline above section"
+    },
     {
        "type": "text",
        "id": "leave-review-section-title",
