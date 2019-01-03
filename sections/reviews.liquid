@@ -4,6 +4,8 @@
   {% case block.type %}
     {% when 'image-carousel'%}
 
+
+
         {%- if block.settings.image-slide-1 -%}
           {%- assign image_slide_one = block.settings.image-slide-1| img_url: '1800x' -%}
         {%- else -%}
@@ -33,6 +35,9 @@
         {%- else -%}
           {%- assign image_slide_five = 'blank.svg' | asset_url -%}
         {%- endif -%}
+
+
+
         <div class="review-carousel-wrapper">
           <div class="owl-carousel owl-theme owl-loaded owl-drag review-image-slider">
               <div class="item review-slide-1" style="background-image:url( {{ image_slide_one }});"></div>
@@ -48,7 +53,7 @@
         $(".owl-carousel").owlCarousel({
           lazyLoad:true,
           loop:true,
-          autoplay:false,
+          autoplay:true,
           autoplayTimeout:8000,
           autoplayHoverPause:true,
           mouseDrag:true,
@@ -56,7 +61,9 @@
           singleItem: true,
           items : 1,
           pagination:false,
-          navText : ["<i class='fas fa-angle-left'></i>","<i class='fas fa-angle-right'></i>"],
+          nav:true,
+          navText:["<div class='nav-btn prev-slide'><i class='fas fa-angle-left review-angle-left'></i></div>",
+                  "<div class='nav-btn next-slide'><i class='fas fa-angle-right review-angle-right'></i></div>"],
           dots: true
         });
         </script>
@@ -325,7 +332,7 @@
           $(".testing-carousel").owlCarousel({
             lazyLoad:true,
             loop:true,
-            autoplay:false,
+            autoplay:true,
             autoplayTimeout:10000,
             autoplayHoverPause:true,
             mouseDrag:true,
@@ -333,7 +340,9 @@
             singleItem: true,
             items : 2,
             pagination:false,
-            navigation:true
+            navigation:true,
+            nav:true,
+            navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"]
           });
           </script>
 
