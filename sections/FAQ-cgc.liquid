@@ -1,3 +1,191 @@
 <div class="faq-wrapper container full-width">
+  <h1>{{ page.title | remove: "-cgc" }}</h1>
+  {% for block in section.blocks %}
+    {% case block.type %}
+    {% when "image-carousel" %}
+
+    {%- if block.settings.image-slide-1 -%}
+      {%- assign image_slide_one = block.settings.image-slide-1| img_url: '1800x' -%}
+    {%- else -%}
+      {%- assign image_slide_one = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+    {%- if block.settings.image-slide-2 -%}
+      {%- assign image_slide_two = block.settings.image-slide-2| img_url: '1800x' -%}
+    {%- else -%}
+      {%- assign image_slide_two = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+    {%- if block.settings.image-slide-3 -%}
+      {%- assign image_slide_three = block.settings.image-slide-3| img_url: '1800x' -%}
+    {%- else -%}
+      {%- assign image_slide_three = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+    {%- if block.settings.image-slide-4 -%}
+      {%- assign image_slide_four = block.settings.image-slide-4| img_url: '1800x' -%}
+    {%- else -%}
+      {%- assign image_slide_four = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+    {%- if block.settings.image-slide-5 -%}
+      {%- assign image_slide_five = block.settings.image-slide-5| img_url: '1800x' -%}
+    {%- else -%}
+      {%- assign image_slide_five = 'blank.svg' | asset_url -%}
+    {%- endif -%}
+
+
+
+    <div class="review-carousel-wrapper container">
+      <div class="owl-carousel owl-theme owl-loaded owl-drag review-image-slider">
+          <div class="item review-slide-1" style="background-image:url( {{ image_slide_one }});"></div>
+          <div class="item review-slide-2" style="background-image:url( {{ image_slide_two }});"></div>
+          <div class="item review-slide-3" style="background-image:url( {{ image_slide_three }});"></div>
+          <div class="item review-slide-4" style="background-image:url( {{ image_slide_four }});"></div>
+          <div class="item review-slide-5" style="background-image:url( {{ image_slide_five }});"></div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      lazyLoad:true,
+      loop:true,
+      autoplay:true,
+      autoplayTimeout:8000,
+      autoplayHoverPause:true,
+      mouseDrag:true,
+      touchDrag:true,
+      singleItem: true,
+      items : 1,
+      pagination:false,
+      nav:true,
+      navText:["<div class='nav-btn prev-slide'><i class='fas fa-angle-left review-angle-left'></i></div>",
+              "<div class='nav-btn next-slide'><i class='fas fa-angle-right review-angle-right'></i></div>"],
+      dots: false
+    });
+    </script>
+
+
+    {% when "faq-question" %}
+
+    <div class="faq-question-container full-width-cgc" style="background-color:{{ block.settings.faq-bg-color }};">
+      <div id="collapsibleTabs">
+      		<!-- Tab 1 -->
+      		<div class="tab">
+      			<input type="checkbox" name="tabCheckBox-1" id="tabCheckBox-1">
+      			<label for="tabCheckBox-1">testing</label>
+      			<div class="tabContent">
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+
+      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
+      			</div>
+      		</div>
+
+      	</div>
+    </div>
+
+    {% endcase %}
+  {% endfor %}
 
 </div>
+
+<style>
+  .custom-template{
+    width: 100%;
+   }
+</style>
+
+{% schema %}
+{
+  "name": "FAQ content",
+  "max_blocks": 8,
+  "settings": [
+  ],
+  "blocks": [
+  {
+    "type": "image-carousel",
+    "name": "Image carousel",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image-slide-1",
+      "label": "Image slider one"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-slide-2",
+      "label": "Image slider two"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-slide-3",
+      "label": "Image slider three"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-slide-4",
+      "label": "Image slider four"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-slide-5",
+      "label": "Image slider five"
+    }
+    ]
+  },
+  {
+    "type": "faq-question",
+    "name": "FAQ question",
+    "settings": [
+    {
+      "type":      "color",
+      "id":        "faq-bg-color",
+      "label":     "Font color",
+      "default":   "#EBECE4"
+    }
+    ]
+  }
+
+
+  ],
+  "presets": [
+    {
+      "name": "Product carousel slide",
+      "category": "Product carousel slide"
+    }
+  ]
+}
+{% endschema %}

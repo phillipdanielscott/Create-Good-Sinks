@@ -2523,9 +2523,81 @@ display: inline-block;
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 
+.faq-wrapper h1{
+  text-align: center;
+}
 
+.faq-wrapper{
+  margin-bottom: 100px;
+}
 
+.faq-wrapper .review-carousel-wrapper{
+  margin-bottom: 100px !important;
+}
 
+.faq-question-container{
+  padding: 50px 0px;
+}
+
+#collapsibleTabs {
+	margin: 0 auto;
+	max-width: 75%;
+}
+
+.tab {
+	margin-bottom: 20px;
+}
+
+.tab input {
+	display: none;
+}
+
+.tab label {
+	cursor: pointer;
+	display: block;
+	padding: 10px 20px;
+	text-align: right;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+.tab label:after {
+	content: '+';
+  float: right;
+}
+
+.tabCheckBox-1{
+  margin-bottom: 0px;
+}
+
+.tabContent {
+	border-top: none;
+	max-height: 0;
+	overflow: hidden;
+	transition-property: visibility, max-height;
+	transition-duration: .5s, .5s;
+	transition-timing-function: ease, ease-in-out;
+	visibility: hidden;
+  background-color: white;
+}
+
+.tab input:checked ~ .tabContent {
+  background-color: white;
+	height: auto;
+  max-height: 300px;
+  overflow: auto;
+  visibility: visible;
+}
+
+.tab input:checked ~ label:after {
+	content: '-';
+}
+
+.tabContent * {
+	padding: 0 10px;
+}
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
