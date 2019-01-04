@@ -38,13 +38,20 @@
 
 
 
-        <div class="review-carousel-wrapper">
-          <div class="owl-carousel owl-theme owl-loaded owl-drag review-image-slider">
-              <div class="item review-slide-1" style="background-image:url( {{ image_slide_one }});"></div>
+        <!-- <div class="review-carousel-wrapper">
+          <div class="owl-carousel owl-theme owl-loaded owl-drag review-image-slider"> -->
+          <div class="review-carousel-wrapper">
+            <div class="owl-carousel owl-theme">
+              <!-- <div class="item review-slide-1" style="background-image:url( {{ image_slide_one }});"></div>
               <div class="item review-slide-2" style="background-image:url( {{ image_slide_two }});"></div>
               <div class="item review-slide-3" style="background-image:url( {{ image_slide_three }});"></div>
               <div class="item review-slide-4" style="background-image:url( {{ image_slide_four }});"></div>
-              <div class="item review-slide-5" style="background-image:url( {{ image_slide_five }});"></div>
+              <div class="item review-slide-5" style="background-image:url( {{ image_slide_five }});"></div> -->
+              <div class="featured-image-container" style="background-image:url({{ image_slide_one }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+              <div class="featured-image-container" style="background-image:url({{ image_slide_two }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+              <div class="featured-image-container" style="background-image:url({{ image_slide_three }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+              <div class="featured-image-container" style="background-image:url({{ image_slide_four }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+              <div class="featured-image-container" style="background-image:url({{ image_slide_five }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
           </div>
         </div>
 
@@ -61,6 +68,9 @@
           singleItem: true,
           items : 1,
           pagination:false,
+          itemsDesktop : false,
+          itemsDesktopSmall : false,
+          itemsTablet: false,
           nav:true,
           navText:["<div class='nav-btn prev-slide'><i class='fas fa-angle-left review-angle-left'></i></div>",
                   "<div class='nav-btn next-slide'><i class='fas fa-angle-right review-angle-right'></i></div>"],
@@ -358,7 +368,14 @@
   {% endcase %}
 {% endfor %}
 
+<!-- <style>
+  .custom-template{
+    width: 100%;
+   }
+</style> -->
+
 </div>
+
 
 
 

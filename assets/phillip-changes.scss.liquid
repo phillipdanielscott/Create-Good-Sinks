@@ -25,9 +25,9 @@ body{
   display: none;
 }
 
-#mobile_menu .sublink ul{
-  display: block;
-}
+// #mobile_menu .sublink ul{
+//   display: block;
+// }
 
 .caption.captionOverlay--true .headline, .caption.captionOverlay--true .subtitle{
   text-shadow: 0px 0px 0px rgba(0,0,0,0.3);
@@ -290,6 +290,15 @@ a.top_link{
   }
   #header .top_bar a.mobile_nav{
     top: 7px;
+  }
+  .menu a, #header span.menu_title, .menu a span, select.currencies, .mini_cart span{
+    font-weight: 600;
+  }
+  .sublink ul li a{
+    font-weight: 200 !important;
+  }
+  .savings{
+    font-size: 14px;
   }
 }
 
@@ -1560,6 +1569,7 @@ i.fas.fa-caret-right.paginate-right{
   .container div.thumbnail.odd{
     margin-left: 0px;
   }
+
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -1721,6 +1731,50 @@ p.modal_price{
   font-family: Poppins;
   margin-bottom: 5px;
   padding: 0px;
+}
+
+@media only screen and (max-width:425px){
+
+  .top-product-title{
+    font-size: 90px;
+  }
+
+  .product_name{
+    font-size: 18px;
+  }
+
+  .cgc-product-specs p,
+  .cgc-customer-promise p{
+    font-size: 14px;
+  }
+
+  .product-quantity-box label{
+    width: 25%;
+  }
+
+  .breadcrumb_text, .article-pagination{
+    font-size: 10px;
+  }
+
+  .cgc-product-specs h6,
+  .cgc-customer-promise h6{
+    font-size: 16px;
+  }
+
+  .was_price{
+    display: inline-block;
+  }
+
+  .flickity-viewport{
+
+  }
+
+}
+
+@media only screen and (max-width:375px){
+   .top-product-title{
+    font-size: 75px;
+   }
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -2647,6 +2701,17 @@ display: inline-block;
 
 .customer-text-container{
   height: 200px;
+}
+
+@media only screen and (max-width:425px){
+  .review-wrapper h1{
+    margin-bottom: 20px;
+    font-size: 35px;
+  }
+
+  .review-carousel-wrapper{
+    height: 375px;
+  }
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
