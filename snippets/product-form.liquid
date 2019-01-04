@@ -12,7 +12,7 @@
         data-product="{{ product | json | escape }}"
         {% if settings.limit_quantity or settings.display_inventory_left %}
           data-variant-inventory='[{%- for v in product.variants -%}{"id":{{v.id}},"inventory_quantity":{{v.inventory_quantity}},"inventory_management":"{{v.inventory_management}}","inventory_policy":"{{v.inventory_policy}}"}{% if forloop.last == false %},{% endif %}{%- endfor -%}]'
-        {% endif %}        
+        {% endif %}
         data-product-id="{{ product.id }}"
         >
 
@@ -69,7 +69,7 @@
         <span class="ss-icon product-plus js-change-quantity" data-func="plus"><span class="icon-plus"></span></span>
       </div>
     {% endif %}
-    <div class="purchase clearfix {% if settings.display_product_quantity %}inline_purchase{% endif %}">
+    <div class="purchase clearfix {% if settings.display_product_quantity %}inline_purchase{% endif %} cgc-add-to-cart">
       {% if settings.cart_action == 'reload_page' %}
         <input type="hidden" name="return_to" value="back" />
       {% elsif settings.cart_action == 'redirect_checkout' %}

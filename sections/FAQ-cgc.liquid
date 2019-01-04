@@ -1,38 +1,37 @@
 <div class="faq-wrapper container full-width">
   <h1>{{ page.title | remove: "-cgc" }}</h1>
-  {% for block in section.blocks %}
-    {% case block.type %}
-    {% when "image-carousel" %}
 
-    {%- if block.settings.image-slide-1 -%}
-      {%- assign image_slide_one = block.settings.image-slide-1| img_url: '1800x' -%}
+    {%- if section.settings.image-slide-1 -%}
+      {%- assign image_slide_one = section.settings.image-slide-1| img_url: '1800x' -%}
     {%- else -%}
       {%- assign image_slide_one = 'blank.svg' | asset_url -%}
     {%- endif -%}
 
-    {%- if block.settings.image-slide-2 -%}
-      {%- assign image_slide_two = block.settings.image-slide-2| img_url: '1800x' -%}
+    {%- if section.settings.image-slide-2 -%}
+      {%- assign image_slide_two = section.settings.image-slide-2| img_url: '1800x' -%}
     {%- else -%}
       {%- assign image_slide_two = 'blank.svg' | asset_url -%}
     {%- endif -%}
 
-    {%- if block.settings.image-slide-3 -%}
-      {%- assign image_slide_three = block.settings.image-slide-3| img_url: '1800x' -%}
+    {%- if section.settings.image-slide-3 -%}
+      {%- assign image_slide_three = section.settings.image-slide-3| img_url: '1800x' -%}
     {%- else -%}
       {%- assign image_slide_three = 'blank.svg' | asset_url -%}
     {%- endif -%}
 
-    {%- if block.settings.image-slide-4 -%}
-      {%- assign image_slide_four = block.settings.image-slide-4| img_url: '1800x' -%}
+    {%- if section.settings.image-slide-4 -%}
+      {%- assign image_slide_four = section.settings.image-slide-4| img_url: '1800x' -%}
     {%- else -%}
       {%- assign image_slide_four = 'blank.svg' | asset_url -%}
     {%- endif -%}
 
-    {%- if block.settings.image-slide-5 -%}
-      {%- assign image_slide_five = block.settings.image-slide-5| img_url: '1800x' -%}
+    {%- if section.settings.image-slide-5 -%}
+      {%- assign image_slide_five = section.settings.image-slide-5| img_url: '1800x' -%}
     {%- else -%}
       {%- assign image_slide_five = 'blank.svg' | asset_url -%}
     {%- endif -%}
+
+
 
 
 
@@ -66,10 +65,10 @@
     });
     </script>
 
+    <div class="faq-question-container full-width-cgc" style="background-color:{{ section.settings.faq-bg-color }};">
 
-    {% when "faq-question" %}
+    {% for block in section.blocks %}
 
-    <div class="faq-question-container full-width-cgc" style="background-color:{{ block.settings.faq-bg-color }};">
       <div id="collapsibleTabs">
       		<!-- Tab 1 -->
       		<div class="tab">
@@ -80,45 +79,17 @@
 
       					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
 
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
-
-      					<p>Lifefaker is the world’s first online life faking service. Instead of going through the hassle of living a perfect life, now you can just get the photos.</p>
       			</div>
       		</div>
 
       	</div>
+
+    {% endfor %}
+
     </div>
 
-    {% endcase %}
-  {% endfor %}
+
+
 
 </div>
 
@@ -133,49 +104,44 @@
   "name": "FAQ content",
   "max_blocks": 8,
   "settings": [
+  {
+    "type":      "color",
+    "id":        "faq-bg-color",
+    "label":     "background color",
+    "default":   "#EBECE4"
+  },
+  {
+    "type": "image_picker",
+    "id": "image-slide-1",
+    "label": "Image slider one"
+  },
+  {
+    "type": "image_picker",
+    "id": "image-slide-2",
+    "label": "Image slider two"
+  },
+  {
+    "type": "image_picker",
+    "id": "image-slide-3",
+    "label": "Image slider three"
+  },
+  {
+    "type": "image_picker",
+    "id": "image-slide-4",
+    "label": "Image slider four"
+  },
+  {
+    "type": "image_picker",
+    "id": "image-slide-5",
+    "label": "Image slider five"
+  }
   ],
   "blocks": [
-  {
-    "type": "image-carousel",
-    "name": "Image carousel",
-    "settings": [
-    {
-      "type": "image_picker",
-      "id": "image-slide-1",
-      "label": "Image slider one"
-    },
-    {
-      "type": "image_picker",
-      "id": "image-slide-2",
-      "label": "Image slider two"
-    },
-    {
-      "type": "image_picker",
-      "id": "image-slide-3",
-      "label": "Image slider three"
-    },
-    {
-      "type": "image_picker",
-      "id": "image-slide-4",
-      "label": "Image slider four"
-    },
-    {
-      "type": "image_picker",
-      "id": "image-slide-5",
-      "label": "Image slider five"
-    }
-    ]
-  },
   {
     "type": "faq-question",
     "name": "FAQ question",
     "settings": [
-    {
-      "type":      "color",
-      "id":        "faq-bg-color",
-      "label":     "Font color",
-      "default":   "#EBECE4"
-    }
+
     ]
   }
 
