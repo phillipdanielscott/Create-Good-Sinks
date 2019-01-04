@@ -64,9 +64,15 @@
     {% if settings.display_product_quantity %}
       <div class="left product-quantity-box">
         <label for="quantity">{{ 'products.product.quantity' | t }}</label>
-        <span class="ss-icon product-minus js-change-quantity" data-func="minus"><span class="icon-minus"></span></span>
+        <span class="ss-icon product-minus js-change-quantity" data-func="minus"><span class="icon-minuss"><i class="fas fa-minus"></i></span></span>
         <input type="number" min="1" size="2" class="quantity" name="quantity" id="quantity" value="1" {% if settings.limit_quantity and variant.inventory_management != blank and variant.inventory_policy == "deny" %}max="{{ variant.inventory_quantity }}"{% endif %} />
-        <span class="ss-icon product-plus js-change-quantity" data-func="plus"><span class="icon-plus"></span></span>
+        <span class="ss-icon product-plus js-change-quantity" data-func="plus"><span class="icon-pluss"><i class="fas fa-plus"></i></span></span>
+      </div>
+
+      <div class="meta">
+        {% if section.settings.display_social_buttons %}
+          {% include "social-buttons" with "product" %}
+        {% endif %}
       </div>
     {% endif %}
     <div class="purchase clearfix {% if settings.display_product_quantity %}inline_purchase{% endif %} cgc-add-to-cart">
