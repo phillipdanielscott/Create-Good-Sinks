@@ -161,7 +161,7 @@
           </div>
         </div>
 
-  {% when 'leave-a-review'%}
+  {% when 'review-widget'%}
 
         {% if block.settings.border-line-review %}
 
@@ -171,7 +171,7 @@
         {% endif %}
           <div class="leave-review-container container">
             <h3>{{ block.settings.leave-review-section-title }}</h3>
-            <div class="leave-review-content-wrapper">
+            <!-- <div class="leave-review-content-wrapper">
               <div class="review-tab">
                 <div class="review-tab-content" style="background-color:{{ block.settings.tab-bg-color }}; height:100%;">
                   <img src="{{ block.settings.review-tab-icon-one | img_url: '500x' }}" alt="">
@@ -182,7 +182,14 @@
                   <img src="{{ block.settings.review-tab-icon-two | img_url: '500x' }}" alt="">
                 </div>
               </div>
+            </div> -->
+            <div class="widget-wrapper container">
+              <a class="houzz-review-widget" data-pro="creategood" data-hzid="20577" data-locale="en-US" href="https://www.houzz.com">Houzz</a>
             </div>
+
+            <script>
+            (function(d,s,id){if(!d.getElementById(id)){var js=d.createElement(s);js.id=id;js.async=true;js.src="//platform.houzz.com/js/widgets.js?"+(new Date().getTime());var ss=d.getElementsByTagName(s)[0];ss.parentNode.insertBefore(js,ss);}})(document,"script","houzzwidget-js");
+            </script>
           </div>
 
   {% when 'customer-reviews' %}
@@ -346,6 +353,8 @@
           });
           </script>
 
+
+
   {% endcase %}
 {% endfor %}
 
@@ -467,8 +476,8 @@
     ]
   },
   {
-    "type": "leave-a-review",
-    "name": "Leave a review",
+    "type": "review-widget",
+    "name": "Review widget",
     "settings": [
     {
      "type":      "checkbox",
@@ -482,24 +491,6 @@
        "id": "leave-review-section-title",
        "label": "Section Title",
        "default": "Title"
-    },
-    {
-       "type":      "color",
-       "id":        "tab-bg-color",
-       "label":     "Review tab background color",
-       "default":   "#B3C2BF"
-    },
-    {
-      "type": "image_picker",
-      "id": "review-tab-icon-one",
-      "label": "Review icon",
-      "info": "500 px x 500 px image size minimum"
-    },
-    {
-      "type": "image_picker",
-      "id": "review-tab-icon-two",
-      "label": "Review icon",
-      "info": "500 px x 500 px image size minimum"
     }
     ]
   },
@@ -657,12 +648,8 @@
       "label": "Customer submitted image",
       "info": "2000 px x 2000 px image size minimum"
     }
-
-
     ]
   }
-
-
   ],
   "presets": [
 

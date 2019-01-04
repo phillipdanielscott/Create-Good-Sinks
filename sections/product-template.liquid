@@ -168,11 +168,28 @@
           {% endif %}
 
           {% if section.settings.product_description_position == "top" %}
+          {% comment %}
+           Edited to implement dynamic collapsible divs - Phillip
+
             {% if product.description != blank %}
              <div class="description" itemprop="description">
                {{ product.description | split: '<!-- split -->' | first }}
              </div>
            {% endif %}
+
+          {% endcomment %}
+
+
+          <div class="cgc-product-specs">
+            <h6>{{ section.settings.product-specs-title }}</h3>
+            {{ section.settings.product-specs }}
+          </div>
+
+          <div class="cgc-customer-promise">
+            <h6>{{ section.settings.customer-promise-title }}</h3>
+            {{ section.settings.customer-promise }}
+          </div>
+
           {% endif %}
 
           {% unless collection_handles contains 'coming-soon' %}
@@ -290,11 +307,35 @@
   "name": "Product",
   "class": "product-template",
   "settings": [
-   {
+    {
      "type": "checkbox",
      "id": "collection-top-title",
      "default": true,
      "label": "Enable top title"
+    },
+    {
+      "type": "text",
+      "id": "product-specs-title",
+      "label": "Product specs title",
+      "default": "title"
+    },
+    {
+      "type": "textarea",
+      "id": "product-specs",
+      "label": "Product specs",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "type": "text",
+      "id": "customer-promise-title",
+      "label": "Customer promise title",
+      "default": "title"
+    },
+    {
+      "type": "textarea",
+      "id": "customer-promise",
+      "label": "Customer promise",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     },
     {
       "type": "header",
