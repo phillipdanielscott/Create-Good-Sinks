@@ -1,4 +1,4 @@
-<div class="review-wrapper container full-width">
+<div class="review-wrapper container">
 <h1>{{ page.title }}</h1>
 {% for block in section.blocks %}
   {% case block.type %}
@@ -114,7 +114,7 @@
         <div class="media-review-container container">
         <h3>{{ block.settings.four-block-title }}</h3>
           <div class="media-review-block one-half-cgc">
-            <div class="review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
+            <div class="media-review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
               <div class="quote-icon-wrapper">
                 <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
               </div>
@@ -128,7 +128,7 @@
             </div>
           </div>
           <div class="media-review-block one-half-cgc">
-            <div class="review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
+            <div class="media-review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
               <div class="quote-icon-wrapper">
                 <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
               </div>
@@ -142,7 +142,7 @@
             </div>
           </div>
           <div class="media-review-block one-half-cgc">
-            <div class="review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
+            <div class="media-review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
               <div class="quote-icon-wrapper">
                 <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
               </div>
@@ -156,7 +156,7 @@
             </div>
           </div>
           <div class="media-review-block one-half-cgc">
-            <div class="review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
+            <div class="media-review-wrapper" style="background-color:{{ block.settings.block-bg-color }}">
               <div class="quote-icon-wrapper">
                 <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
               </div>
@@ -193,7 +193,7 @@
                 </div>
               </div>
             </div> -->
-            <div class="widget-wrapper container">
+            <div class="widget-wrapper">
               <a class="houzz-review-widget" data-pro="creategood" data-hzid="20577" data-locale="en-US" href="https://www.houzz.com">Houzz</a>
             </div>
 
@@ -359,7 +359,17 @@
             pagination:false,
             navigation:true,
             nav:true,
-            navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"]
+            navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+            responsive : {
+                // breakpoint from 0 up
+                0 : {
+                    items:1
+                },
+                // breakpoint from 480 up
+                480 : {
+                    items : 2
+                }
+            }
           });
           </script>
 
@@ -368,11 +378,18 @@
   {% endcase %}
 {% endfor %}
 
-<!-- <style>
+<style>
+
+@media only screen and (max-width:1366px){
+
   .custom-template{
     width: 100%;
+    padding-top: 0px !important;
    }
-</style> -->
+
+}
+
+</style>
 
 </div>
 
