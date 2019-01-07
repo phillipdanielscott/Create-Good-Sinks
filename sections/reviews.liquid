@@ -367,7 +367,19 @@
                 },
                 // breakpoint from 480 up
                 480 : {
-                    items : 2
+                  lazyLoad:true,
+                  loop:true,
+                  autoplay:true,
+                  autoplayTimeout:10000,
+                  autoplayHoverPause:true,
+                  mouseDrag:true,
+                  touchDrag:true,
+                  singleItem: true,
+                  items : 2,
+                  pagination:false,
+                  navigation:true,
+                  nav:true,
+                  navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"]
                 }
             }
           });
