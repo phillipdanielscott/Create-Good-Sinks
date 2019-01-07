@@ -61,7 +61,7 @@
       nav:true,
       navText:["<div class='nav-btn prev-slide'><i class='fas fa-angle-left review-angle-left'></i></div>",
               "<div class='nav-btn next-slide'><i class='fas fa-angle-right review-angle-right'></i></div>"],
-      dots: false
+      dots: true
     });
     </script>
 
@@ -72,9 +72,9 @@
       <div class="faq-content-container container">
         {% for block in section.blocks %}
         <div class="faq-spacer">
-          <button class="collapsible"><span class="faq-text-question"> testing </span></button>
+          <button class="collapsible"><span class="faq-text-question">{{ block.settings.faq-question }}</span></button>
           <div class="collapsibleContent">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="faq-answer">{{ block.settings.faq-answer }}</div>
           </div>
         </div>
         {% endfor %}
@@ -90,6 +90,7 @@
 <style>
   .custom-template{
     width: 100%;
+    padding: 0px;
    }
 </style>
 
@@ -135,7 +136,18 @@
     "type": "faq-question",
     "name": "FAQ question",
     "settings": [
-
+    {
+     "type":      "text",
+     "id":        "faq-question",
+     "label":     "FAQ question",
+     "default":   "This is a placeholder for FAQ question?"
+   },
+   {
+      "type": "richtext",
+      "id": "faq-answer",
+      "label": "Text",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+   }
     ]
   }
 
