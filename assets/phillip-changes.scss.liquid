@@ -308,6 +308,10 @@ a.top_link{
     // display: none;
   }
 
+  span.right.icon-down-arrows{
+    padding: 0px;
+  }
+
 }
 
 @media only screen and (max-width:375px){
@@ -2885,6 +2889,10 @@ display: inline-block;
     width: 20%;
   }
 
+  .customer-carousel-wrapper{
+    width: 100%;
+  }
+
 }
 
 @media only screen and (max-width:375px){
@@ -2931,69 +2939,66 @@ display: inline-block;
   margin-bottom: 100px !important;
 }
 
-.faq-question-container{
+.faq-question-wrapper{
   padding: 50px 0px;
 }
 
-#collapsibleTabs {
-	margin: 0 auto;
-	max-width: 75%;
-}
-
-.tab {
-	margin-bottom: 20px;
-}
-
-.tab input {
-	display: none;
-}
-
-.tab label {
-	cursor: pointer;
-	display: block;
-	padding: 10px 20px;
-	text-align: right;
+.collapsible {
   background-color: white;
-  border-radius: 5px;
-  margin-bottom: 0px;
+  color: #38373E;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
   text-align: left;
+  outline: none;
+  font-size: 15px;
+  border-radius: 8px;
 }
 
-.tab label:after {
-	content: '+';
+.collapsible.active, .collapsible:hover {
+  background-color: white;
+  border: 0px;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: #38373E;
+  font-weight: bold;
   float: right;
+  margin-left: 5px;
+  position: relative;
+  top: -10px;
 }
 
-.tabCheckBox-1{
-  margin-bottom: 0px;
+.collapsible.active:after {
+  content: "\2212";
 }
 
-.tabContent {
-	border-top: none;
-	max-height: 0;
-	overflow: hidden;
-	transition-property: visibility, max-height;
-	transition-duration: .5s, .5s;
-	transition-timing-function: ease, ease-in-out;
-	visibility: hidden;
+.collapsible:focus {
   background-color: white;
 }
 
-.tab input:checked ~ .tabContent {
+.collapsibleContent {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
   background-color: white;
-	height: auto;
-  max-height: 300px;
-  overflow: auto;
-  visibility: visible;
 }
 
-.tab input:checked ~ label:after {
-	content: '-';
+.faq-text-question{
+  width: 100%;
+  line-height: 24px;
+  position: relative;
+  top: -7px;
+  font-weight: 600;
 }
 
-.tabContent * {
-	padding: 0 10px;
+.faq-spacer{
+  margin-bottom: 25px;
 }
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
 
