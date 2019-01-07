@@ -72,7 +72,7 @@
       <div class="faq-content-container container">
         {% for block in section.blocks %}
         <div class="faq-spacer">
-          <button class="collapsible"><span class="faq-text-question">{{ block.settings.faq-question }}</span></button>
+          <button class="collapsible"><i class="far fa-question-circle"></i><span class="faq-text-question">{{ block.settings.faq-question }}</span></button>
           <div class="collapsibleContent">
             <div class="faq-answer">{{ block.settings.faq-answer }}</div>
           </div>
