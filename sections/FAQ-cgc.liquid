@@ -71,17 +71,57 @@
 
       <div class="faq-content-container container">
         {% for block in section.blocks %}
-        <div class="faq-spacer">
-          <button class="collapsible"><i class="far fa-question-circle"></i><span class="faq-text-question">{{ block.settings.faq-question }}</span></button>
-          <div class="collapsibleContent">
-            <div class="faq-answer">{{ block.settings.faq-answer }}</div>
-          </div>
-        </div>
+            {% case block.type %}
+
+            {% when "faq-question"%}
+
+            <div class="faq-spacer">
+              <button class="collapsible"><i class="far fa-question-circle"></i><span class="faq-text-question">{{ block.settings.faq-question }}</span></button>
+              <div class="collapsibleContent">
+                <div class="faq-answer">{{ block.settings.faq-answer }}</div>
+              </div>
+            </div>
+
+            {% when "faq-with-images"%}
+
+            {%- if block.settings.faq-image-one -%}
+              {%- assign faq_image_one = block.settings.faq-image-one | img_url: '400x' -%}
+            {%- else -%}
+              {%- assign faq_image_one = 'blank.svg' | asset_url -%}
+            {%- endif -%}
+
+            {%- if block.settings.faq-image-two -%}
+              {%- assign faq_image_two = block.settings.faq-image-two | img_url: '400x' -%}
+            {%- else -%}
+              {%- assign faq_image_two = 'blank.svg' | asset_url -%}
+            {%- endif -%}
+
+            <div class="faq-spacer">
+              <button class="collapsible"><i class="far fa-question-circle"></i><span class="faq-text-question">{{ block.settings.faq-question-with-image }}</span></button>
+              <div class="collapsibleContent">
+                <img src="{{ faq_image_one }}" alt="">
+                <div class="faq-answer">{{ block.settings.faq-answer-with-image }}</div>
+                <img src="{{ faq_image_two }}" alt="">
+                <div class="faq-answer">{{ block.settings.faq-answer-with-image-two }}</div>
+                <div class="faq-answer">{{ block.settings.faq-answer-with-image-three }}</div>
+
+
+
+
+
+
+              </div>
+            </div>
+
+
+
+
+
+          {% endcase %}
         {% endfor %}
       </div>
 
     </div>
-
 
 
 
@@ -97,7 +137,6 @@
 {% schema %}
 {
   "name": "FAQ content",
-  "max_blocks": 8,
   "settings": [
   {
     "type":      "color",
@@ -147,6 +186,40 @@
       "id": "faq-answer",
       "label": "Text",
       "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+   }
+    ]
+  },
+  {
+    "type": "faq-with-images",
+    "name": "FAQ question with images",
+    "settings": [
+    {
+     "type":      "text",
+     "id":        "faq-question-with-image",
+     "label":     "FAQ question",
+     "default":   "This is a placeholder for FAQ question?"
+   },
+   {
+      "type": "richtext",
+      "id": "faq-answer-with-image",
+      "label": "Section one text",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+   },
+   {
+     "type": "image_picker",
+     "id": "faq-image-one",
+     "label": "FAQ answer image"
+   },
+   {
+      "type": "richtext",
+      "id": "faq-answer-with-image-two",
+      "label": "Section two text",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+   },
+   {
+     "type": "image_picker",
+     "id": "faq-image-two",
+     "label": "FAQ answer image for section two"
    }
     ]
   }
