@@ -96,6 +96,12 @@
               {%- assign faq_image_two = 'blank.svg' | asset_url -%}
             {%- endif -%}
 
+            {%- if block.settings.faq-image-three -%}
+              {%- assign faq_image_three = block.settings.faq-image-three | img_url: '400x' -%}
+            {%- else -%}
+              {%- assign faq_image_three = 'blank.svg' | asset_url -%}
+            {%- endif -%}
+
             <div class="faq-spacer">
               <button class="collapsible"><i class="far fa-question-circle"></i><span class="faq-text-question">{{ block.settings.faq-question-with-image }}</span></button>
               <div class="collapsibleContent">
@@ -103,13 +109,8 @@
                 <div class="faq-answer">{{ block.settings.faq-answer-with-image }}</div>
                 <img src="{{ faq_image_two }}" alt="">
                 <div class="faq-answer">{{ block.settings.faq-answer-with-image-two }}</div>
+                <img src="{{ faq_image_three }}" alt="">
                 <div class="faq-answer">{{ block.settings.faq-answer-with-image-three }}</div>
-
-
-
-
-
-
               </div>
             </div>
 
@@ -202,7 +203,7 @@
    {
       "type": "richtext",
       "id": "faq-answer-with-image",
-      "label": "Section one text",
+      "label": "FAQ answer",
       "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
    },
    {
@@ -213,13 +214,24 @@
    {
       "type": "richtext",
       "id": "faq-answer-with-image-two",
-      "label": "Section two text",
+      "label": "FAQ answer",
       "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
    },
    {
      "type": "image_picker",
      "id": "faq-image-two",
      "label": "FAQ answer image for section two"
+   },
+   {
+     "type": "image_picker",
+     "id": "faq-image-three",
+     "label": "FAQ answer image"
+   },
+   {
+      "type": "richtext",
+      "id": "faq-answer-with-image-three",
+      "label": "FAQ answer",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
    }
     ]
   }
