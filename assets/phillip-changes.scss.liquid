@@ -2928,7 +2928,7 @@ display: inline-block;
 
 .faq-carousel-wrapper{
   height: 500px;
-  margin-bottom: 80px !important;
+  margin-bottom: 0px !important;
 }
 
 
@@ -2941,12 +2941,9 @@ display: inline-block;
   padding: 0px;
 }
 
-.faq-wrapper .review-carousel-wrapper{
-  margin-bottom: 100px !important;
-}
-
 .faq-question-wrapper{
   padding: 50px 0px;
+  margin-bottom: 180px;
 }
 
 .collapsible {
@@ -3030,19 +3027,59 @@ display: inline-block;
   padding-right: 10px;
 }
 
+//
+// @media only screen and (max-width:1280px){
+//
+//   .faq-carousel-wrapper{
+//     height: 350px;
+//   }
+//
+// }
+//
+// @media only screen and (max-width:798px){
+//
+//   .faq-carousel-main-container{
+//     width: 80%;
+//   }
+//
+// }
 
-@media only screen and (max-width:1280px){
+@media only screen and (max-width:798px){
+
+  .faq-wrapper{
+    width: 600px;
+  }
+
+  .faq-wrapper h1{
+    font-size: 35px;
+  }
 
   .faq-carousel-wrapper{
-    height: 350px;
+    height: 300px;
   }
 
 }
 
-@media only screen and (max-width:798px){
+@media only screen and (max-width:425px){
 
-  .faq-carousel-main-container{
-    width: 80%;
+  .faq-carousel-wrapper{
+    height: 300px;
+  }
+
+  .faq-wrapper{
+    width: 350px;
+  }
+
+}
+
+@media only screen and (max-width:375px){
+
+  .faq-wrapper{
+    width: 300px;
+  }
+
+  .faq-carousel-wrapper{
+    height: 275px;
   }
 
 }
