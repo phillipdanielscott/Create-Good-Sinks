@@ -2926,6 +2926,11 @@ display: inline-block;
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+.faq-carousel-wrapper{
+  height: 500px;
+  margin-bottom: 80px !important;
+}
+
 
 .faq-wrapper h1{
   text-align: center;
@@ -2991,6 +2996,10 @@ display: inline-block;
   border-radius: 0px 0px 6px 6px;
 }
 
+.collapsibleContent img{
+  max-width: 50%;
+}
+
 .faq-text-question{
   width: 100%;
   line-height: 24px;
@@ -3010,7 +3019,7 @@ display: inline-block;
 }
 
 .faq-answer p{
-  padding-top: 10px;
+  padding-top: 0px;
   margin-top: 15px;
 }
 
@@ -3020,6 +3029,25 @@ display: inline-block;
   font-size: 19px;
   padding-right: 10px;
 }
+
+
+@media only screen and (max-width:1280px){
+
+  .faq-carousel-wrapper{
+    height: 350px;
+  }
+
+}
+
+@media only screen and (max-width:798px){
+
+  .faq-carousel-main-container{
+    width: 80%;
+  }
+
+}
+
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
 
