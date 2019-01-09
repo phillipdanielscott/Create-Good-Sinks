@@ -46,6 +46,7 @@
       </div>
 
 
+
     <script type="text/javascript">
     $(".owl-carousel").owlCarousel({
       lazyLoad:true,
@@ -117,7 +118,31 @@
               </div>
             </div>
 
+            {% when "faq-two-images"%}
 
+
+            {%- if block.settings.faq-two-image-one -%}
+              {%- assign faq_image_two_one = block.settings.faq-two-image-one | img_url: '1000x' -%}
+            {%- else -%}
+              {%- assign faq_image_two_one = 'blank.svg' | asset_url -%}
+            {%- endif -%}
+
+            {%- if block.settings.faq-two-image-two -%}
+              {%- assign faq_image_two_two = block.settings.faq-two-image-two | img_url: '1000x' -%}
+            {%- else -%}
+              {%- assign faq_image_two_two = 'blank.svg' | asset_url -%}
+            {%- endif -%}
+
+            <div class="faq-spacer">
+              <button class="collapsible"><i class="far fa-question-circle"></i><span class="faq-text-question">{{ block.settings.faq-two-image-question }}</span></button>
+              <div class="collapsibleContent">
+                <div class="faq-answer">{{ block.settings.faq-two-image-answer }}</div>
+                <span>{{block.settings.faq-image-title-one }}</span>
+                <img src="{{ faq_image_two_one }}" alt="">
+                <span>{{block.settings.faq-image-title-two }}</span>
+                <img src="{{ faq_image_two_two }}" alt="">
+              </div>
+            </div>
 
 
 
@@ -177,7 +202,7 @@
   "blocks": [
   {
     "type": "faq-question",
-    "name": "FAQ question",
+    "name": "FAQ question title",
     "settings": [
     {
      "type":      "text",
@@ -236,6 +261,46 @@
       "label": "FAQ answer",
       "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
    }
+    ]
+  },
+  {
+    "type": "faq-two-images",
+    "name": "FAQ with two images",
+    "settings": [
+    {
+     "type":      "text",
+     "id":        "faq-two-image-question",
+     "label":     "FAQ question",
+     "default":   "This is a placeholder for FAQ question?"
+    },
+    {
+       "type": "richtext",
+       "id": "faq-two-image-answer",
+       "label": "FAQ answer",
+       "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+    },
+    {
+     "type":      "text",
+     "id":        "faq-image-title-one",
+     "label":     "FAQ image title",
+     "default":   "This is a placeholder for FAQ question?"
+    },
+    {
+      "type": "image_picker",
+      "id": "faq-two-image-one",
+      "label": "FAQ answer image"
+    },
+    {
+     "type":      "text",
+     "id":        "faq-image-title-two",
+     "label":     "FAQ image title",
+     "default":   "This is a placeholder for FAQ question?"
+    },
+    {
+      "type": "image_picker",
+      "id": "faq-two-image-two",
+      "label": "FAQ answer image"
+    }
     ]
   }
 
