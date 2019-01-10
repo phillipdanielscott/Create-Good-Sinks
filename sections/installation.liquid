@@ -1,0 +1,63 @@
+<div class="installation-page-wrapper container">
+  <h1>{{ page.title }}</h1>
+
+  {% for block in section.blocks %}
+    {% case block.type %}
+
+      {% when 'instruction-link'%}
+          <div class="instruction-link-box" style="background-color:{{ block.settings.info-box-color }}">
+            <h6>{{ block.settings.installation-info-title }}</h6>
+            <span>{{ block.settings.installation-info-description }}</span>
+          </div>
+
+    {% endcase %}
+  {% endfor %}
+
+</div>
+
+
+{% schema %}
+{
+  "name": "installation-content",
+  "max_blocks": 8,
+  "settings": [
+
+  ],
+  "blocks": [
+  {
+    "type": "instruction-link",
+    "name": "Installation info",
+    "settings": [
+    {
+     "type": "color",
+     "id": "info-box-color",
+     "label": "Info box background color",
+     "default": "#EBECE4"
+   },
+    {
+     "type":      "text",
+     "id":        "installation-info-title",
+     "label":     "Installation info title",
+     "default":   "value",
+     "placeholder": "Text"
+    },
+    {
+     "type":      "text",
+     "id":        "installation-info-description",
+     "label":     "Installation info description",
+     "default":   "value",
+     "placeholder": "Text"
+    }
+
+    ]
+  }
+
+  ],
+  "presets": [
+    {
+      "name": "installation-content",
+      "category": "images"
+    }
+  ]
+}
+{% endschema %}
