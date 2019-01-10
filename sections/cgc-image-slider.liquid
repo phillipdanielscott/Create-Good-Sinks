@@ -3,7 +3,7 @@
 
       {% for block in section.blocks %}
         {% case block.type %}
-          {% when 'Featured-background-image' %}
+          {% when 'Featured-image' %}
               {%- if block.settings.Featured-product-full-bg -%}
                 {%- assign featured_image = block.settings.Featured-product-full-bg | img_url: '1800x' -%}
               {%- else -%}
@@ -14,21 +14,7 @@
 
                 </div>
               </div>
-          {% when 'featured-product'  %}
-             <div class="item full-item">
-               <div class="featured-bg-color" style="background-color:{{ block.settings.slide-bg-color }}"></div>
-               <div class="carousel-text-content">
-                 <h2 style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.title }}</h2>
-                 <div class="carousel-text-underline" style="border: 2px solid {{ block.settings.slide-bg-color }}"></div>
-                 <p style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.details-one}}</p>
-                 <p style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.details-two }}</p>
-                 <p style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.details-three }}</p>
-                 <p style="color:{{ block.settings.slide-bg-color }}">{{ block.settings.details-four }}</p>
-                 <i class="fas fa-arrow-right" style="color:{{ block.settings.slide-bg-color }}"></i>
-               </div>
 
-                <img src="{{ block.settings.product-image | img_url: '1024x' }}" alt="" class="carousel-product-image">
-             </div>
          {% when 'featured-sink'  %}
          <div class="item featured-sink-item">
               <div class="featured-sink-bg" style="background-color:{{ block.settings.featured-sink-bg-color }}"></div>
@@ -44,6 +30,10 @@
          </div>
 
         {% endcase %}
+
+
+
+
       {% endfor %}
 
   </div>
@@ -65,7 +55,7 @@
    itemsDesktopSmall : false,
    itemsTablet: false,
    dotsData: false,
-   dots:false,
+   dots:true,
    itemsMobile: false
  });
 
@@ -74,14 +64,14 @@
 
 {% schema %}
 {
-  "name": "Product carousel slide",
+  "name": "CGC Image Slider",
   "max_blocks": 8,
   "settings": [
 
   ],
   "blocks": [
   {
-    "type": "Featured-background-image",
+    "type": "Featured-image",
     "name": "Full background image",
     "settings": [
       {
@@ -89,65 +79,6 @@
       "id": "Featured-product-full-bg",
       "label": "Full background image"
      }
-    ]
-  },
-  {
-    "type": "featured-product",
-    "name": "Featured product",
-    "settings": [
-    {
-     "id": "title",
-     "type": "text",
-     "label": "Featured product title",
-     "default": "Title"
-    },
-    {
-        "type": "image_picker",
-        "id": "product-image",
-        "label": "Product Image"
-    },
-    {
-     "id": "featured-slide-description",
-     "type": "textarea",
-     "label": "Featured product description",
-     "default": "Featured Description"
-    },
-    {
-     "id": "details-one",
-     "type": "text",
-     "label": "featured slide details",
-     "default": "Featured Details"
-    },
-    {
-     "id": "details-two",
-     "type": "text",
-     "label": "featured slide details",
-     "default": "Featured Details"
-    },
-    {
-     "id": "details-three",
-     "type": "text",
-     "label": "featured slide details",
-     "default": "Featured Details"
-    },
-    {
-     "id": "details-four",
-     "type": "text",
-     "label": "featured slide details",
-     "default": "Featured Details"
-    },
-    {
-       "type":      "color",
-       "id":        "slide-bg-color",
-       "label":     "Slide background color",
-       "default":   "#AAB7B4"
-    },
-    {
-       "type":      "color",
-       "id":        "text-color",
-       "label":     "Text color",
-       "default":   "#AAB7B4"
-    }
     ]
   },
   {
@@ -200,8 +131,8 @@
 ],
   "presets": [
     {
-      "name": "Product carousel slide",
-      "category": "Product carousel slide"
+      "name": "CGC Image Slider",
+      "category": "images"
     }
   ]
 }
