@@ -4,28 +4,52 @@
   {% for block in section.blocks %}
     {% case block.type %}
 
-      {% when 'instruction-link'%}
+      {% when 'info-box'%}
           <div class="instruction-link-box" style="background-color:{{ block.settings.info-box-color }}">
             <h6>{{ block.settings.installation-info-title }}</h6>
             <span>{{ block.settings.installation-info-description }}</span>
           </div>
 
+      {% when 'installation-video'%}
+        <div class="video-section-container">
+          <div class="container full-width">
+              <div class="videoWrapper">
+                  <!-- Copy & Pasted from YouTube -->
+                  <iframe width="100%" height="" src="{{ block.settings.install-video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+              </div>
+          </div>
+        </div>
+
+      {% when 'installation-tip' %}
+
+        <div class="installation-container">
+          <h4>{{ block.settings.install-tip-title }}</h4>
+          <div class="tip-text-content">
+            {{ block.settings.tip-instruction }}
+          </div>
+        </div>
+
+      {% when 'installation-image' %}
+
+      <div class="image-instruction-container">
+        <img src="{{ block.settings.instruction-image }}" alt="">
+      </div>
+
     {% endcase %}
   {% endfor %}
-
 </div>
 
 
 {% schema %}
 {
-  "name": "installation-content",
+  "name": "intallation content",
   "max_blocks": 8,
   "settings": [
 
   ],
   "blocks": [
   {
-    "type": "instruction-link",
+    "type": "info-box",
     "name": "Installation info",
     "settings": [
     {
@@ -48,6 +72,56 @@
      "default":   "value",
      "placeholder": "Text"
     }
+
+    ]
+  },
+  {
+    "type": "installation-video",
+    "name": "Installation video URL",
+    "settings": [
+    {
+     "type":      "text",
+     "id":        "install-video-url",
+     "label":     "Video URL"
+    }
+
+    ]
+  },
+  {
+    "type": "installation-tip",
+    "name": "Instruction tip",
+    "settings": [
+    {
+     "type":      "text",
+     "id":        "install-tip-title",
+     "label":     "Install tip title",
+     "info": "Tip title",
+     "default":   "TIP"
+   },
+   {
+      "type": "richtext",
+      "id": "tip-instruction",
+      "label": "Tip instruction",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+   }
+
+    ]
+  },
+  {
+    "type": "installation-image",
+    "name": "Instruction image",
+    "settings": [
+    {
+     "type":      "text",
+     "id":        "instruction-image-title",
+     "label":     "Instruction image title",
+     "default":   "TITLE"
+   },
+   {
+      "type": "image_picker",
+      "id": "instruction-image",
+      "label": "Instruction image"
+   }
 
     ]
   }
