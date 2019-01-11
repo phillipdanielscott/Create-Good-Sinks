@@ -11,8 +11,18 @@
               {%- endif -%}
               <div class="item full-bg-image">
                 <div class="featured-image-container" style="background-image:url({{ featured_image }}); background-position:center; background-repeat: no-repeat; background-size: cover; ">
-
+                  {% if block.settings.text-overlay %}
+                      <div class="slider-text-overlay">
+                        <div class="overlay-text-box">
+                          <div class="overlay-text">
+                            <h3> {{ block.settings.overlay-text }} </h3>
+                          </div>
+                        </div>
+                      </div>
+                  {% endif %}
                 </div>
+
+
               </div>
 
          {% when 'featured-sink'  %}
@@ -43,8 +53,8 @@
 <script type="text/javascript">
  $(".owl-carousel").owlCarousel({
    lazyLoad:true,
-   loop:true,
-   autoplay:true,
+   loop:false,
+   autoplay:false,
    autoplayTimeout:8000,
    autoplayHoverPause:true,
    mouseDrag:true,
@@ -78,7 +88,49 @@
       "type": "image_picker",
       "id": "Featured-product-full-bg",
       "label": "Full background image"
-     }
+      },
+      {
+     "type":      "checkbox",
+     "id":        "text-overlay",
+     "label":     "Enable text overlay",
+     "default":   false
+      },
+      {
+        "type": "select",
+        "id": "overlay",
+        "label": "Image overlay opacity",
+        "info": "Used to darken image for legible text.",
+        "default": "image-overlay-15",
+        "options": [
+          { "value": "image-overlay-0", "label": "0%"},
+          { "value": "image-overlay-5", "label": "5%"},
+          { "value": "image-overlay-10", "label": "10%"},
+          { "value": "image-overlay-15", "label": "15%"},
+          { "value": "image-overlay-20", "label": "20%"},
+          { "value": "image-overlay-25", "label": "25%"},
+          { "value": "image-overlay-30", "label": "30%"},
+          { "value": "image-overlay-35", "label": "35%"},
+          { "value": "image-overlay-40", "label": "40%"},
+          { "value": "image-overlay-45", "label": "45%"},
+          { "value": "image-overlay-50", "label": "50%"},
+          { "value": "image-overlay-55", "label": "55%"},
+          { "value": "image-overlay-60", "label": "60%"},
+          { "value": "image-overlay-65", "label": "65%"},
+          { "value": "image-overlay-70", "label": "70%"},
+          { "value": "image-overlay-75", "label": "75%"},
+          { "value": "image-overlay-80", "label": "80%"},
+          { "value": "image-overlay-85", "label": "85%"},
+          { "value": "image-overlay-90", "label": "90%"},
+          { "value": "image-overlay-95", "label": "95%"},
+          { "value": "image-overlay-100", "label": "100%"}
+        ]
+      },
+      {
+       "id": "overlay-text",
+       "type": "text",
+       "label": "Overlay text content",
+       "default": "Text"
+      }
     ]
   },
   {
@@ -94,7 +146,7 @@
       "type":      "color",
       "id":        "featured-sink-bg-color",
       "label":     "Slide background color",
-      "default":   "#AAB7B4"
+      "default":   "#EBECE4"
     },
     {
       "type":      "color",

@@ -11,7 +11,7 @@
           </div>
 
       {% when 'installation-video'%}
-        <div class="video-section-container">
+        <div class="video-section-container instructional-video-container">
           <div class="container full-width">
               <div class="videoWrapper">
                   <!-- Copy & Pasted from YouTube -->
@@ -22,17 +22,25 @@
 
       {% when 'installation-tip' %}
 
-        <div class="installation-container">
-          <h4>{{ block.settings.install-tip-title }}</h4>
-          <div class="tip-text-content">
-            {{ block.settings.tip-instruction }}
+        <div class="installation-tip-container container-fluid">
+          <div class="installation-tip-content">
+            <h4>{{ block.settings.install-tip-title }}</h4>
+            <div class="tip-text-content">
+              {{ block.settings.tip-instruction }}
+            </div>
           </div>
         </div>
 
       {% when 'installation-image' %}
 
+      {%- if block.settings.instruction-image -%}
+        {%- assign instruction_image = block.settings.instruction-image | img_url: '800x' -%}
+      {%- else -%}
+        {%- assign instruction_image = 'blank.svg' | asset_url -%}
+      {%- endif -%}
+
       <div class="image-instruction-container">
-        <img src="{{ block.settings.instruction-image }}" alt="">
+        <img src="{{ instruction_image }}" alt="">
       </div>
 
     {% endcase %}
