@@ -387,8 +387,8 @@ a.top_link{
 
 .overlay-text h3{
   color: white;
-  font-size: 80px;
-  font-weight: 500;
+  font-size: 60px;
+  font-weight: 700;
   font-family: Poppins;
   display: inline;
   border: 3px solid white;
@@ -847,6 +847,10 @@ button.owl-dot.active span{
     .featured-sink-container .offset-text-bottom{
       bottom: 3px;
     }
+    .mobile_nav-fixed--true #pagecontent,
+    .mobile_nav-fixed--false #pagecontent{
+      padding-bottom: 0px !important;
+    }
 }
 
 @media only screen and (max-width:425px){
@@ -891,11 +895,13 @@ button.owl-dot.active span{
   }
   .featured-sink-container .offset-text-bottom{
     bottom: 0px;
-    right: 25%;
+    right: 0px;
+    left: 0px;
   }
   .featured-sink-container .offset-text-top{
-    top: 3px;
-   right: 32px;
+    top: 0;
+    right: 0px;
+    left: 0px;
   }
   .borderline-left, .borderline-right{
     display: none;
@@ -903,6 +909,11 @@ button.owl-dot.active span{
   .featured-sink-item img{
     right: 18px;
     max-width: 350px;
+  }
+  .overlay-text h3{
+    border: 2px solid white;
+    padding: 12px 17px;
+    font-size: 20px;
   }
 }
 
