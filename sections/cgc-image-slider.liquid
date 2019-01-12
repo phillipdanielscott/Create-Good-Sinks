@@ -55,7 +55,7 @@
    animateOut: 'slideOutDown',
    animateIn: 'flipInX',
    lazyLoad:true,
-   loop:false,
+   loop:true,
    autoplay:false,
    autoplayTimeout:8000,
    autoplayHoverPause:true,
@@ -68,7 +68,20 @@
    itemsTablet: false,
    dotsData: false,
    dots:true,
-   itemsMobile: false
+   itemsMobile: false,
+   responsive : {
+       // breakpoint from 0 up
+       0 : {
+         dots:false
+       },
+       // breakpoint from 480 up
+       480 : {
+         dots:false
+       },
+       800 : {
+         dots:true
+       }
+   }
  });
 
 </script>

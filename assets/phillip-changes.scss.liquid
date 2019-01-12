@@ -439,22 +439,33 @@ a.top_link{
   text-align: left;
 }
 
+// .featured-sink-item img{
+//   max-width: 1090px;
+//   position: absolute;
+//   right: 10vw;
+//   top: 50%;
+//   -webkit-transform: translateY(-50%);
+//   transform: translateY(-50%);
+//   -webkit-perspective: 100vmin;
+//   perspective: 100vmin;
+//   margin: auto;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+// }
+
 .featured-sink-item img{
-  max-width: 1090px;
-  // position: absolute;
-  // right: 10vw;
-  // top: 50%;
-  // -webkit-transform: translateY(-50%);
-  // transform: translateY(-50%);
-  // -webkit-perspective: 100vmin;
-  // perspective: 100vmin;
+  max-width: 950px;
   margin: auto;
   position: absolute;
-  top: 0;
+  top: -20px;
   left: 0;
   bottom: 0;
   right: 0;
 }
+
 
 .featured-sink-container .container{
   height: -webkit-fill-available;
@@ -462,7 +473,7 @@ a.top_link{
 }
 
 .featured-sink-container{
-   padding: 10px 0px;
+  padding: 50px 0px;
 }
 
 .featured-sink-bg{
@@ -493,14 +504,14 @@ a.top_link{
   height: 550px;
   width: 5px;
   position: relative;
-  top: 130px;
+  top: 100px;
 }
 
 .borderline-right{
   height: 550px;
   width: 5px;
   position: absolute;
-  bottom: 16%;
+  bottom: 135px;
   right: 0px;
 }
 
@@ -617,10 +628,10 @@ button.owl-dot.active span{
     font-size: 18px;
   }
 
-  .featured-sink-item img{
-    max-width: 1024px;
-    right: 11vw;
-  }
+  // .featured-sink-item img{
+  //   max-width: 1024px;
+  //   right: 11vw;
+  // }
 
   .featured-sink-container h3{
     font-size: 55px;
@@ -674,7 +685,7 @@ button.owl-dot.active span{
   }
 
   .featured-sink-container h3{
-   font-size: 50px;
+    font-size: 50px;
   }
 
   .featured-sink-item img{
@@ -685,25 +696,30 @@ button.owl-dot.active span{
   top: 13px;
  }
 
- .featured-sink-container .offset-text-bottom{
-  bottom: 28px;
- }
 
  .borderline-left, .borderline-right{
   height: 450px;
  }
 
+ .borderline-right{
+  bottom: 117px;
+ }
+
  .borderline-left{
-  bottom: 39%;
+  top: 91px;
  }
 
 .featured-sink-container .container{
-  width: 81%;
+  width: 80%;
 }
 
-.featured-sink-item img{
-  right: 13vw;
+.featured-sink-container{
+  padding: 30px 0px;
 }
+
+// .featured-sink-item img{
+//   right: 13vw;
+// }
 
 }
 
@@ -740,7 +756,7 @@ button.owl-dot.active span{
   }
 
   .featured-sink-container h3{
-   font-size: 45px;
+   font-size: 40px;
   }
 
   .featured-sink-item img{
@@ -748,22 +764,23 @@ button.owl-dot.active span{
   }
 
   .borderline-left, .borderline-right{
-   height: 400px;
-  }
-
-  .borderline-left{
-  bottom: 38%;
+   height: 350px;
   }
 
   .borderline-right{
-  bottom: 15%;
+   bottom: 102px;
   }
+
+  .borderline-left{
+   top: 82px;
+  }
+
+
 }
 
 @media only screen and (max-width:1366px){
   .featured-sink-item img{
     max-width: 800px;
-    right: 12vw;
   }
 
   // .overlay-text h3{
@@ -771,6 +788,17 @@ button.owl-dot.active span{
   // }
 }
 
+@media only screen and (max-width:1280px){
+
+  .featured-sink-item img {
+    max-width: 750px;
+}
+
+.borderline-left{
+  top: 80px;
+}
+
+}
 
 @media only screen and (max-width:1024px){
   .cgc-carousel-wrapper{
@@ -779,7 +807,6 @@ button.owl-dot.active span{
 
   .featured-sink-item img{
     max-width: 600px;
-    right: 12vw;
   }
 
   .cgc-carousel-wrapper h2{
@@ -829,7 +856,10 @@ button.owl-dot.active span{
     bottom: 11px;
   }
   .borderline-left{
-    bottom: 47%;
+
+  }
+  .featured-sink-container .container{
+    width: 78%;
   }
 }
 
@@ -871,9 +901,7 @@ button.owl-dot.active span{
       height: 200px;
       width: 3px;
     }
-    .featured-sink-item img{
-      top: 48%;
-    }
+
     .featured-sink-container .offset-text-top{
       top: 1px;
     }
@@ -941,13 +969,21 @@ button.owl-dot.active span{
     display: none;
   }
   .featured-sink-item img{
-    right: 18px;
-    max-width: 350px;
+    max-width: 300px;
+    top: -8px;
   }
   .overlay-text h3{
     border: 2px solid white;
     padding: 12px 17px;
     font-size: 25px;
+  }
+  .offset-text-bottom,
+  .offset-text-top{
+    margin-bottom: 0px;
+  }
+
+  .featured-sink-container{
+    padding: 12px 0px;
   }
 }
 
@@ -973,14 +1009,13 @@ button.owl-dot.active span{
   }
 
   .featured-sink-item img{
-    right: 22px;
-    max-width: 300px;
+    max-width: 250px;
   }
 
-  .featured-sink-container .offset-text-top{
-    top: 4px;
-    right: 28px;
+  .featured-sink-container{
+    padding: 30px 0px;
   }
+
 }
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
 
