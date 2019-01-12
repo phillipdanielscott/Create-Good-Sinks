@@ -440,14 +440,20 @@ a.top_link{
 }
 
 .featured-sink-item img{
-  max-width: 1200px;
+  max-width: 1090px;
+  // position: absolute;
+  // right: 10vw;
+  // top: 50%;
+  // -webkit-transform: translateY(-50%);
+  // transform: translateY(-50%);
+  // -webkit-perspective: 100vmin;
+  // perspective: 100vmin;
+  margin: auto;
   position: absolute;
-  right: 10vw;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-perspective: 100vmin;
-  perspective: 100vmin;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .featured-sink-container .container{
@@ -456,9 +462,9 @@ a.top_link{
 }
 
 .featured-sink-bg{
-  height: 85%;
+  height: 100%;
   position: absolute;
-  top: 6%;
+  // top: 6%;
   width: 100%;
 }
 
@@ -937,14 +943,14 @@ button.owl-dot.active span{
   .overlay-text h3{
     border: 2px solid white;
     padding: 12px 17px;
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 
 @media only screen and (max-width:375px){
-  .cgc-carousel-wrapper{
-    height: 350px;
-  }
+  // .cgc-carousel-wrapper{
+  //   height: 350px;
+  // }
   .full-item img{
     max-width: 150px;
   }
@@ -952,6 +958,10 @@ button.owl-dot.active span{
   .cgc-carousel-wrapper h2{
     font-size: 35px;
     line-height: 2rem;
+  }
+
+  .overlay-text h3{
+    font-size: 20px;
   }
 
   .featured-sink-container h3{
