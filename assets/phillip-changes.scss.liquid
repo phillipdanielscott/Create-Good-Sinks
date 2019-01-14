@@ -1832,17 +1832,112 @@ p.modal_price{
   transform: translateX(-50%);
 }
 
-.cgc-product-specs,
-.cgc-customer-promise{
-  margin-bottom: 30px;
-}
+// .cgc-product-specs,
+// .cgc-customer-promise{
+//   margin-bottom: 30px;
+// }
 
 .cgc-product-specs h6,
 .cgc-customer-promise h6{
   font-family: Poppins;
   margin-bottom: 5px;
+  margin-left: 5px;
   padding: 0px;
+  display: inline-block;
 }
+
+.cgc-tab .cgc--desc-item {
+   // padding: 1em 1em;
+   padding: 0px;
+   position: relative;
+   overflow: hidden;
+   cursor: pointer;
+ }
+
+ .cgc-tab .cgc--desc-item + .ncgc--desc-item{
+   border-top: 1px solid #ddd;
+ }
+
+ .cgc-tab .cgc--desc-item a {
+   text-decoration: none;
+   color: #12c777;
+ }
+
+ .cgc-tab .cgc--desc-item a:hover,
+ .cgc-tab .cgc--desc-item a:focus {
+   color: #c76712;
+ }
+
+ .cgc-tab .cgc--desc-item .nav-indicator {
+   position: relative;
+   left: 0;
+   top: 3px;
+ }
+
+ .nav--primary .cgc--desc-item.is-active path {
+   stroke-dashoffset: -15;
+ }
+
+ .nav--secondary {
+   overflow: hidden;
+   // margin-top: 1em;
+   will-change: height;
+   transition: height 0.3s, margin-top 0.3s;
+ }
+
+ .is-collapsed .nav--secondary {
+   margin-top: 0;
+   height: 0 !important;
+ }
+
+ .nav--secondary .cgc--desc-item {
+   padding: 0.3em 1em;
+ }
+
+ .nav--secondary .cgc--desc-item + .cgc--desc-item {
+   border: none;
+ }
+
+ .nav--primary svg.nav-indicator path {
+   fill: none;
+   stroke: #0B0B0C;
+   stroke-linecap: round;
+   stroke-width: 4;
+   stroke-dasharray: 29 40;
+   transition: stroke-dashoffset 0.3s;
+ }
+
+ .nav--alt svg.nav-indicator--alt {
+   -webkit-transform: translateY(-20%);
+           transform: translateY(-20%);
+   transition: -webkit-transform 0.2s;
+   transition: transform 0.2s;
+   transition: transform 0.2s, -webkit-transform 0.2s;
+ }
+
+ .nav--alt svg.nav-indicator--alt path {
+   fill: none;
+   stroke: #aaa;
+   stroke-linecap: square;
+   stroke-width: 2;
+   stroke-dasharray: 14 40;
+   stroke-dashoffset: -15;
+   transition: stroke-dashoffset 0.3s;
+ }
+
+ .nav--alt .cgc--desc-item.is-active svg {
+   -webkit-transform: translateY(0);
+           transform: translateY(0);
+ }
+
+ .nav--alt .cgc--desc-item.is-active svg path {
+   stroke-dashoffset: 0;
+ }
+
+ .cgc-tab{
+   padding-left: 0px;
+ }
+
 
 @media only screen and (max-width:425px){
 

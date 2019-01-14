@@ -39,21 +39,7 @@
           </div>
         {% endif %} -->
 
-        {% if section.settings.product_breadcrumb %}
-          <div class="breadcrumb_text" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item" class="breadcrumb_link"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a></span>
-            <span class="breadcrumb-divider">/</span>
-            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-              {% if collection %}
-                <a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="item" class="breadcrumb_link"><span itemprop="name">{{ collection.title }}</span></a>
-              {% else %}
-                <a href="/collections/all" title="{{ collections.all.title }}" class="breadcrumb_link"><span>{{ collections.all.title }}</span></a>
-              {% endif %}
-            </span>
-            <span class="breadcrumb-divider">/</span>
-            {{ product.title }}
-          </div>
-        {% endif %}
+
       </div>
     {% endif %}
   </div>
@@ -180,7 +166,7 @@
           {% endcomment %}
 
 
-          <div class="cgc-product-specs">
+          <!-- <div class="cgc-product-specs">
             <h6>{{ section.settings.product-specs-title }}</h3>
               <p>{{ section.settings.product-specs }}</p>
           </div>
@@ -188,7 +174,57 @@
           <div class="cgc-customer-promise">
             <h6>{{ section.settings.customer-promise-title }}</h3>
             <p>{{ section.settings.customer-promise }}</p>
-          </div>
+          </div> -->
+
+
+          <ul class="cgc-tab nav--primary cgc-product-specs">
+             <li class="cgc--desc-item nav-item--primary">
+               <div class="nav-label">
+                 <svg class="nav-indicator" width="18" height="18" viewbox="0 0 26 26">
+                   <path d="M11,1 L21,11 L11,21 L1,11"></path>
+                 </svg>
+                 <h6>{{ section.settings.product-specs-title }}</h6>
+               </div>
+               <ul class="cgc-tab nav--secondary">
+                 <p>{{ section.settings.product-specs }}</p>
+               </ul>
+             </li>
+           </ul>
+
+           <ul class="cgc-tab nav--primary cgc-product-specs">
+              <li class="cgc--desc-item nav-item--primary">
+                <div class="nav-label">
+                  <svg class="nav-indicator" width="18" height="18" viewbox="0 0 26 26">
+                    <path d="M11,1 L21,11 L11,21 L1,11"></path>
+                  </svg>
+                  <h6>{{ section.settings.customer-promise-title }}</h6>
+                </div>
+                <ul class="cgc-tab nav--secondary">
+                  <p>{{ section.settings.customer-promise }}</p>
+                </ul>
+              </li>
+            </ul>
+
+
+           <script type="text/javascript">
+              var navPrimary = document.querySelector('.cgc-product-specs');
+              var navItems = document.querySelectorAll('.nav-item--primary');
+
+              navItems.forEach(item => {
+              var secondary = item.querySelector('.nav--secondary')
+              if (secondary) {
+                secondary.style.height = secondary.offsetHeight + 'px';
+              }
+              item.classList.add('is-collapsed');
+
+              item.onclick = function() {
+                item.classList.toggle('is-collapsed');
+                item.classList.toggle('is-active');
+              }
+              });
+           </script>
+
+
 
           {% endif %}
 
@@ -299,6 +335,22 @@
         {% include 'recently-viewed' %}
       {% endif %}
 
+    {% endif %}
+
+    {% if section.settings.product_breadcrumb %}
+      <div class="breadcrumb_text" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item" class="breadcrumb_link"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a></span>
+        <span class="breadcrumb-divider">/</span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          {% if collection %}
+            <a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="item" class="breadcrumb_link"><span itemprop="name">{{ collection.title }}</span></a>
+          {% else %}
+            <a href="/collections/all" title="{{ collections.all.title }}" class="breadcrumb_link"><span>{{ collections.all.title }}</span></a>
+          {% endif %}
+        </span>
+        <span class="breadcrumb-divider">/</span>
+        {{ product.title }}
+      </div>
     {% endif %}
 
 {% schema %}
