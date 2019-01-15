@@ -10,7 +10,7 @@
                 {%- assign about_image = 'blank.svg' | asset_url -%}
               {%- endif -%}
               <div class="item full-bg-image">
-                <div class="featured-image-container" style="background-image:url({{ featured_image }}); background-position:center; background-repeat: no-repeat; background-size: cover; ">
+                <div class="featured-image-container" style="background-image:url({{ featured_image }}); background-position:center; background-repeat: no-repeat; background-size: cover;">
 
                   {% if block.settings.overlay-text-option == "center"%}
 
@@ -29,9 +29,8 @@
                         <div class="left-text" style="color:{{ block.settings.image-slider-text-color }};">
                           <h3 style="color:{{ block.settings.image-slider-text-color }};">{{ block.settings.left-text-title }}</h3>
                           <div class="left-text-contnet" style="color:{{ block.settings.image-slider-text-color }};"> {{ block.settings.left-text-content }} </div>
-                            {% if block.settings.enable-left-button %}
-
-
+                            {% if block.settings.enable-slide-button %}
+                              <button type="button" name="button" class="slide-button"> Learn More</button>
                             {% endif %}
                         </div>
                       </div>
@@ -111,111 +110,127 @@
 
 {% schema %}
 {
-  "name": "CGC Image Slider",
-  "max_blocks": 8,
-  "settings": [
-  ],
-  "blocks": [
+	"name": "CGC Image Slider",
+	"max_blocks": 8,
+	"settings": [],
+	"blocks": [
   {
-    "type": "Featured-image",
-    "name": "Full background image",
-    "settings": [
+		"type": "Featured-image",
+		"name": "Full background image",
+		"settings": [
+    {
+			"type": "image_picker",
+			"id": "Featured-product-full-bg",
+			"label": "Full background image"
+		},
+    {
+			"type": "select",
+			"id": "overlay-text-option",
+			"options": [{
+				"value": "none",
+				"label": "no overlay text"
+			},
       {
-        "type": "image_picker",
-        "id": "Featured-product-full-bg",
-        "label": "Full background image"
-      },
-     {
-       "type": "select",
-       "id": "overlay-text-option",
-       "options": [
-          { "value": "none", "label": "no overlay text"},
-          { "value": "center", "label": "Centered Text"},
-          { "value": "left", "label": "Text align left"},
-          { "value": "right", "label": "Text align right"}
-       ],
-        "default": "none",
-       "label": "Overlay text and placement"
-     },
-     {
-        "type": "color",
-        "id": "image-slider-text-color",
-        "label": "Slider text color",
-        "default": "#ffffff"
-     },
-     {
-      "id": "center-text-title",
-      "type": "text",
-      "label": "Centered text content",
-      "default": "TEXT"
-    },
+				"value": "center",
+				"label": "Centered Text"
+			},
+      {
+				"value": "left",
+				"label": "Text align left"
+			},
+      {
+				"value": "right",
+				"label": "Text align right"
+			}
+      ],
+			"default": "none",
+			"label": "Overlay text and placement"
+		},
     {
-     "id": "left-text-title",
-     "type": "textarea",
-     "label": "Left text title",
-     "default": "Left text title"
-   },
-   {
-    "id": "left-text-content",
-    "type": "richtext",
-    "label": "Left text content",
-    "default": "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>"
-   }
+			"type": "color",
+			"id": "image-slider-text-color",
+			"label": "Slider text color",
+			"default": "#ffffff"
+		},
+    {
+			"id": "center-text-title",
+			"type": "text",
+			"label": "Centered text content",
+			"default": "TEXT"
+		},
+    {
+			"id": "left-text-title",
+			"type": "text",
+			"label": "Left text title",
+			"default": "Left text title"
+		},
+    {
+			"id": "left-text-content",
+			"type": "richtext",
+			"label": "Left text content",
+			"default": "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>"
+		},
+    {
+			"type": "checkbox",
+			"id": "enable-slide-button",
+			"default": true,
+			"label": "Enable button"
+		}
     ]
-  },
+  	},
+    {
+		"type": "featured-sink",
+		"name": "Featured sink",
+		"settings": [
+    {
+			"type": "image_picker",
+			"id": "featured-sink-img",
+			"label": "Featured sink img"
+		},
+    {
+			"type": "color",
+			"id": "featured-sink-bg-color",
+			"label": "Slide background color",
+			"default": "#EBECE4"
+		},
+    {
+			"type": "color",
+			"id": "featured-text-color",
+			"label": "Font color",
+			"default": "#38373E"
+		},
+    {
+			"type": "color",
+			"id": "borderline-left",
+			"label": "border line left color",
+			"default": "#AAB7B4"
+		},
+    {
+			"type": "color",
+			"id": "borderline-right",
+			"label": "border line right color",
+			"default": "#AAB7B4"
+		},
+    {
+			"id": "text-top",
+			"type": "text",
+			"label": "Featured product title",
+			"default": "Text top"
+		},
+    {
+			"id": "text-bottom",
+			"type": "text",
+			"label": "Featured product title",
+			"default": "Text bottom"
+		}
+    ]
+	}
+  ],
+	"presets": [
   {
-    "type": "featured-sink",
-    "name": "Featured sink",
-    "settings": [
-    {
-      "type": "image_picker",
-      "id": "featured-sink-img",
-      "label": "Featured sink img"
-    },
-    {
-      "type":      "color",
-      "id":        "featured-sink-bg-color",
-      "label":     "Slide background color",
-      "default":   "#EBECE4"
-    },
-    {
-      "type":      "color",
-      "id":        "featured-text-color",
-      "label":     "Font color",
-      "default":   "#38373E"
-    },
-    {
-      "type":      "color",
-      "id":        "borderline-left",
-      "label":     "border line left color",
-      "default":   "#AAB7B4"
-    },
-    {
-      "type":      "color",
-      "id":        "borderline-right",
-      "label":     "border line right color",
-      "default":   "#AAB7B4"
-    },
-    {
-     "id": "text-top",
-     "type": "text",
-     "label": "Featured product title",
-     "default": "Text top"
-    },
-    {
-     "id": "text-bottom",
-     "type": "text",
-     "label": "Featured product title",
-     "default": "Text bottom"
-   }
-    ]
-  }
-],
-  "presets": [
-    {
-      "name": "CGC Image Slider",
-      "category": "images"
-    }
+		"name": "CGC Image Slider",
+		"category": "images"
+	}
   ]
 }
 {% endschema %}
