@@ -10,7 +10,7 @@
         {% if block.settings.image_text_alignment == "image-right" %}
 
             <div class="text-side-content one-half-cgc" >
-              <div class="meet-text-content wow fadeInLeft">
+              <div class="meet-text-content">
                 <h2 style="color:{{ block.settings.text-side-color }}; border-bottom: 4px solid {{ block.settings.text-side-color}}">
                   {{ block.settings.image-text-header }}
                 </h2>
@@ -66,7 +66,7 @@
 
             <div class="video-side-content one-half-cgc">
                 <!-- Copy & Pasted from YouTube -->
-                <div class="videoWrapper">
+                <div class="videoWrapper wow fadeInRight">
                     <iframe width="100%" height="" src="{{ block.settings.video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
                 </div>
             </div>
@@ -95,9 +95,9 @@
         <div class="offset-wrapper container full-width">
 
           <div class="offset-image-section one-half-cgc">
-            <div class="image-background-block" style="background-color:{{ block.settings.offset-bg-color }}"></div>
-            <div class="offset-image-border-line" style="background-color:{{ block.settings.offset-text-color }}"></div>
-            <div class="image-offset-container" style="background-image:url({{offset_bg}})"></div>
+            <div class="image-background-block wow fadeInLeft" style="background-color:{{ block.settings.offset-bg-color }}"></div>
+            <div class="offset-image-border-line wow fadeInRight" style="background-color:{{ block.settings.offset-text-color }}"></div>
+            <div class="image-offset-container wow fadeInUp" style="background-image:url({{offset_bg}})"></div>
           </div>
           <div class="offset-text-section one-half-cgc" >
             <div class="offset-text-container" style="background-color:{{ block.settings.offset-bg-color }}">
@@ -144,9 +144,9 @@
             <div class="bio-header-content">
               <div class="bio-section-title wow fadeInDown">
                 <h2>{{ block.settings.team-bio-header }}</h2>
-                <div class="offset-color-square"></div>
+                <div class="offset-color-square wow fadeInLeft"></div>
               </div>
-              <div class="bio-section-description">
+              <div class="bio-section-description wow fadeInDown">
                 {{ block.settings.team-bio-description }}
                 <!-- <div class="offset-color-square-bottom"></div> -->
               </div>
@@ -200,12 +200,12 @@
           {%- endif -%}
 
           <div class="group-team-photo-wrapper container full-width">
-            <div class="group-section-title">
+            <div class="group-section-title wow fadeInDown">
               <h2>{{ block.settings.group-photo-title }}</h2>
-              <div class="offset-color-square-group"></div>
+              <div class="offset-color-square-group wow fadeInLeft"></div>
             </div>
-            <div class="group-description">{{ block.settings.group-description }}</div>
-            <div class="group-team-photo" style="background-image:url({{ group-pic }})">
+            <div class="group-description wow fadeInDown">{{ block.settings.group-description }}</div>
+            <div class="group-team-photo wow fadeInUp" style="background-image:url({{ group-pic }})">
             </div>
           </div>
     {% endcase %}
