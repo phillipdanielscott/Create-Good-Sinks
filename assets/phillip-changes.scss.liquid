@@ -360,8 +360,9 @@ a.top_link{
 }
 
 .cgc-carousel-wrapper p{
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 25px;
+  letter-spacing: 2px;
 }
 
 .full-item img{
@@ -395,10 +396,11 @@ a.top_link{
   bottom: 40%;
   left: 170px;
   text-align: left;
+
 }
 
 .left-text h3{
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 700;
   font-family: Poppins;
   line-height: normal;
@@ -418,6 +420,7 @@ a.top_link{
 .slide-button:hover{
   background-color: white;
   color: #333333;
+  border: 0px;
 }
 
 .overlay-text h3{
@@ -756,6 +759,10 @@ button.owl-dot.active span{
 //   right: 13vw;
 // }
 
+.left-text h3{
+  font-size: 45px;
+}
+
 }
 
 @media only screen and (max-width:1440px){
@@ -811,12 +818,19 @@ button.owl-dot.active span{
    top: 82px;
   }
 
+  .left-text h3{
+   font-size: 40px;
+  }
 
 }
 
 @media only screen and (max-width:1366px){
   .featured-sink-item img{
     max-width: 800px;
+  }
+
+  .left-overlay-text-box{
+    left: 131px;
   }
 
   // .overlay-text h3{
@@ -858,7 +872,7 @@ button.owl-dot.active span{
 
   .cgc-carousel-wrapper p{
   font-size: 14px;
-  width: 50%;
+  // width: 50%;
   }
 
   .full-item img{
@@ -897,6 +911,16 @@ button.owl-dot.active span{
   .featured-sink-container .container{
     width: 78%;
   }
+  .left-text h3{
+    font-size: 30px;
+  }
+  .left-overlay-text-box{
+    left: 99px;
+    padding: 12px 26px;
+  }
+  .cgc-carousel-wrapper p{
+    letter-spacing: 1px;
+  }
 }
 
 @media only screen and (max-width:768px){
@@ -917,8 +941,8 @@ button.owl-dot.active span{
       margin-right: 50px;
     }
     .cgc-carousel-wrapper p{
-      font-size: 12px;
-      width: 60%;
+      font-size: 14px;
+      // width: 60%;
     }
     .cgc-carousel-wrapper h2{
     font-size: 45px;
@@ -948,6 +972,24 @@ button.owl-dot.active span{
     .mobile_nav-fixed--false #pagecontent{
       padding-bottom: 0px !important;
     }
+    .left-text h3{
+      font-size: 26px;
+    }
+    .left-overlay-text-box{
+      padding: 16px !important;
+    }
+    .cgc-carousel-wrapper p{
+      margin-bottom: 0px;
+    }
+    .left-overlay-text-box{
+      left: 51px;
+    }
+    .slide-button{
+      padding: 11px;
+      font-size: 13px;
+      height: 30px;
+      margin-top: 10px;
+    }
 }
 
 @media only screen and (max-width:425px){
@@ -971,11 +1013,11 @@ button.owl-dot.active span{
     letter-spacing: normal;
     line-height: 2.5rem;
   }
-  .cgc-carousel-wrapper p{
-    font-size: 10px;
-    width: 69%;
-    margin-bottom: 3px;
-  }
+  // .cgc-carousel-wrapper p{
+  //   font-size: 10px;
+  //   // width: 69%;
+  //   margin-bottom: 3px;
+  // }
   .owl-carousel .owl-item .featured-bg-color{
     width: 83%;
   }
@@ -1021,6 +1063,27 @@ button.owl-dot.active span{
   .featured-sink-container{
     padding: 12px 0px;
   }
+  .left-overlay-text-box{
+    margin: auto;
+    position: absolute;
+    left: 0;
+    bottom: 35px;
+    right: 0;
+    height: fit-content;
+    width: 70% !important;
+  }
+  .left-text h3,
+  .cgc-carousel-wrapper p,
+  .left-overlay-text{
+    text-align: center;
+  }
+  .left-text h3{
+    font-size: 24px;
+  }
+  .left-overlay-text-box{
+    padding: 9px !important;
+  }
+
 }
 
 @media only screen and (max-width:375px){
@@ -1050,6 +1113,10 @@ button.owl-dot.active span{
 
   .featured-sink-container{
     padding: 30px 0px;
+  }
+
+  .cgc-carousel-wrapper p{
+    font-size: 12px;
   }
 
 }
