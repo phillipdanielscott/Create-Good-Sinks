@@ -10,14 +10,14 @@
         {% if block.settings.image_text_alignment == "image-right" %}
 
             <div class="text-side-content one-half-cgc" >
-              <div class="meet-text-content">
+              <div class="meet-text-content wow fadeInLeft">
                 <h2 style="color:{{ block.settings.text-side-color }}; border-bottom: 4px solid {{ block.settings.text-side-color}}">
                   {{ block.settings.image-text-header }}
                 </h2>
                 <div class="text-value" style="color:{{ block.settings.text-side-color }}">{{ block.settings.section-content }}</div>
               </div>
             </div>
-            <div class="image-side-content one-half-cgc" style="float: right;">
+            <div class="image-side-content one-half-cgc wow fadeInRight" style="float: right;">
               <img src="{{ block.settings.image-side-content | img_url: '1000x' }}" alt="">
             </div>
 
@@ -142,7 +142,7 @@
             {%- endif -%}
 
             <div class="bio-header-content">
-              <div class="bio-section-title">
+              <div class="bio-section-title wow fadeInDown">
                 <h2>{{ block.settings.team-bio-header }}</h2>
                 <div class="offset-color-square"></div>
               </div>
@@ -152,7 +152,7 @@
               </div>
             </div>
 
-            <div class="team-member-container one-fourth-cgc">
+            <div class="team-member-container one-fourth-cgc wow fadeInDown" data-wow-delay="0.2s">
               <div class="team-member-bio-pic" style="background-image:url({{ bio-pic-one }})"></div>
               <p class="member-position">{{ block.settings.team-member-position-one }}</p>
               <h3 class="member-name">{{ block.settings.team-member-name-one }}</h3>
@@ -161,7 +161,7 @@
               <p class="member-description">{{ block.settings.team-member-description-one }}</p>
             </div>
 
-            <div class="team-member-container one-fourth-cgc">
+            <div class="team-member-container one-fourth-cgc wow fadeInDown" data-wow-delay="0.3s">
               <div class="team-member-bio-pic" style="background-image:url({{ bio-pic-two }})"></div>
               <p class="member-position">{{ block.settings.team-member-position-two }}</p>
               <h3 class="member-name">{{ block.settings.team-member-name-two }}</h3>
@@ -170,7 +170,7 @@
               <p class="member-description">{{ block.settings.team-member-description-two }}</p>
             </div>
 
-            <div class="team-member-container one-fourth-cgc">
+            <div class="team-member-container one-fourth-cgc wow fadeInDown" data-wow-delay="0.4s">
               <div class="team-member-bio-pic" style="background-image:url({{ bio-pic-three }})"></div>
               <p class="member-position">{{ block.settings.team-member-position-three }}</p>
               <h3 class="member-name">{{ block.settings.team-member-name-three }}</h3>
@@ -179,7 +179,7 @@
               <p class="member-description">{{ block.settings.team-member-description-three }}</p>
             </div>
 
-            <div class="team-member-container one-fourth-cgc">
+            <div class="team-member-container one-fourth-cgc wow fadeInDown" data-wow-delay="0.5s">
               <div class="team-member-bio-pic" style="background-image:url({{ bio-pic-four }})"></div>
               <p class="member-position">{{ block.settings.team-member-position-four }}</p>
               <h3 class="member-name">{{ block.settings.team-member-name-four }}</h3>
