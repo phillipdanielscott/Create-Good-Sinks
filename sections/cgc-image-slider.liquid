@@ -14,7 +14,7 @@
 
                   {% if block.settings.overlay-text-option == "center"%}
 
-                    <div class="slider-text-overlay">
+                    <div class="slider-text-overlay {{ block.settings.overlay-value }}">
                       <div class="overlay-text-box" data-animation-in="fadeInUp">
                         <div class="overlay-text animated">
                           <h3> {{ block.settings.center-text-title }} </h3>
@@ -179,6 +179,36 @@
 			"label": "Slider text color",
 			"default": "#ffffff"
 		},
+    {
+    "type": "select",
+    "id": "overlay-value",
+    "label": "background-opacity",
+    "info": "Used to darken image for legible text.",
+    "default": "image-overlay-35",
+    "options": [
+      { "value": "image-overlay-0", "label": "0%"},
+      { "value": "image-overlay-5", "label": "5%"},
+      { "value": "image-overlay-10", "label": "10%"},
+      { "value": "image-overlay-15", "label": "15%"},
+      { "value": "image-overlay-20", "label": "20%"},
+      { "value": "image-overlay-25", "label": "25%"},
+      { "value": "image-overlay-30", "label": "30%"},
+      { "value": "image-overlay-35", "label": "35%"},
+      { "value": "image-overlay-40", "label": "40%"},
+      { "value": "image-overlay-45", "label": "45%"},
+      { "value": "image-overlay-50", "label": "50%"},
+      { "value": "image-overlay-55", "label": "55%"},
+      { "value": "image-overlay-60", "label": "60%"},
+      { "value": "image-overlay-65", "label": "65%"},
+      { "value": "image-overlay-70", "label": "70%"},
+      { "value": "image-overlay-75", "label": "75%"},
+      { "value": "image-overlay-80", "label": "80%"},
+      { "value": "image-overlay-85", "label": "85%"},
+      { "value": "image-overlay-90", "label": "90%"},
+      { "value": "image-overlay-95", "label": "95%"},
+      { "value": "image-overlay-100", "label": "100%"}
+    ]
+    },
     {
 			"id": "center-text-title",
 			"type": "text",
