@@ -38,7 +38,7 @@
       {%- else -%}
         {%- assign instruction_image = 'blank.svg' | asset_url -%}
       {%- endif -%}
-
+      <span class="install-image-description"> {{ block.settings.instruction-image-description }} </span>
       <div class="image-instruction-container">
         <img src="{{ instruction_image }}" alt="">
       </div>
@@ -121,9 +121,9 @@
     "settings": [
     {
      "type":      "text",
-     "id":        "instruction-image-title",
-     "label":     "Instruction image title",
-     "default":   "TITLE"
+     "id":        "instruction-image-description",
+     "label":     "Instruction image description",
+     "default":   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
    },
    {
       "type": "image_picker",

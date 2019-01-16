@@ -1230,7 +1230,9 @@ button.owl-dot.active span{
   .right-overlay-text{
     text-align: center;
   }
-  .left-text h3{
+  .left-text h3,
+  .right-text h3
+  {
     font-size: 24px;
   }
   .left-overlay-text-box{
@@ -1380,7 +1382,7 @@ button.owl-dot.active span{
 
   .offset-image-wrapper{
     margin: 115px 0px;
-    margin-bottom: 170px;
+    margin-bottom: 130px;
   }
 }
 
@@ -1643,14 +1645,14 @@ button.owl-dot.active span{
     margin-top: 18px;
   }
   .grid-text-content p{
-    font-size: 16px;
+    font-size: 14px;
   }
   .quote-marks{
     left: 6px;
   }
 }
 
-@media only screen and (max-width:7px){
+@media only screen and (max-width:425px){
   .grid-layout-container{
     height: auto;
     width: 90%;
@@ -1695,6 +1697,9 @@ button.owl-dot.active span{
   }
   .quote-content-half{
     padding-left: 20px;
+  }
+  .grid-text-content p{
+    font-size: 16px;
   }
 }
 
@@ -3673,6 +3678,7 @@ display: inline-block;
 
 .installation-page-wrapper h1{
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .instruction-link-box{
@@ -3693,15 +3699,18 @@ display: inline-block;
   display: inline-block;
   margin-bottom: 0px;
   font-size: 20px;
+  margin-right: 15px;
 }
 
 .installation-tip-container{
   text-align: left;
-  border-top: 2px solid #38373E;
-  border-bottom: 2px solid #38373E;
+  // border-top: 2px solid #38373E;
+  // border-bottom: 2px solid #38373E;
   width: 75%;
   margin: 0 auto;
   margin-bottom: 50px;
+  padding-left: 10px;
+  border-left: 5px solid #EBECE4;
 }
 
 .tip-text-content{
@@ -3714,6 +3723,25 @@ display: inline-block;
 
 .installation-tip-content{
   margin: 0 auto;
+}
+
+.image-instruction-container img{
+  margin: 0 auto;
+  display: block;
+}
+
+.image-instruction-container{
+  margin: 50px 0px 180px 0px;
+}
+
+.install-image-description{
+  text-align: center;
+  font-weight: 600;
+  margin: 0 auto;
+  display: block;
+  width: fit-content;
+  padding-bottom: 5px;
+  border-bottom: 4px solid #EBECE4;
 }
 
 
