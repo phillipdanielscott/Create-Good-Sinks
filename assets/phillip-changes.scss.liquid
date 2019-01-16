@@ -448,7 +448,7 @@ a.top_link{
 
 .cgc-carousel-wrapper p{
   font-weight: 400;
-  font-size: 25px;
+  font-size: 18px;
   letter-spacing: 2px;
 }
 
@@ -867,7 +867,7 @@ button.owl-dot.active span{
 //   right: 13vw;
 // }
 
-.left-text h3{
+.left-text h3, .right-text h3{
   font-size: 45px;
 }
 
@@ -926,8 +926,12 @@ button.owl-dot.active span{
    top: 82px;
   }
 
-  .left-text h3{
+  .left-text h3, .right-text h3{
    font-size: 40px;
+  }
+
+  .left-overlay-text-box{
+    left: 142px;
   }
 
 }
@@ -939,6 +943,14 @@ button.owl-dot.active span{
 
   .left-overlay-text-box{
     left: 131px;
+  }
+
+  .right-overlay-text-box{
+    right: 133px;
+  }
+
+  .cgc-carousel-wrapper p{
+    font-size: 14px;
   }
 
   // .overlay-text h3{
@@ -955,6 +967,18 @@ button.owl-dot.active span{
 .borderline-left{
   top: 80px;
 }
+
+}
+
+@media only screen and (max-width:1200px){
+
+  .left-overlay-text-box{
+    left: 118px;
+  }
+
+  .right-overlay-text-box{
+    right: 118px;
+  }
 
 }
 
@@ -1019,7 +1043,7 @@ button.owl-dot.active span{
   .featured-sink-container .container{
     width: 78%;
   }
-  .left-text h3{
+  .left-text h3, .right-text h3{
     font-size: 30px;
   }
   .left-overlay-text-box{
@@ -1028,6 +1052,10 @@ button.owl-dot.active span{
   }
   .cgc-carousel-wrapper p{
     letter-spacing: 1px;
+  }
+
+  .right-overlay-text-box{
+    right: 105px;
   }
 }
 
@@ -1049,7 +1077,7 @@ button.owl-dot.active span{
       margin-right: 50px;
     }
     .cgc-carousel-wrapper p{
-      font-size: 14px;
+      font-size: 12px;
       // width: 60%;
     }
     .cgc-carousel-wrapper h2{
@@ -1092,11 +1120,17 @@ button.owl-dot.active span{
     .left-overlay-text-box{
       left: 51px;
     }
+    .right-overlay-text-box{
+      right: 51px;
+    }
     .slide-button{
       padding: 11px;
-      font-size: 13px;
+      font-size: 12px;
       height: 30px;
       margin-top: 10px;
+    }
+    .grid-text-content p{
+      font-size: 14px;
     }
 }
 
@@ -1180,9 +1214,20 @@ button.owl-dot.active span{
     height: fit-content;
     width: 70% !important;
   }
+  .right-overlay-text-box{
+    margin: auto;
+    position: absolute;
+    left: 0;
+    bottom: 35px;
+    right: 0;
+    height: fit-content;
+    width: 70% !important;
+  }
   .left-text h3,
   .cgc-carousel-wrapper p,
-  .left-overlay-text{
+  .left-overlay-text,
+  .right-text h3,
+  .right-overlay-text{
     text-align: center;
   }
   .left-text h3{

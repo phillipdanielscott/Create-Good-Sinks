@@ -23,27 +23,31 @@
                     </div>
 
                     {% elsif block.settings.overlay-text-option == "left" %}
+                    <div class="slider-text-overlay {{ block.settings.overlay-value }}">
 
-                    {% if block.settings.enable-border-outline %}
-                        <div class="left-overlay-text-box" data-animation-in="fadeInUp" style="width: auto; padding: 16px 30px; border: 2px solid white;">
+                      {% if block.settings.enable-border-outline %}
+                          <div class="left-overlay-text-box" data-animation-in="fadeInUp" style="width: auto; padding: 16px 30px; border: 2px solid white;">
 
-                      {% else %}
+                        {% else %}
 
-                        <div class="left-overlay-text-box" data-animation-in="fadeInUp">
-                    {% endif %}
+                          <div class="left-overlay-text-box" data-animation-in="fadeInUp">
+                      {% endif %}
 
-                      <div class="left-overlay-text animated" >
-                        <div class="left-text" style="color:{{ block.settings.image-slider-text-color }};">
-                          <h3 style="color:{{ block.settings.image-slider-text-color }};">{{ block.settings.left-text-title }}</h3>
-                          <div class="left-text-content" style="color:{{ block.settings.image-slider-text-color }};"> {{ block.settings.left-text-content }} </div>
-                            {% if block.settings.enable-slide-button %}
-                              <button type="button" name="button" class="slide-button" onclick="location.href='{{ block.settings.button_url }}'">{{ block.settings.button_text }}</button>
-                            {% endif %}
+                        <div class="left-overlay-text animated" >
+                          <div class="left-text" style="color:{{ block.settings.image-slider-text-color }};">
+                            <h3 style="color:{{ block.settings.image-slider-text-color }};">{{ block.settings.left-text-title }}</h3>
+                            <div class="left-text-content" style="color:{{ block.settings.image-slider-text-color }};"> {{ block.settings.left-text-content }} </div>
+                              {% if block.settings.enable-slide-button %}
+                                <button type="button" name="button" class="slide-button" onclick="location.href='{{ block.settings.button_url }}'">{{ block.settings.button_text }}</button>
+                              {% endif %}
+                          </div>
                         </div>
                       </div>
-                    </div>
 
+                   </div>
                     {% elsif block.settings.overlay-text-option == "right" %}
+
+                    <div class="slider-text-overlay {{ block.settings.overlay-value }}">
 
                     {% if block.settings.enable-border-outline %}
                         <div class="right-overlay-text-box" data-animation-in="fadeInUp" style="width: auto; padding: 16px 30px; border: 2px solid white;">
@@ -64,6 +68,8 @@
                             </div>
                           </div>
                         </div>
+
+                    </div>
 
                     {% elsif block.settings.overlay-text-option == "none" %}
 
