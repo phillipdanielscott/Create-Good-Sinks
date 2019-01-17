@@ -69,7 +69,9 @@
         </div>
 
         <div class="{% if sidebar %}five{% else %}seven{% endif %} columns {% if section.settings.product_images_position == 'left' %}omega{% else %}alpha{% endif %}">
-
+          <div class="product-detail-container">
+            <div class="product-detail-border">
+            </div>
           {% assign collection_handles = product.collections | map: 'handle' %}
           {% assign variant = product.selected_or_first_available_variant %}
 
@@ -291,6 +293,8 @@
           {% endcomment %}
 
         </div>
+      </div>
+
       </div>
 
       {% if product.description contains "<!-- split -->"  %}
