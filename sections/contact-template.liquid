@@ -83,6 +83,15 @@
 
       <input type="submit" class="submit action_button" value="{{ 'contact.form.send' | t }}" />
     {% endform %}
+
+
+    {% if section.settings.faq_box %}
+      <div class="faq-contact-container">
+        <h4> {{ section.settings.faq-box-title }} </h4>
+        <span><a href="{{ section.settings.faq-box-url }}"> {{ section.settings.faq-box-content }} </a></span>
+      </div>
+    {% endif %}
+
   </div>
 </div>
 
@@ -117,6 +126,7 @@
     </div>
   {% endif %}
 {% endif %}
+
 
 <style>
   {% if section.settings.map_greyscale %}
@@ -176,6 +186,30 @@
       "id": "subtitle",
       "label": "Subheading",
       "default": "Subheading"
+    },
+    {
+      "type": "checkbox",
+      "id": "faq_box",
+      "label": "Enable bottom link box",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "faq-box-title",
+      "label": "Link box title",
+      "default": "Title"
+    },
+    {
+      "type": "text",
+      "id": "faq-box-content",
+      "label": "Link box content",
+      "default": "Link box content"
+    },
+    {
+      "type": "text",
+      "id": "faq-box-url",
+      "label": "Link box URL",
+      "default": "https://www.creategoodsinks.com/"
     },
     {
         "type": "header",

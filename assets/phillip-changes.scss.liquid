@@ -1138,6 +1138,7 @@ button.owl-dot.active span{
   .cgc-carousel-wrapper{
     // height: 375px;
     height: 300px;
+    margin-top: 10px;
   }
   .owl-carousel .owl-item .featured-bg-color{
     margin-right: 20px;
@@ -3736,6 +3737,33 @@ display: inline-block;
   border: 2px solid #0B0B0C;
 }
 
+.faq-contact-container{
+  width: 50%;
+  background-color: #EBECE4;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding: 10px 0px;
+}
+
+.faq-contact-container h4{
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+@media only screen and (max-width:1024px){
+
+  .faq-contact-container h4, .faq-contact-container span{
+    font-size: 14px;
+    padding: 0px;
+  }
+
+  .faq-contact-container{
+    padding: 16px 0px;
+  }
+
+}
+
 @media only screen and (max-width:768px){
   .form-container{
     width: 80%;
@@ -3747,14 +3775,24 @@ display: inline-block;
   #contact_form .action_button{
     margin-top: 30px;
   }
+
+  .faq-contact-container{
+    width: 70%;
+  }
 }
 
 @media only screen and (max-width:425px){
 
   .form-container{
     width: 100%;
+    margin-top: 0px;
   }
-  
+
+  .faq-contact-container{
+    width: 80%;
+    margin-top: 60px;
+  }
+
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
