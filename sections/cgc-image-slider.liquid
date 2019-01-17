@@ -15,7 +15,7 @@
                   {% if block.settings.overlay-text-option == "center"%}
 
                     <div class="slider-text-overlay {{ block.settings.overlay-value }}">
-                      <div class="overlay-text-box" data-animation-in="fadeInUp">
+                      <div class="overlay-text-box" data-animation-in="fadeIn">
                         <div class="overlay-text animated">
                           <h3> {{ block.settings.center-text-title }} </h3>
                         </div>
@@ -85,10 +85,10 @@
               <div class="featured-sink-bg" style="background-color:{{ block.settings.featured-sink-bg-color }}"></div>
                <div class="featured-sink-container">
                  <div class="container full-width" stlye="height:-webkit-fill-available;">
-                   <div class="borderline-left" style="background-color:{{ block.settings.borderline-left }}"></div>
-                   <div class="borderline-right"  style="background-color:{{ block.settings.borderline-right }}"></div>
-                   <h3 class="offset-text-top animated" style="color:{{ block.settings.featured-text-color}}">{{ block.settings.text-top }}</h3>
-                   <h3 class="offset-text-bottom" style="color:{{ block.settings.featured-text-color}}">{{ block.settings.text-bottom }}</h3>
+                   <div class="borderline-left" style="background-color:{{ block.settings.borderline-left }}" data-animation-in="fadeInDown"></div>
+                   <div class="borderline-right"  style="background-color:{{ block.settings.borderline-right }}" data-animation-in="fadeInUp"></div>
+                   <h3 class="offset-text-top animated" style="color:{{ block.settings.featured-text-color}}" data-animation-in="fadeInDown">{{ block.settings.text-top }}</h3>
+                   <h3 class="offset-text-bottom" style="color:{{ block.settings.featured-text-color}}" data-animation-in="fadeInUp">{{ block.settings.text-bottom }}</h3>
                    <img src="{{ block.settings.featured-sink-img | img_url: '1024x' }}" alt="" class="featured-sink-img">
                  </div>
                </div>
