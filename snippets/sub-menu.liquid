@@ -7,7 +7,25 @@
 
           <div class="bottom-menu-wrapper">
           {% for sublink in linklists[link.handle].links %}
-          
+
+            {% if sublink.title == "Reviews"%}
+
+            <div class="dropdown_column five columns cgc_dropdown_column">
+
+                <a href="{{ sublink.url }}" style="color:black;">{{ sublink.title }}</a>
+
+             </div>
+
+             {% elsif sublink.title == "FAQ-cgc" %}
+
+             <div class="dropdown_column five columns cgc_dropdown_column">
+
+                 <a href="{{ sublink.url }}" style="color:black;">{{ sublink.title }}</a>
+
+              </div>
+
+            {% else %}
+
             <div class="dropdown_column menu-item-box five columns" style="background:
                linear-gradient(
                  rgba(0, 0, 0, 0.6),
@@ -25,6 +43,10 @@
                 <div class="explore-container"><div class="explore-line"></div></div>
                </div>
              </div>
+
+            {% endif %}
+
+
 
             {% cycle link.handle: '', '', '', '', '<div class="dropdown_row"></div>' %}
           {% endfor %}

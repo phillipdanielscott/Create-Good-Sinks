@@ -1,6 +1,6 @@
 <div class="meet-about-wrapper container full-width">
 
-  <h3 class="meet-about-title" style="color:{{ section.settings.page-text-color }}">{{ page.title | remove: "-PHILLIP"}}</h3>
+  <h3 class="meet-about-title wow fadeInUp" style="color:{{ section.settings.page-text-color }}">{{ page.title | remove: "-PHILLIP"}}</h3>
   {% for block in section.blocks %}
     {% case block.type %}
 
@@ -17,7 +17,7 @@
                 <div class="text-value" style="color:{{ block.settings.text-side-color }}">{{ block.settings.section-content }}</div>
               </div>
             </div>
-            <div class="image-side-content one-half-cgc wow fadeInRight" style="float: right;">
+            <div class="image-side-content one-half-cgc" style="float: right;">
               <img src="{{ block.settings.image-side-content | img_url: '1000x' }}" alt="">
             </div>
 
@@ -57,7 +57,7 @@
               </div>
               <div class="video-side-content one-half-cgc" style="float: right;">
                   <!-- Copy & Pasted from YouTube -->
-                  <div class="videoWrapper wow fadeInRight">
+                  <div class="videoWrapper">
                       <iframe width="100%" height="" src="{{ block.settings.video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
                   </div>
               </div>
@@ -66,7 +66,7 @@
 
             <div class="video-side-content one-half-cgc">
                 <!-- Copy & Pasted from YouTube -->
-                <div class="videoWrapper wow fadeInRight">
+                <div class="videoWrapper">
                     <iframe width="100%" height="" src="{{ block.settings.video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
                 </div>
             </div>
