@@ -62,13 +62,13 @@
 
        <br class="clear" />
        <!-- <div class="five columns alpha name-row"> -->
-        <div class="name-row wow fadeInUp" data-wow-delay="0.2s">
+        <div class="name-row">
         {% assign name_attr = 'contact.form.name' | handle %}
         <label for="contactFormName">{{ 'contact.form.name' | t }} <span class="red">*</span></label>
         <input type="text" id="contactFormName" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}" required="required">
        </div>
        <!-- <div class="five columns omega email-row"> -->
-        <div class="email-row wow fadeInUp" data-wow-delay="0.3s">
+        <div class="email-row">
         <label for="contactFormEmail">{{ 'contact.form.email' | t }} <span class="red">*</span></label>
         <input type="email" id="contactFormEmail" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" required="required">
        </div>
@@ -78,15 +78,15 @@
         <input type="tel" id="contactFormPhone" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
         {% endcomment %}
 
-      <label for="contactFormMessage" class="wow fadeInUp" data-wow-delay="0.4s">{{ 'contact.form.message' | t }} <span class="red wow fadeInUp" data-wow-delay="0.4s">*</span></label>
-      <textarea rows="5" id="contactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}" required="required" class="wow fadeInUp" data-wow-delay="0.4s" >{% if form.body %}{{ form.body }}{% endif %}</textarea>
+      <label for="contactFormMessage">{{ 'contact.form.message' | t }} <span class="red wow fadeInUp" data-wow-delay="0.4s">*</span></label>
+      <textarea rows="5" id="contactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}" required="required">{% if form.body %}{{ form.body }}{% endif %}</textarea>
 
-      <input type="submit" class="submit action_button wow fadeInUp" value="{{ 'contact.form.send' | t }}" data-wow-delay="0.5s" />
+      <input type="submit" class="submit action_button" value="{{ 'contact.form.send' | t }}" />
     {% endform %}
 
 
     {% if section.settings.faq_box %}
-      <div class="faq-contact-container wow fadeInUp" data-wow-delay="0.4s">
+      <div class="faq-contact-container">
         <h4> {{ section.settings.faq-box-title }} </h4>
         <span><a href="{{ section.settings.faq-box-url }}"> {{ section.settings.faq-box-content }} </a></span>
       </div>
