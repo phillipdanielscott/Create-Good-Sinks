@@ -9,7 +9,7 @@
 
     {% if sublink.title == "Reviews"%}
 
-    <ul class="{% if linklists[sublink.handle] != empty %}dropdown_title{% else %}dropdown_item{% endif %}">
+    <ul class="{% if linklists[sublink.handle] != empty %}dropdown_title{% else %}dropdown_item{% endif %} non-image-link">
 
       <li>
         <a href="{{ sublink.url }}" style="color:black !important;">{{ sublink.title }}</a>
@@ -17,10 +17,10 @@
 
     {% elsif sublink.title == "FAQ-cgc" %}
 
-    <ul class="{% if linklists[sublink.handle] != empty %}dropdown_title{% else %}dropdown_item{% endif %}">
+    <ul class="{% if linklists[sublink.handle] != empty %}dropdown_title{% else %}dropdown_item{% endif %} non-image-link">
 
       <li>
-        <a href="{{ sublink.url }}" style="color:black !important;">{{ sublink.title }}</a>
+        <a href="{{ sublink.url }}" style="color:black !important;">{{ sublink.title | remove_first: "-cgc" }}</a>
       </li>
 
     {% else %}
