@@ -7,7 +7,7 @@
 
 <div class="section clearfix">
   <div class="sixteen columns">
-    <h1>{{ 'cart.general.title' | t }}</h1>
+    <h1 class="cart-page-title">{{ 'cart.general.title' | t }}</h1>
     <div class="feature_divider"></div>
   </div>
 </div>
@@ -179,6 +179,15 @@
 
   {% include 'cart-shipping-calculator' %}
 {% endif %}
+
+
+<style>
+
+.custom-template{
+  margin-bottom: 50px !important;
+ }
+
+</style>
 
 {% schema %}
 
