@@ -2417,6 +2417,13 @@ p.modal_price{
   transition: all 0.3s ease 0s;
 }
 
+@media only screen and (max-width:1366px){
+  .cgc-product-specs h6,
+  .cgc-customer-promise h6{
+    font-size: 16px;
+  }
+}
+
 @media only screen and (max-width:425px){
 
   .top-product-title{
@@ -2442,7 +2449,7 @@ p.modal_price{
 
   .cgc-product-specs h6,
   .cgc-customer-promise h6{
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .was_price{
@@ -2554,11 +2561,10 @@ p.modal_price{
 
 .video-side-content .videoWrapper iframe{
   position: absolute;
-  top: -125px;
-  left: unset;
+  top: -67px !important;
+  left: unset !important;
   right: 0;
-  width: 70%;
-  /* height: 80%; */
+  width: 70% !important;
   margin: 0 auto;
 }
 
@@ -2802,8 +2808,8 @@ display: inline-block;
 }
 
 .video-side-content .videoWrapper iframe{
-  top: -67px;
-  width: 75%;
+  top: -67px !important;
+  width: 75% !important;
 }
 
 // .image-side-content img{
@@ -3878,10 +3884,19 @@ display: inline-block;
 
   .faq-carousel-wrapper{
     width: 90%;
+    height: 400px;
   }
 
   .collapsibleContent img{
     max-width: 45%;
+  }
+
+  .faq-text-question{
+    font-size: 14px;
+  }
+
+  .faq-answer p{
+    font-size: 14px;
   }
 
 }
@@ -3935,7 +3950,8 @@ display: inline-block;
 @media only screen and (max-width:425px){
 
   .faq-carousel-wrapper{
-    height: 250px;
+    height: 200px;
+    width: 100%;
   }
 
   .faq-wrapper{
@@ -3966,6 +3982,7 @@ display: inline-block;
 
   .faq-question-wrapper{
     padding: 20px 0px;
+    margin-bottom: 80px;
   }
 
 }
@@ -3976,9 +3993,9 @@ display: inline-block;
     width: 300px;
   }
 
-  .faq-carousel-wrapper{
-    height: 275px;
-  }
+  // .faq-carousel-wrapper{
+  //   height: 275px;
+  // }
 
 }
 
