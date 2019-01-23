@@ -5,7 +5,7 @@
     {% case block.type %}
 
       {% when 'info-box'%}
-          <div class="instruction-link-box" style="background-color:{{ block.settings.info-box-color }}">
+          <div class="instruction-link-box wow fadeInUp" style="background-color:{{ block.settings.info-box-color }}">
             <h6>{{ block.settings.installation-info-title }}</h6>
             <span>{{ block.settings.installation-info-description }}</span>
           </div>
@@ -13,7 +13,7 @@
       {% when 'installation-video'%}
         <div class="video-section-container instructional-video-container">
           <div class="container full-width">
-              <div class="videoWrapper">
+              <div class="videoWrapper wow fadeInUp">
                   <!-- Copy & Pasted from YouTube -->
                   <iframe width="100%" height="" src="{{ block.settings.install-video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
               </div>
@@ -23,7 +23,7 @@
       {% when 'installation-tip' %}
 
         <div class="installation-tip-container container-fluid">
-          <div class="installation-tip-content">
+          <div class="installation-tip-content wow fadeInUp">
             <h4>{{ block.settings.install-tip-title }}</h4>
             <div class="tip-text-content">
               {{ block.settings.tip-instruction }}
@@ -38,8 +38,8 @@
       {%- else -%}
         {%- assign instruction_image = 'blank.svg' | asset_url -%}
       {%- endif -%}
-      <span class="install-image-description"> {{ block.settings.instruction-image-description }} </span>
-      <div class="image-instruction-container">
+      <span class="install-image-description wow fadeInUp" data-wow-delay="0.2s"> {{ block.settings.instruction-image-description }} </span>
+      <div class="image-instruction-container wow fadeInUp" data-wow-delay="0.3s">
         <img src="{{ instruction_image }}" alt="">
       </div>
 
