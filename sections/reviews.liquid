@@ -171,6 +171,24 @@
           </div>
         </div>
 
+  {% when 'awards'%}
+
+  <div class="awards-container container">
+    <div class="awards-content-wrapper">
+      <h3>{{ block.settings.awards-section-title }}</h3>
+      <div class="award-item-container">
+        <div class="award-one wow fadeInUp" data-wow-delay="0.2s">
+          <table style="width: 80px;" cellpadding="0" cellspacing="0"><tr><td><a href="https://www.houzz.com/pro/creategood/create-good-sinks-kitchen-sinks-and-accessories"><img src="https://st.hzcdn.com/static/badge_44_8@2x.png" alt="Dan Sullivan in Cincinnati, OH on Houzz" width="80" height="80" border="0" /></a></td></tr></table>
+        </div>
+
+        <div class="award-two wow fadeInUp" data-wow-delay="0.3s">
+          <table style="width: 80px;" cellpadding="0" cellspacing="0"><tr><td><a href="https://www.houzz.com/pro/creategood/create-good-sinks-kitchen-sinks-and-accessories"><img src="https://st.hzcdn.com/static/badge_47_8@2x.png" alt="Dan Sullivan in Cincinnati, OH on Houzz" width="80" height="80" border="0" /></a></td></tr></table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   {% when 'review-widget'%}
 
         {% if block.settings.border-line-review %}
@@ -241,10 +259,10 @@
         {%- endif -%}
 
 
-          <div class="customer-review-container container">
+          <div class="customer-review-container container wow fadeInUp">
             <div class="customer-carousel-wrapper">
               <div class="owl-carousel owl-theme owl-loaded owl-drag testing-carousel">
-                  <div class="item customer-review-slide-1 customer-review-item wow fadeInUp" data-wow-delay="0.2s">
+                  <div class="item customer-review-slide-1 customer-review-item ">
                         <div class="customer-text-container" style="background-color:{{ block.settings.customer-review-bg-color }}">
                           <div class="quote-icon-wrapper">
                             <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
@@ -261,7 +279,7 @@
                           </div>
 
                   </div>
-                  <div class="item customer-review-slide-2 customer-review-item wow fadeInUp" data-wow-delay="0.3s">
+                  <div class="item customer-review-slide-2 customer-review-item">
                         <div class="customer-text-container" style="background-color:{{ block.settings.customer-review-bg-color }}">
                           <div class="quote-icon-wrapper">
                             <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
@@ -277,7 +295,7 @@
 
                         </div>
                   </div>
-                  <div class="item customer-review-slide-3 customer-review-item wow fadeInUp" data-wow-delay="0.4s">
+                  <div class="item customer-review-slide-3 customer-review-item">
                       <div class="customer-text-container" style="background-color:{{ block.settings.customer-review-bg-color }}">
                         <div class="quote-icon-wrapper">
                           <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
@@ -293,7 +311,7 @@
 
                       </div>
                   </div>
-                  <div class="item customer-review-slide-4 customer-review-item wow fadeInUp" data-wow-delay="0.5s">
+                  <div class="item customer-review-slide-4 customer-review-item">
                       <div class="customer-text-container" style="background-color:{{ block.settings.customer-review-bg-color }}">
                         <div class="quote-icon-wrapper">
                           <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
@@ -309,7 +327,7 @@
 
                       </div>
                   </div>
-                  <div class="item customer-review-slide-5 customer-review-item wow fadeInUp" data-wow-delay="0.6s">
+                  <div class="item customer-review-slide-5 customer-review-item">
                       <div class="customer-text-container" style="background-color:{{ block.settings.customer-review-bg-color }}">
                         <div class="quote-icon-wrapper">
                           <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
@@ -325,7 +343,7 @@
 
                       </div>
                   </div>
-                  <div class="item customer-review-slide-6 customer-review-item wow fadeInUp" data-wow-delay="0.7s">
+                  <div class="item customer-review-slide-6 customer-review-item">
                       <div class="customer-text-container" style="background-color:{{ block.settings.customer-review-bg-color }}">
                         <div class="quote-icon-wrapper">
                           <img src="{{ 'quote-icon.svg' | asset_url }}" alt="">
@@ -552,6 +570,18 @@
        "id": "leave-review-section-title",
        "label": "Section Title",
        "default": "Title"
+    }
+    ]
+  },
+  {
+    "type": "awards",
+    "name": "Awards",
+    "settings": [
+    {
+     "id": "awards-section-title",
+     "type": "text",
+     "label": "awards section title",
+     "default": "TITLE"
     }
     ]
   },
