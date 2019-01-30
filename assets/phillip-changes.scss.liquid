@@ -3556,15 +3556,21 @@ display: inline-block;
   margin-top: 50px;
 }
 
-.award-one, .award-two{
+.award-item{
   display: inline-block;
   margin: 0px 20px;
+  position: relative;
 }
 
 .award-item-container{
   width: fit-content;
   display: block;
   margin: 0 auto;
+}
+
+.award-item img{
+  margin: 0 auto;
+  display: block
 }
 
 
@@ -3759,6 +3765,10 @@ display: inline-block;
     width: 100%;
   }
 
+  .award-item-container{
+    width: 80%;
+  }
+
 }
 
 @media only screen and (max-width:375px){
@@ -3781,6 +3791,19 @@ display: inline-block;
 
   .border-line{
     width: 20%;
+  }
+
+  .award-item-container{
+    width: 100%;
+  }
+
+  .award-item{
+    width: 48%;
+    margin: 0px 0px 25px 0px;
+  }
+
+  .award-item table{
+    margin: 0 auto;
   }
 }
 
