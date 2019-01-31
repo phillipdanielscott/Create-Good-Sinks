@@ -1,5 +1,4 @@
 <div class="faq-wrapper container">
-  <h1>{{ page.title | remove: "-cgc" }}</h1>
 
     {%- if section.settings.image-slide-1 -%}
       {%- assign image_slide_one = section.settings.image-slide-1| img_url: '1800x' -%}
@@ -72,6 +71,8 @@
 </div>
 
     <div class="faq-question-wrapper full-width-cgc" style="background-color:{{ section.settings.faq-bg-color }};">
+
+      <h1>{{ page.title | remove: "-cgc" }}</h1>
 
       <div class="faq-content-container container">
         {% for block in section.blocks %}
@@ -150,10 +151,37 @@
         {% endfor %}
       </div>
 
+
+       <h1>SPECIAL FEATURES</h1>
+       <div class="special-features-container container">
+
+
+       {% for block in section.blocks %}
+           {% case block.type %}
+
+           {% when "special-feature" %}
+
+             <div class="faq-spacer">
+               <button class="collapsible">
+                 <!-- <i class="far fa-question-circle"></i> -->
+              <span class="faq-text-question">{{ block.settings.special-feature-item-title }}</span></button>
+               <div class="collapsibleContent">
+                 <div class="faq-answer">
+                   {{ block.settings.special-feature-item-description }}
+                   <p><a href="{{ block.settings.special-feature-page-link }}" class="feature-learn-more-btn">LEARN MORE <i class="fas fa-caret-right"></i></a></p>
+                 </div>
+
+               </div>
+             </div>
+
+           {% endcase %}
+
+
+       {% endfor %}
+      </div>
+
+
     </div>
-
-
-
 
 
 <style>
@@ -301,6 +329,30 @@
       "id": "faq-two-image-two",
       "label": "FAQ answer image"
     }
+    ]
+  },
+  {
+    "type": "special-feature",
+    "name": "Special Feature Item",
+    "settings": [
+    {
+     "type":      "text",
+     "id":        "special-feature-item-title",
+     "label":     "Special Feature title",
+     "default":   "This is a placeholder for Special Feature Title"
+   },
+   {
+    "type":      "richtext",
+    "id":        "special-feature-item-description",
+    "label":     "Special Feature Description",
+    "default":   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+  },
+   {
+    "type":      "text",
+    "id":        "special-feature-page-link",
+    "label":     "URL to specific featured page",
+    "default":   "https://www.creategoodsinks.com/"
+   }
     ]
   }
 

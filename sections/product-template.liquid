@@ -167,6 +167,12 @@
 
           {% endcomment %}
 
+          {% if product.description != blank %}
+           <div class="description cgc-product-description" itemprop="description">
+             {{ product.description | split: '<!-- split -->' | first }}
+           </div>
+         {% endif %}
+
 
           <!-- <div class="cgc-product-specs">
             <h6>{{ section.settings.product-specs-title }}</h3>
