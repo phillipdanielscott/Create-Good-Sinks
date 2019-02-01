@@ -791,6 +791,19 @@ button.owl-dot.active span{
        -ms-transform: translateZ(0);
    }
 
+   .slide-icon-container{
+     position: absolute;
+     display: -webkit-box;
+     bottom: 0px;
+     left: 20px;
+   }
+
+   .slide-icon-container table{
+      margin-right: 15px;
+   }
+
+
+
 
 
 @media only screen and (max-width:1920px){
@@ -1180,6 +1193,15 @@ button.owl-dot.active span{
     .grid-text-content p{
       font-size: 14px;
     }
+    .slide-icon-container table{
+       margin-right: 5px;
+       width: 50px;
+    }
+
+    .slide-icon-container img{
+      width: 60px;
+      height: 60px;
+    }
 }
 
 @media only screen and (max-width:680px){
@@ -1293,6 +1315,20 @@ button.owl-dot.active span{
   .left-overlay-text-box{
     padding: 9px !important;
   }
+
+}
+
+@media only screen and (max-width:425px){
+
+   .slide-icon-container{
+     position: absolute;
+    display: -webkit-box;
+    bottom: -16px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    width: fit-content;
+   }
 
 }
 
