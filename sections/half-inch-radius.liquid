@@ -1,1 +1,117 @@
-<h1>{{ page.title }}</h1>
+<div class="half-inch-container container">
+  <h1>{{ page.title }}</h1>
+
+
+
+  {%- if block.settings.image-slide-1 -%}
+    {%- assign image_slide_one = block.settings.image-slide-1| img_url: '1800x' -%}
+  {%- else -%}
+    {%- assign image_slide_one = 'blank.svg' | asset_url -%}
+  {%- endif -%}
+
+  {%- if block.settings.image-slide-2 -%}
+    {%- assign image_slide_two = block.settings.image-slide-2| img_url: '1800x' -%}
+  {%- else -%}
+    {%- assign image_slide_two = 'blank.svg' | asset_url -%}
+  {%- endif -%}
+
+  {%- if block.settings.image-slide-3 -%}
+    {%- assign image_slide_three = block.settings.image-slide-3| img_url: '1800x' -%}
+  {%- else -%}
+    {%- assign image_slide_three = 'blank.svg' | asset_url -%}
+  {%- endif -%}
+
+  {%- if block.settings.image-slide-4 -%}
+    {%- assign image_slide_four = block.settings.image-slide-4| img_url: '1800x' -%}
+  {%- else -%}
+    {%- assign image_slide_four = 'blank.svg' | asset_url -%}
+  {%- endif -%}
+
+  {%- if block.settings.image-slide-5 -%}
+    {%- assign image_slide_five = block.settings.image-slide-5| img_url: '1800x' -%}
+  {%- else -%}
+    {%- assign image_slide_five = 'blank.svg' | asset_url -%}
+  {%- endif -%}
+
+  <div class="review-carousel-wrapper seamless-carousel-wrapper">
+    <div class="owl-carousel owl-theme">
+      <div class="featured-image-container" style="background-image:url({{ image_slide_one }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+      <div class="featured-image-container" style="background-image:url({{ image_slide_two }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+      <div class="featured-image-container" style="background-image:url({{ image_slide_three }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+      <div class="featured-image-container" style="background-image:url({{ image_slide_four }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+      <div class="featured-image-container" style="background-image:url({{ image_slide_five }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+   </div>
+  </div>
+
+<script type="text/javascript">
+$(".owl-carousel").owlCarousel({
+  lazyLoad:true,
+  loop:true,
+  autoplay:true,
+  autoplayTimeout:8000,
+  autoplayHoverPause:true,
+  mouseDrag:true,
+  touchDrag:true,
+  singleItem: true,
+  items : 1,
+  pagination:false,
+  itemsDesktop : false,
+  itemsDesktopSmall : false,
+  itemsTablet: false,
+  nav:true,
+  navText:["<div class='nav-btn prev-slide'><i class='fas fa-angle-left review-angle-left'></i></div>",
+          "<div class='nav-btn next-slide'><i class='fas fa-angle-right review-angle-right'></i></div>"],
+  dots: true
+});
+</script>
+
+
+
+
+
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Half inch content",
+  "settings": [
+  {
+    "type": "image_picker",
+    "id": "image-slide-1",
+    "label": "Image slider one"
+  },
+  {
+    "type": "image_picker",
+    "id": "image-slide-2",
+    "label": "Image slider two"
+  },
+  {
+    "type": "image_picker",
+    "id": "image-slide-3",
+    "label": "Image slider three"
+  },
+  {
+    "type": "image_picker",
+    "id": "image-slide-4",
+    "label": "Image slider four"
+  },
+  {
+    "type": "image_picker",
+    "id": "image-slide-5",
+    "label": "Image slider five"
+  }
+  ],
+  "blocks": [
+
+
+  ],
+  "presets": [
+    {
+      "name": "FAQ image slider",
+      "category": "images"
+    }
+  ]
+}
+{% endschema %}

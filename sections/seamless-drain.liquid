@@ -1,1 +1,310 @@
-<h1>{{ page.title }}</h1>
+<div class="seamless-drain-container container">
+  <h1>{{ page.title }}</h1>
+
+
+
+  {%- if section.settings.image-slide-1 -%}
+    {%- assign image_slide_one = section.settings.image-slide-1| img_url: '1800x' -%}
+  {%- else -%}
+    {%- assign image_slide_one = 'blank.svg' | asset_url -%}
+  {%- endif -%}
+
+  {%- if section.settings.image-slide-2 -%}
+    {%- assign image_slide_two = section.settings.image-slide-2| img_url: '1800x' -%}
+  {%- else -%}
+    {%- assign image_slide_two = 'blank.svg' | asset_url -%}
+  {%- endif -%}
+
+  {%- if section.settings.image-slide-3 -%}
+    {%- assign image_slide_three = section.settings.image-slide-3| img_url: '1800x' -%}
+  {%- else -%}
+    {%- assign image_slide_three = 'blank.svg' | asset_url -%}
+  {%- endif -%}
+
+  {%- if section.settings.image-slide-4 -%}
+    {%- assign image_slide_four = section.settings.image-slide-4| img_url: '1800x' -%}
+  {%- else -%}
+    {%- assign image_slide_four = 'blank.svg' | asset_url -%}
+  {%- endif -%}
+
+  {%- if section.settings.image-slide-5 -%}
+    {%- assign image_slide_five = section.settings.image-slide-5| img_url: '1800x' -%}
+  {%- else -%}
+    {%- assign image_slide_five = 'blank.svg' | asset_url -%}
+  {%- endif -%}
+
+  <div class="review-carousel-wrapper seamless-carousel-wrapper">
+    <div class="owl-carousel owl-theme">
+      <div class="featured-image-container" style="background-image:url({{ image_slide_one }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+      <div class="featured-image-container" style="background-image:url({{ image_slide_two }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+      <div class="featured-image-container" style="background-image:url({{ image_slide_three }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+      <div class="featured-image-container" style="background-image:url({{ image_slide_four }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+      <div class="featured-image-container" style="background-image:url({{ image_slide_five }}); background-position:center; background-repeat: no-repeat; background-size: cover; "></div>
+   </div>
+  </div>
+
+<script type="text/javascript">
+$(".owl-carousel").owlCarousel({
+  lazyLoad:true,
+  loop:true,
+  autoplay:true,
+  autoplayTimeout:8000,
+  autoplayHoverPause:true,
+  mouseDrag:true,
+  touchDrag:true,
+  singleItem: true,
+  items : 1,
+  pagination:false,
+  itemsDesktop : false,
+  itemsDesktopSmall : false,
+  itemsTablet: false,
+  nav:true,
+  navText:["<div class='nav-btn prev-slide'><i class='fas fa-angle-left review-angle-left'></i></div>",
+          "<div class='nav-btn next-slide'><i class='fas fa-angle-right review-angle-right'></i></div>"],
+  dots: true
+});
+</script>
+</div>
+
+
+{% for block in section.blocks %}
+
+{% if block.settings.image_and_placement == "left" %}
+    <div class="featured_collections
+                clearfix across-{{section.settings.featured_links_per_row}} image-align--{{ section.settings.frontpage_image_position }}">
+      {% if section.blocks.size > 0 %}
+          <section class="featured-link--section featured-link--image section-{{ forloop.index }}" {{ block.shopify_attributes }}>
+            <div class="featured-link--half featured-link--image featured-link--margin">
+              <div class="featured-link--wrap">
+                <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} title="{{ block.settings.title }}">
+                  {% if block.settings.image %}
+                    <img  src="{{ block.settings.image | img_url: '100x' }}"
+                          alt="{% if block.settings.image.alt != blank %}{{ block.settings.image.alt | escape }}{% else %}{{ block.settings.title | escape }}{% endif %}"
+                          class="lazyload full-width-image {{ settings.image_loading_style }}"
+                          data-sizes="auto"
+                          data-src="{{ block.settings.image | img_url: '1600x' }}"
+                          data-srcset=" {{ block.settings.image | img_url: '400x' }} 400w,
+                                        {{ block.settings.image | img_url: '500x' }} 500w,
+                                        {{ block.settings.image | img_url: '600x' }} 600w,
+                                        {{ block.settings.image | img_url: '700x' }} 700w,
+                                        {{ block.settings.image | img_url: '800x' }} 800w,
+                                        {{ block.settings.image | img_url: '900x' }} 900w,
+                                        {{ block.settings.image | img_url: '1200x' }} 1200w,
+                                        {{ block.settings.image | img_url: '1600x' }} 1600w"
+                        />
+                  {% else %}
+                    {% capture i %}{% cycle "1", "2", "3", "4", "5", "6" %}{% endcapture %}
+                    {{ 'collection-' | append: i | placeholder_svg_tag: 'placeholder-svg placeholder-svg--promotions' }}
+                  {% endif %}
+                </a>
+              </div>
+            </div>
+            <div class="featured-link--half">
+              <div class="info text-align--{{section.settings.frontpage_text_align}}">
+                <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} class="collection_title">
+                  {{ block.settings.title }}
+                </a>
+                {% if block.settings.text != blank %}
+                  <div class="description">{{ block.settings.text }}</div>
+                {% endif %}
+                {% if block.settings.button_label != blank %}
+                  <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} class="button">
+                    {{ block.settings.button_label }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </section>
+
+      {% endif %}
+    </div>
+
+
+  {% elsif block.settings.image_and_placement == "right" %}
+
+  <div class="featured_collections
+              clearfix across-{{section.settings.featured_links_per_row}} image-align--{{ section.settings.frontpage_image_position }}">
+    {% if section.blocks.size > 0 %}
+
+        <section class="featured-link--section featured-link--image section-{{ forloop.index }}" {{ block.shopify_attributes }}>
+          <div class="featured-link--half">
+            <div class="info text-align--{{section.settings.frontpage_text_align}}">
+              <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} class="collection_title">
+                {{ block.settings.title }}
+              </a>
+              {% if block.settings.text != blank %}
+                <div class="description">{{ block.settings.text }}</div>
+              {% endif %}
+              {% if block.settings.button_label != blank %}
+                <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} class="button">
+                  {{ block.settings.button_label }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+          <div class="featured-link--half featured-link--image featured-link--margin">
+            <div class="featured-link--wrap">
+              <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} title="{{ block.settings.title }}">
+                {% if block.settings.image %}
+                  <img  src="{{ block.settings.image | img_url: '100x' }}"
+                        alt="{% if block.settings.image.alt != blank %}{{ block.settings.image.alt | escape }}{% else %}{{ block.settings.title | escape }}{% endif %}"
+                        class="lazyload full-width-image {{ settings.image_loading_style }}"
+                        data-sizes="auto"
+                        data-src="{{ block.settings.image | img_url: '1600x' }}"
+                        data-srcset=" {{ block.settings.image | img_url: '400x' }} 400w,
+                                      {{ block.settings.image | img_url: '500x' }} 500w,
+                                      {{ block.settings.image | img_url: '600x' }} 600w,
+                                      {{ block.settings.image | img_url: '700x' }} 700w,
+                                      {{ block.settings.image | img_url: '800x' }} 800w,
+                                      {{ block.settings.image | img_url: '900x' }} 900w,
+                                      {{ block.settings.image | img_url: '1200x' }} 1200w,
+                                      {{ block.settings.image | img_url: '1600x' }} 1600w"
+                      />
+                {% else %}
+                  {% capture i %}{% cycle "1", "2", "3", "4", "5", "6" %}{% endcapture %}
+                  {{ 'collection-' | append: i | placeholder_svg_tag: 'placeholder-svg placeholder-svg--promotions' }}
+                {% endif %}
+              </a>
+            </div>
+          </div>
+        </section>
+
+    {% endif %}
+  </div>
+
+
+  {% endif %}
+{% endfor %}
+
+<style>
+  {% if section.settings.frontpage_grid_style == 'standard' and section.settings.featured_links_per_row == '1' %}
+    .featured-link--section {
+      margin-bottom: 3%;
+    }
+    @media only screen and (max-width: 480px) {
+      .featured-link--section {
+        margin-bottom: 10%;
+      }
+    }
+    .featured-link--half {
+      width: 45%;
+    }
+    .featured-link--margin {
+      {% if section.settings.frontpage_image_position == 'right' %}
+        margin-left: 3%;
+      {% else %}
+        margin-left: 0%;
+        margin-right: 3%;
+      {% endif %}
+    }
+    .featured-link--section:nth-child(even) .featured-link--margin {
+      {% if section.settings.frontpage_image_position == 'right' %}
+        margin-left: 0%;
+        margin-right: 3%;
+      {% else %}
+        margin-left: 3%;
+        margin-right: 0%;
+      {% endif %}
+    }
+  {% elsif section.settings.frontpage_grid_style == 'standard' and section.settings.featured_links_per_row == '2' %}
+    @media only screen and (max-width: 480px) {
+      .featured-link--section {
+        margin-bottom: 10%;
+      }
+    }
+    .featured-link--margin {
+      margin-right: 0%;
+      margin-left: 0%;
+    }
+    .featured-link--section:nth-child(even) .featured-link--margin {
+      margin-left: 0%;
+      margin-right: 0%;
+    }
+  {% endif %}
+</style>
+
+
+<style>
+
+  .custom-template{
+    width: 100%;
+    padding-top: 0px !important;
+   }
+
+</style>
+
+
+{% schema %}
+{
+  "name": "Seamless page content",
+  "settings": [
+  {
+    "type": "image_picker",
+    "id": "image-slide-1",
+    "label": "Image slider one"
+  },
+  {
+    "type": "image_picker",
+    "id": "image-slide-2",
+    "label": "Image slider two"
+  },
+  {
+    "type": "image_picker",
+    "id": "image-slide-3",
+    "label": "Image slider three"
+  },
+  {
+    "type": "image_picker",
+    "id": "image-slide-4",
+    "label": "Image slider four"
+  },
+  {
+    "type": "image_picker",
+    "id": "image-slide-5",
+    "label": "Image slider five"
+  }
+  ],
+  "blocks": [
+  {
+    "type": "image",
+    "name": "Image left with text",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Your headline"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+      },
+      {
+       "type": "select",
+       "id": "image_and_placement",
+       "options": [
+          { "value": "left", "label": "Image left text right"},
+          { "value": "right", "label": "Image right text left"}
+       ],
+       "label": "Image and text placement",
+       "default":   "left"
+    }
+    ]
+  }
+
+  ],
+  "presets": [
+    {
+      "name": "FAQ image slider",
+      "category": "images"
+    }
+  ]
+}
+{% endschema %}
