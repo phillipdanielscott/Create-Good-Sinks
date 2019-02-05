@@ -118,12 +118,35 @@ $(".owl-carousel").owlCarousel({
       </div>
 
     {% endif %}
+
+
+
   {% endcase %}
 {% endfor %}
 </div>
 
+{% for block in section.blocks %}
+    {% case block.type %}
+
+    {% when "video-section" %}
+
+    <div class="video-section-container">
+      <div class="container full-width">
+          <div class="videoWrapper">
+              <iframe width="100%" height="349" src="{{ block.settings.video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+          </div>
+      </div>
+    </div>
+
+    <style media="screen">
+      .mediaWrapper{
+            position: unset !important;
+      }
+    </style>
 
 
+    {% endcase %}
+  {% endfor %}
 <style>
 
   .custom-template{
@@ -203,6 +226,17 @@ $(".owl-carousel").owlCarousel({
      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
    }
 
+    ]
+  },
+  {
+    "type": "video-section",
+    "name": "Video section",
+    "settings": [
+    {
+     "id": "video-url",
+     "type": "text",
+     "label": "Video Url"
+    }
     ]
   }
 
