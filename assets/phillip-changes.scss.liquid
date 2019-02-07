@@ -4679,7 +4679,7 @@ border-top: 0px;
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 
-                  SEAMLESS DRAIN PAGE
+                  FEATURED PAGE
 
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -4692,7 +4692,7 @@ border-top: 0px;
 }
 
 .image-side-seam, .text-side-seam{
-  height: 500px;
+  height: 750px;
   width: 50%;
   float: left;
 }
@@ -4720,7 +4720,104 @@ border-top: 0px;
 }
 
 .seamless-description p{
-  font-size: 14px;
+  font-size: 16px;
+}
+
+.seamless-info-container{
+  margin-bottom: 80px !important;
+}
+
+@media only screen and (max-width:1920px){
+
+.image-side-seam,
+.text-side-seam{
+  height: 700px;
+}
+
+}
+
+@media only screen and (max-width:1680px){
+
+  .image-side-seam,
+  .text-side-seam{
+    height: 650px;
+  }
+
+}
+
+@media only screen and (max-width:1440px){
+
+ .image-side-seam,
+ .text-side-seam{
+   height: 600px;
+ }
+
+ .seamless-description p{
+   font-size: 15px;
+ }
+
+}
+
+@media only screen and (max-width:1366px){
+
+  .image-side-seam,
+  .text-side-seam{
+    height: 500px;
+  }
+
+  .seamless-description p{
+    font-size: 14px;
+  }
+
+}
+
+@media only screen and (max-width:1024px){
+
+  .image-side-seam,
+  .text-side-seam{
+    height: 450px;
+  }
+
+  .seamless-text-content h4{
+    font-size: 20px;
+  }
+
+}
+
+@media only screen and (max-width:800px){
+
+  .image-side-seam,
+  .text-side-seam{
+    width: 100%;
+    float: unset;
+    height: 400px;
+  }
+
+  .image-and-text-container-seam-right{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media only screen and (max-width:450px){
+
+  .image-side-seam,
+  .text-side-seam{
+    height: 250px;
+  }
+
+  .seamless-text-content h4{
+    border-bottom: 5px solid #B3C2B8;
+    padding-bottom: 2px;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .seamless-description p{
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
 }
 
 
