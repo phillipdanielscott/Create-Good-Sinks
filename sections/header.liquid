@@ -5,13 +5,10 @@
 
 {% comment %}Mobile navigation{% endcomment %}
 <header id="header" class="mobile_nav-fixed--{{ section.settings.fixed_header }}">
-  {% if section.settings.promo_text != blank %}
-    <div class="promo_banner">
-      {{ section.settings.promo_text }}
-      <div class="promo_banner-close"></div>
-    </div>
-  {% endif %}
   <div class="top_bar clearfix">
+    <!-- {% if section.settings.promo_text != blank %}
+        {{ section.settings.promo_text }}
+    {% endif %} -->
     <a class="mobile_nav dropdown_link" data-dropdown-rel="menu" data-no-instant="true">
       <div>
         <span></span>
@@ -105,13 +102,24 @@
 {% comment %}Main navigation{% endcomment %}
 <header class="{% if feature_image %}feature_image{% endif %} {% if section.settings.logo_home != nil %}secondary_logo--true{% endif %}">
   <div class="header {% if feature_image and settings.header_background == false %}is-absolute {% endif %} header-fixed--{{ section.settings.fixed_header }} {% if settings.header_background %}header-background--solid{% endif %}">
-    {% if section.settings.promo_text != blank %}
-      <div class="promo_banner">
-        {{ section.settings.promo_text }}
-        <div class="promo_banner-close"></div>
-      </div>
-    {% endif %}
+
     <div class="top_bar clearfix">
+
+
+      <!-- {% if section.settings.promo_text != blank %}
+        <div class="promo_banner">
+          {{ section.settings.promo_text }}
+          <div class="promo_banner-close"></div>
+        </div>
+      {% endif %} -->
+
+      {% if section.settings.promo_text != blank %}
+        <div class="promo-text">
+          {{ section.settings.promo_text }}
+        </div>
+      {% endif %}
+
+
       {% if section.settings.social_icons_header %}
         {% include 'social-icons' %}
       {% endif %}
