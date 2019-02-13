@@ -34,7 +34,7 @@
         <div class="smaller-image-container my-paroller wow fadeInRight"
         style="background-image:url({{ section.settings.smaller-image-right | img_url: '800x800' }})" >
         </div>
-        <div class="grid-text-content  wow fadeInRight" >
+        <div class="grid-text-content  wow fadeInRight" style="background-color:{{ section.settings.block-color-bg }}">
 
             <div class="grid-text-content-wrapper">
 
@@ -70,6 +70,12 @@
     "id": "smaller-image-right",
     "type": "image_picker",
     "label": "Smaller image right"
+  },
+  {
+    "type": "color",
+    "id": "block-color-bg",
+    "label": "Block color background",
+    "default": "#D48166"
   },
   {
    "id": "grid-text-content",
