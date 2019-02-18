@@ -3,9 +3,9 @@
     <div class="image-container eight columns">
       <div class="diagram-left wow fadeInRight" data-wow-delay="0.4s">
         <div class="diagram-circle">
-            <i class="far fa-circle diagram-circle-left"></i>
+            <i class="far fa-circle diagram-circle-left" style="color:{{ section.settings.arrow_colors }}"></i>
         </div>
-        <div class="diagram-line"></div>
+        <div class="diagram-line" style="background-color:{{ section.settings.arrow_colors }}"></div>
       </div>
       <!-- <div class="featured-offset-image seven columns" style="background-image:url({{ section.settings.offset-image | img_url: '1000x1000' }})">
       </div> -->
@@ -33,9 +33,9 @@
     <div class="image-container eight columns">
       <div class="diagram-box-right wow fadeInLeft" data-wow-delay="0.6s">
         <div class="diagram-circle-right">
-            <i class="far fa-circle diagram-circle-two"></i>
+            <i class="far fa-circle diagram-circle-two" style="color:{{ section.settings.arrow_colors }}"></i>
         </div>
-        <div class="diagram-line-two"></div>
+        <div class="diagram-line-two" style="background-color:{{ section.settings.arrow_colors }}"></div>
       </div>
       <!-- <div class="featured-offset-image-two seven columns" style="background-image:url({{ section.settings.offset-image-two | img_url: '1000x1000' }})">
       </div> -->
@@ -61,6 +61,12 @@
       "type": "color",
       "id": "offset_font_color",
       "label": "font color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "arrow_colors",
+      "label": "arrow colors",
       "default": "#ffffff"
     },
     {

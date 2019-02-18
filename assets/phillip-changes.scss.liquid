@@ -1499,11 +1499,45 @@ button.owl-dot.active span{
   background-color: white;
 }
 
+@media only screen and (max-width:1600px){
+
+  .featured-offset-image, .featured-offset-image-two{
+    height: 348px;
+    width: 80%;
+  }
+
+  .diagram-left{
+    right: -3px;
+  }
+}
+
 
 
 @media only screen and (max-width:1366px){
   .text-container h2{
    font-size: 27px;
+  }
+
+  .featured-offset-image, .featured-offset-image-two{
+    height: 348px;
+    width: 80%;
+  }
+
+  .featured-offset-image{
+    bottom: 55px;
+  }
+
+  .featured-offset-image-two{
+    bottom: -7px;
+    position: relative;
+  }
+
+  .diagram-box-right{
+    right: 60%;
+  }
+
+  .text-container p{
+    font-size: 14px;
   }
 }
 
@@ -1690,7 +1724,7 @@ button.owl-dot.active span{
     float: none;
     right: 0;
     margin: auto;
-    width: 3px;
+    width: 2px;
     height: 71%;
     bottom: 0px;
   }
@@ -1702,15 +1736,19 @@ button.owl-dot.active span{
     margin: auto;
     width: fit-content;
     bottom: 2px;
-    height: 60%;
+    height: 71%;
   }
 
   .diagram-line-two{
-    width: 3px;
+    width: 2px;
     bottom: -12px;
     margin: auto;
-    height: 80px;
+    height: 82px;
     top: -79px;
+  }
+
+  .diagram-circle-left, .diagram-circle-right{
+    font-size: 22px;
   }
 }
 

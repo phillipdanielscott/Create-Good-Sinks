@@ -65,4 +65,11 @@ $(document).ready(function() {
  // Initiate the wowjs animation library
 new WOW().init();
 
+if (window.matchMedia("(max-width: 700px)").matches) {
+  /* The viewport is less than, or equal to, 700 pixels wide */
+  console.log("I am 768 or less");
+  $('.diagram-box-right').removeClass("fadeInLeft").addClass("fadeInDown");
+  $('.diagram-left').removeClass("fadeInRight").addClass("fadeInUp");
+}
+
 });
