@@ -164,6 +164,35 @@ input.action_button[type="button"]:active{
    display: inline-block;
  }
 
+ /* * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+                  STICKY NAVIGATION
+
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+ .sticky_nav .cgc-main-nav .CGC-logo{
+   top: 11px;
+   position: relative;
+ }
+
+.sticky_nav .icon-bag{
+  position: absolute;
+  right: -105px;
+  top: -6px;
+}
+
+ .sticky_nav .cgc-menu-items{
+   top: 11px;
+   position: relative;
+   padding-top: 0px !important;
+ }
+
+ .sticky_nav .main_nav{
+   border-bottom: 5px solid #E6E2DD;
+ }
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
 
@@ -172,6 +201,8 @@ input.action_button[type="button"]:active{
 
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
 .cgc-main-nav{
   display: block;
   // background: white;
@@ -880,7 +911,8 @@ button.owl-dot.active span{
     max-width: 575px;
   }
   .cgc-carousel-wrapper{
-    height: 850px;
+    // height: 800px;
+    height: 700px;
   }
 
   .cgc-carousel-wrapper h2{
@@ -949,6 +981,12 @@ button.owl-dot.active span{
   font-size: 45px;
 }
 
+}
+
+@media only screen and (max-width:1600px){
+  .cgc-carousel-wrapper{
+    height: 700px;
+  }
 }
 
 @media only screen and (max-width:1440px){
@@ -1031,6 +1069,11 @@ button.owl-dot.active span{
     font-size: 14px;
   }
 
+  .cgc-carousel-wrapper{
+    height: 600px;
+    // height: 575px;
+  }
+
   // .overlay-text h3{
   //   font-size: 40px;
   // }
@@ -1062,7 +1105,7 @@ button.owl-dot.active span{
 
 @media only screen and (max-width:1024px){
   .cgc-carousel-wrapper{
-    height: 600px;
+    height: 500px;
   }
 
   .featured-sink-item img{
@@ -1541,9 +1584,9 @@ button.owl-dot.active span{
     position: relative;
   }
 
-  .diagram-box-right{
-    right: 60%;
-  }
+  // .diagram-box-right{
+  //   right: 60%;
+  // }
 
   .text-container p{
     font-size: 14px;
@@ -1660,11 +1703,14 @@ button.owl-dot.active span{
   }
 
   .diagram-box-right{
-    width: 50%;
-    right: 57%;
+    // width: 50%;
+    // right: 57%;
+    width: 37%;
+    right: 67%;
   }
   .diagram-line-two{
-    width: 87%;
+    // width: 87%;
+    width: 82%;
     bottom: -12px;
   }
   .diagram-left{
@@ -3705,6 +3751,30 @@ display: inline-block;
 }
 
 
+
+/* * * * * * * * * HOUZZ REVIEWS BLOCK * * * * * * * */
+
+.houzz-review-container{
+  margin-bottom: 90px !important;
+}
+
+.houzz-review-wrapper{
+  border: 1px solid #CCC;
+}
+
+@media only screen and (max-width: 425px){
+
+  .houzz-review-container .media-review-block{
+    margin-bottom: 0px;
+    padding: 15px 0px;
+  }
+
+  .houzz-review-container{
+    margin-bottom: 50px !important;
+  }
+
+}
+
 /* * * * * * * * * LEAVE US A REVIEWS * * * * * * * */
 
 .leave-review-content-wrapper{
@@ -3760,7 +3830,7 @@ display: inline-block;
 
 .customer-review-container{
   margin-top: 0px !important;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .customer-text-content{
@@ -3809,7 +3879,7 @@ display: inline-block;
 /* * * * * * * * * AWARDS BLOCK * * * * * * * */
 
 .awards-content-wrapper{
-  margin-top: 50px;
+  margin-top: 130px;
 }
 
 .award-item{
@@ -3958,7 +4028,7 @@ display: inline-block;
   }
 
   .awards-content-wrapper{
-    margin-top: 0px;
+    margin-top: 50px;
   }
 
 }
@@ -4051,7 +4121,7 @@ display: inline-block;
 
   .award-item{
     width: 48%;
-    margin: 0px 0px 25px 0px;
+    margin: 0px 0px 13px 0px;
   }
 
   .award-item table{
@@ -4476,9 +4546,13 @@ input.get-rates.action_button.continue-button{
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+.installation-page-wrapper{
+  margin-bottom: 80px !important;
+}
+
 .installation-page-wrapper h1{
   text-align: center;
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
 }
 
 .instruction-link-box{
@@ -4553,7 +4627,7 @@ input.get-rates.action_button.continue-button{
 }
 
 .image-instruction-container{
-  margin: 50px 0px 180px 0px;
+  margin: 50px 0px 60px 0px;
 }
 
 .install-image-description{

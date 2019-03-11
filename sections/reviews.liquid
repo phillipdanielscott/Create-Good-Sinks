@@ -385,7 +385,9 @@
             pagination:false,
             navigation:true,
             nav:true,
-            navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+            navText:["<div class='nav-btn prev-slide'><i class='fas fa-angle-left review-angle-left'></i></div>",
+                    "<div class='nav-btn next-slide'><i class='fas fa-angle-right review-angle-right'></i></div>"],
+            dots: true,
             responsive : {
                 // breakpoint from 0 up
                 0 : {
@@ -405,7 +407,9 @@
                   pagination:false,
                   navigation:true,
                   nav:true,
-                  navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"]
+                  navText:["<div class='nav-btn prev-slide'><i class='fas fa-angle-left review-angle-left'></i></div>",
+                          "<div class='nav-btn next-slide'><i class='fas fa-angle-right review-angle-right'></i></div>"],
+                  dots: true
                 },
                 800 : {
                   lazyLoad:true,
@@ -420,12 +424,57 @@
                   pagination:false,
                   navigation:true,
                   nav:true,
-                  navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"]
+                  navText:["<div class='nav-btn prev-slide'><i class='fas fa-angle-left review-angle-left'></i></div>",
+                          "<div class='nav-btn next-slide'><i class='fas fa-angle-right review-angle-right'></i></div>"],
+                  dots: true
                 }
             }
           });
           </script>
 
+        {% when 'houzz-reviews'%}
+
+        {% if block.settings.border-line-media %}
+
+          <div class="border-line">
+          </div>
+
+        {% endif %}
+
+        <div class="media-review-container houzz-review-container container">
+        <h3 class="wow fadeInUp">{{ block.settings.houzz-four-block-title }}</h3>
+          <div class="media-review-block one-half-cgc wow fadeInUp" data-wow-delay="0.2s">
+            <div class="testing-block">
+
+            </div>
+            <div class="media-review-wrapper houzz-review-wrapper" style="background-color:{{ block.settings.houzz-block-bg-color }}">
+              <div class="media-review-text-content" style="color:{{ block.settings.houzz-block-text-color }}">
+                {{ block.settings.houzz-review-quote-1 }}
+              </div>
+            </div>
+          </div>
+          <div class="media-review-block one-half-cgc wow fadeInUp" data-wow-delay="0.3s">
+            <div class="media-review-wrapper houzz-review-wrapper" style="background-color:{{ block.settings.houzz-block-bg-color }}">
+              <div class="media-review-text-content" style="color:{{ block.settings.houzz-block-text-color }}">
+                {{ block.settings.houzz-review-quote-2 }}
+              </div>
+            </div>
+          </div>
+          <div class="media-review-block one-half-cgc wow fadeInUp" data-wow-delay="0.4s">
+            <div class="media-review-wrapper houzz-review-wrapper" style="background-color:{{ block.settings.houzz-block-bg-color }}">
+              <div class="media-review-text-content" style="color:{{ block.settings.houzz-block-text-color }}">
+                {{ block.settings.houzz-review-quote-3 }}
+              </div>
+            </div>
+          </div>
+          <div class="media-review-block one-half-cgc wow fadeInUp" data-wow-delay="0.5s">
+            <div class="media-review-wrapper houzz-review-wrapper" style="background-color:{{ block.settings.houzz-block-bg-color }}">
+              <div class="media-review-text-content" style="color:{{ block.settings.houzz-block-text-color }}">
+                {{ block.settings.houzz-review-quote-4 }}
+              </div>
+            </div>
+          </div>
+        </div>
 
 
   {% endcase %}
@@ -561,6 +610,61 @@
        "default": "<p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
     }
     ]
+  },
+  {
+  "type": "houzz-reviews",
+  "name": "Houzz reviews",
+  "settings": [
+  {
+   "type":      "checkbox",
+   "id":        "border-line-media",
+   "label":     "Border divide line",
+   "default":   true,
+   "info":      "borderline above section"
+  },
+  {
+   "id": "houzz-four-block-title",
+   "type": "text",
+   "label": "Section Title",
+   "default": "Title"
+  },
+  {
+     "type": "color",
+     "id": "houzz-block-bg-color",
+     "label": "Block background color",
+     "default": "#EBECE4"
+  },
+  {
+     "type":      "color",
+     "id":        "houzz-block-text-color",
+     "label":     "Text color",
+     "default":   "#38373E"
+  },
+  {
+     "type": "richtext",
+     "id": "houzz-review-quote-1",
+     "label": "Review quote text content",
+     "default": "<p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+  },
+  {
+     "type": "richtext",
+     "id": "houzz-review-quote-2",
+     "label": "Review quote text content",
+     "default": "<p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+  },
+  {
+     "type": "richtext",
+     "id": "houzz-review-quote-3",
+     "label": "Review quote text content",
+     "default": "<p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+  },
+  {
+     "type": "richtext",
+     "id": "houzz-review-quote-4",
+     "label": "Review quote text content",
+     "default": "<p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+  }
+  ]
   },
   {
     "type": "review-widget",
