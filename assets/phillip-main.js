@@ -71,6 +71,7 @@ if (window.matchMedia("(max-width: 768px)").matches) {
   $('.diagram-box-right').removeClass("fadeInLeft").addClass("fadeInDown");
   $('.diagram-left').removeClass("fadeInRight").addClass("fadeInUp");
   $("header").removeClass("mobile_nav-fixed--true").addClass("mobile_nav-fixed--false");
+    $("#side-gallery-images").removeClass("left-thumbnails");
 }
 
 

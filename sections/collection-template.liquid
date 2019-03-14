@@ -8,27 +8,6 @@
   {% capture sizes %}100x,480x,765x,1400x,2048x{% endcapture %}
   {% assign sizes = sizes | split: ',' %}
 
-  <div class="clearfix container breadcrumb-collection">
-    {% if section.settings.collection_breadcrumb %}
-      <div class="sixteen columns breadcrumb_text" itemscope itemtype="http://schema.org/BreadcrumbList">
-        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item" class="breadcrumb_link"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a></span>
-        <span class="breadcrumb-divider">/</span>
-        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}" title="{{ collection.title | escape }}" itemprop="item" class="breadcrumb_link"><span itemprop="name">{{ collection.title }}</span></a></span>
-        {% if current_tags %}
-          {% for tag in current_tags %}
-            {% unless tag contains 'meta-' %}
-              <span class="breadcrumb-divider">/</span>
-              <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}" title="{{ tag | escape }}" itemprop="item"><span itemprop="name">{{ tag }}</span></a></span>
-            {% endunless %}
-          {% endfor %}
-        {% endif %}
-
-        {% if paginate.pages != 0 and settings.pagination_type != 'load_more' and settings.pagination_type != 'infinite_scroll' %}
-          <span class="breadcrumb-divider">/</span> {{ 'general.breadcrumbs.page' | t: current_page: paginate.current_page, pages: paginate.pages }}
-        {% endif %}
-      </div>
-    {% endif %}
-  </div>
 
   {%- if section.settings.image -%}
     {%- assign collection_banner_image = section.settings.image | img_url: '1800x' -%}
@@ -36,7 +15,7 @@
     {%- assign collection_banner_image = 'blank.svg' | asset_url -%}
   {%- endif -%}
 
-  <header class="banner center page_banner dark-overlay-{{ section.settings.image_darken }} cgc-collection-banner-image" style="background-image:url({{collection_banner_image}})">
+  <header class="banner center page_banner dark-overlay-{{ section.settings.image_darken }} cgc-collection-banner-image" {% if collection.title contains "Apron" %} style="background-image:url({{ 'carousel-image-one-brighter.jpg' | asset_img_url: '2000x' }})" {% else %} style="background-image:url({{ collection.image | img_url: '2000x' }})" {% endif %}>
 
           <!-- <img
           src="{{ section.settings.image | img_url: sizes.first }}"
@@ -50,6 +29,11 @@
           {% if collection.title contains "Sinks" or "sinks" %}
            <h1 class="headline banner-headline">{{ collection.title | replace: 'Sinks', '' }}</h1>
 
+             <div class="section clearfix collection_description">
+               <p style="font-weight: 500;">{{ collection.description }}</p>
+             </div>
+
+
             {% else %}
 
            <h1 class="headline banner-headline">{{ collection.title }}</h1>
@@ -58,6 +42,7 @@
 
         </div>
       {% endif %}
+
   </header>
 {% endif %}
 
@@ -66,11 +51,7 @@
 <!-- <div class="container full-cgc-product-container"> -->
   <div class="container full-cgc-product-container">
   {% paginate collection.products by section.settings.pagination_limit %}
-  {% if collection.description != blank %}
-    <div class="section clearfix collection_description">
-      <span>{{ collection.description }}</span>
-    </div>
-  {% endif %}
+
 
     <div class="section clearfix">
       {% if section.settings.display_collection_title and section.settings.featured_collection_image == false %}
@@ -152,6 +133,28 @@
     </div>
   {% endpaginate %}
 
+</div>
+
+<div class="clearfix container breadcrumb-collection">
+  {% if section.settings.collection_breadcrumb %}
+    <div class="sixteen columns breadcrumb_text" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item" class="breadcrumb_link"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a></span>
+      <span class="breadcrumb-divider">/</span>
+      <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}" title="{{ collection.title | escape }}" itemprop="item" class="breadcrumb_link"><span itemprop="name">{{ collection.title }}</span></a></span>
+      {% if current_tags %}
+        {% for tag in current_tags %}
+          {% unless tag contains 'meta-' %}
+            <span class="breadcrumb-divider">/</span>
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}" title="{{ tag | escape }}" itemprop="item"><span itemprop="name">{{ tag }}</span></a></span>
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+
+      {% if paginate.pages != 0 and settings.pagination_type != 'load_more' and settings.pagination_type != 'infinite_scroll' %}
+        <span class="breadcrumb-divider">/</span> {{ 'general.breadcrumbs.page' | t: current_page: paginate.current_page, pages: paginate.pages }}
+      {% endif %}
+    </div>
+  {% endif %}
 </div>
 
 {% schema %}

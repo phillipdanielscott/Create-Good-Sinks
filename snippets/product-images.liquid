@@ -7,7 +7,7 @@
   {% endcapture %}
   {% assign image_list = list | split: "^" %}
 
-<div class="gallery-wrap js-product-page-gallery clearfix
+<div id="side-gallery-images" class="gallery-wrap js-product-page-gallery clearfix
             gallery-arrows--{{section.settings.gallery_arrows}}
             {% if section.settings.product_thumbs %} {{ section.settings.thumbnail_position }} {% endif %}
             slideshow_animation--{{ section.settings.slideshow_animation }}

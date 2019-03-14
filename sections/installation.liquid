@@ -6,8 +6,8 @@
 
       {% when 'info-box'%}
           <div class="instruction-link-box wow fadeInUp" style="background-color:{{ block.settings.info-box-color }}">
-            <h6>{{ block.settings.installation-info-title }}</h6>
-            <span>{{ block.settings.installation-info-description }}</span>
+            <a href="{{ block.settings.instruction-link }}" target="_blank" ><h6>{{ block.settings.installation-info-title }}</h6></a>
+            <!-- <span>{{ block.settings.installation-info-description }}</span> -->
           </div>
 
       {% when 'installation-video'%}
@@ -78,14 +78,14 @@
      "label":     "Installation info title",
      "default":   "value",
      "placeholder": "Text"
-    },
-    {
-     "type":      "text",
-     "id":        "installation-info-description",
-     "label":     "Installation info description",
-     "default":   "value",
-     "placeholder": "Text"
-    }
+   },
+   {
+    "type":      "text",
+    "id":        "installation-link",
+    "label":     "Installation link URL",
+    "default":   "https://www.creategoodsinks.com/",
+    "placeholder": "https://www.creategoodsinks.com/"
+   }
 
     ]
   },
