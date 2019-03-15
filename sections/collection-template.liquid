@@ -29,7 +29,7 @@
           {% if collection.title contains "Sinks" or "sinks" %}
            <h1 class="headline banner-headline">{{ collection.title | replace: 'Sinks', '' }}</h1>
 
-             <div class="section clearfix collection_description">
+             <div class="section clearfix collection_description desktop">
                <p style="font-weight: 500;">{{ collection.description }}</p>
              </div>
 
@@ -45,6 +45,10 @@
 
   </header>
 {% endif %}
+
+<div class="section clearfix collection_description mobile">
+  <p style="font-weight: 500;">{{ collection.description }}</p>
+</div>
 
 <a name="pagecontent" id="pagecontent"></a>
 

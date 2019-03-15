@@ -29,6 +29,10 @@ body{
   display: none;
 }
 
+  .mobile{
+    display: none;
+  }
+
 // #mobile_menu .sublink ul{
 //   display: block;
 // }
@@ -447,6 +451,12 @@ a.top_link{
   // }
   .non-image-link a{
     font-size: 14px;
+  }
+  .nav{
+    width: 90% !important;
+  }
+  .CGC-logo{
+    font-size: 18px !important;
   }
 }
 
@@ -1676,22 +1686,36 @@ button.owl-dot.active span{
 
 @media only screen and (max-width:1024px){
   .offset-image-wrapper{
-    margin: 125px 0px;
+    // margin: 125px 0px;
+     margin: 200px 0px;
   }
   .text-container p{
-    font-size: 14px;
+    font-size: 13px;
   }
   .text-container h2{
     font-size: 25px;
   }
   .diagram-left{
-    right: -24px;
+    right: -18px;
   }
   .diagram-line{
-    width: 78%;
+    width: 81%;
   }
   .diagram-line-two{
-    width: 88%;
+    width: 87%;
+  }
+  .featured-offset-image, .featured-offset-image-two{
+    height: 250px;
+    width: 72%;
+  }
+  .image-container, .text-container{
+    height: 245px;
+  }
+  .featured-offset-image-two{
+    bottom: -41px;
+  }
+  .diagram-box-right{
+    right: 65%;
   }
 }
 
@@ -1881,7 +1905,7 @@ button.owl-dot.active span{
   }
 
   .offset-image-wrapper{
-    margin-bottom: 100px;
+    margin: 100px 0px;
   }
 
   .diagram-left{
@@ -2180,7 +2204,9 @@ button.owl-dot.active span{
   //   padding: 22px 22px;
   // }
   .quote-content-half{
-    padding-left: 15px;
+    padding-left: 0px;
+    width: 100%;
+
   }
   .border-line{
     border-right: 2px solid white;
@@ -2190,10 +2216,23 @@ button.owl-dot.active span{
     margin-top: 18px;
   }
   .grid-text-content p{
-    font-size: 14px;
+    font-size: 16px;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
   }
   .quote-marks{
     left: 6px;
+  }
+  .image-and-text-half{
+    width: 100%;
+    float: none;
+  }
+  .smaller-image-container{
+    display: none;
+  }
+  .larger-image-half {
+    width: 100%;
   }
 }
 
@@ -2347,7 +2386,7 @@ button.owl-dot.active span{
 .breadcrumb_text{
   text-align: center;
   padding-top: 0px;
-  // margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .dark-overlay-true:after{
@@ -2436,9 +2475,9 @@ text-align: left;
   width: 70%;
 }
 
-.product-list{
-  margin-bottom: 100px;
-}
+// .product-list{
+//   margin-bottom: 100px;
+// }
 
 i.fas.fa-caret-right.paginate-right{
   font-size: 25px;
@@ -2499,6 +2538,33 @@ i.fas.fa-caret-right.paginate-right{
 }
 
 @media only screen and (max-width:425px){
+
+  .desktop{
+    display: none;
+  }
+
+  .mobile{
+    display: block;
+  }
+
+  .product-container{
+    margin-top: 0px;
+  }
+
+  .product-wrap{
+    margin-bottom: 50px;
+  }
+
+
+
+  .collection_description{
+    margin-top: 20px !important;
+  }
+
+  .collection_description span{
+    color: black;
+  }
+
   .mobile_nav-fixed--false .cgc-collection-banner-image, .mobile_nav-fixed--true .cgc-collection-banner-image{
     height: 200px;
     margin-top: 0px;
@@ -2556,6 +2622,10 @@ i.fas.fa-caret-right.paginate-right{
 
   .container div.thumbnail.odd{
     margin-left: 0px;
+  }
+
+  .product-details .title{
+    width: 100%;
   }
 
 }
@@ -2893,6 +2963,7 @@ p.modal_price{
     font-size: 10px;
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 20px !important;
   }
 
   .cgc-product-specs h6,
@@ -3843,6 +3914,8 @@ display: inline-block;
 
 
 
+
+
 /* * * * * * * * * MEDIA REVIEWS BLOCK * * * * * * * */
 
 .media-review-block {
@@ -3929,8 +4002,61 @@ display: inline-block;
   margin-bottom: 90px !important;
 }
 
+.houzz-review-block{
+  height: 350px;
+}
+
 .houzz-review-wrapper{
   border: 1px solid #CCC;
+}
+
+.client-name-container{
+  width: 100%;
+  height: 40px;
+  background-color: #2b2b2b;
+  position: absolute;
+}
+
+.review-more-link{
+  position: absolute;
+bottom: 13px;
+right: 13px;
+font-weight: 500;
+font-size: 13px;
+}
+
+.testing-wrapper{
+  width: 100%;
+  height: 100%;
+}
+
+.houzz-review-text-content{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  right: unset;
+  transform: translate(-50%, -50%);
+  margin: unset;
+}
+
+.client-info-section{
+  position: absolute;
+  bottom: 27px;
+  right: 42px;
+  text-align: right;
+}
+
+.review-by-content{
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.houzz-review-link{
+  position: absolute;
+  bottom: 27px;
+  left: 24px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 425px){
