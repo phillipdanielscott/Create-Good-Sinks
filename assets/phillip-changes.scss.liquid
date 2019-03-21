@@ -210,6 +210,24 @@ input.action_button[type="button"]:active{
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+.menu li.search_link{
+  display: inline-block;
+}
+
+.search-dropdown{
+  border-bottom: 7px solid #E6E2DD;
+}
+
+.header_search_form,
+.header_search_form input,
+.header_search_form span{
+
+}
+
+.header_search_form{
+  width: 30%;
+}
+
 
 .cgc-main-nav{
   display: block;
@@ -250,7 +268,8 @@ input.action_button[type="button"]:active{
 }
 
 .nav{
-  width: 65% !important;
+  // width: 65% !important;
+  width: 75% !important;
 }
 
 .dropdown.menu{
@@ -364,6 +383,20 @@ a.top_link{
   padding: 0px;
 }
 
+.search_container{
+  top: -8px;
+  position: relative;
+}
+
+.search-submit{
+  font-size: 16px;
+}
+
+.search-bar{
+  height: 35px !important;
+  min-height: 35px !important;
+}
+
 @media only screen and (max-width:1920px){
   .nav{
     width: 74% !important;
@@ -375,7 +408,8 @@ a.top_link{
 
 @media only screen and (max-width:1680px){
   .nav{
-    width: 81% !important;
+    // width: 81% !important;
+    width: 85% !important;
   }
   .menu-item-box a{
     font-size: 22px;
@@ -400,6 +434,12 @@ a.top_link{
   .dropdown_column{
     padding: 15px 12px 30px 12px;
   }
+  .nav{
+    width: 90% !important;
+  }
+  .CGC-logo{
+   font-size: 20px;
+  }
 }
 
 @media only screen and (max-width:1280px){
@@ -410,12 +450,35 @@ a.top_link{
   .cgc_dropdown_column a{
     font-size: 14px;
   }
+  // .nav{
+  //   width: 95% !important;
+  // }
+  .CGC-logo{
+    font-size: 18px !important;
+  }
+  .cgc-main-nav a.top_link, .menu a.top_link, .menu a.dropdown_link{
+    font-size: 13px;
+  }
+  .cgc-menu-items li{
+    margin-left: 20px;
+  }
 }
 
-@media only screen and (max-width:1024px){
+@media only screen and (max-width:1200px){
+
   .logo{
     font-size: 18px;
   }
+  .cgc-menu-items li{
+    margin-left: 10px;
+  }
+  .nav{
+    width: 95% !important;
+  }
+
+}
+
+@media only screen and (max-width:1024px){
 
   .cgc-menu-items li{
     margin-left: 5px;
@@ -453,10 +516,24 @@ a.top_link{
     font-size: 14px;
   }
   .nav{
-    width: 90% !important;
+    width: 95% !important;
   }
   .CGC-logo{
     font-size: 18px !important;
+  }
+}
+
+@media only screen and (max-width:798px){
+  #header .top_bar{
+    text-align: center;
+    height: 50px;
+  }
+  #header .top_bar a.mobile_logo{
+    line-height: 47px;
+    font-size: 20px;
+  }
+  #header .top_bar a.mobile_nav{
+    top: 7px;
   }
 }
 
@@ -494,6 +571,10 @@ a.top_link{
 
   span.right.icon-down-arrows{
     padding: 0px;
+  }
+
+  a.icon-search.dropdown_link{
+    display: none;
   }
 
 }
@@ -1240,10 +1321,13 @@ button.owl-dot.active span{
   }
 }
 
+@media only screen and (max-width:798px){
+  #header span.menu_title{
+    display: none !important;
+  }
+}
+
 @media only screen and (max-width:768px){
-    #header span.menu_title{
-      display: none !important;
-    }
     .carousel-text-content{
       left: 50px;
     }

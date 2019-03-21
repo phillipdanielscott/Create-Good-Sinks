@@ -49,7 +49,7 @@
       </div>
     </div>
   {% endif %}
-  <div class="dropdown_container" data-dropdown="menu">
+  <div class="dropdown_container thiswork" data-dropdown="menu">
     <div class="dropdown">
       <ul class="menu" id="mobile_menu">
         {% include 'mobile-menu' with section.settings.main_linklist %}
@@ -292,7 +292,7 @@
             {% include 'menu' with section.settings.main_linklist2 %}
           {% endif %}
           {% if section.settings.search_enabled %}
-            <li class="search_container">
+            <!-- <li class="search_container">
               <form action="/search" class="search_form">
                 {% if settings.search_option != 'everything' %}
                   <input type="hidden" name="type" value="product" />
@@ -300,10 +300,24 @@
                 <span class="icon-search search-submit"></span>
                 <input type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" value="{% if search and search.results.first.price %}{{ search.terms }}{% endif %}" autocapitalize="off" autocomplete="off" autocorrect="off" />
               </form>
-            </li>
+            </li> -->
             <li class="search_link">
               <a href="/search" class="icon-search dropdown_link" title="{{ 'general.search.title' | t | escape }}" data-dropdown-rel="search"></a>
             </li>
+
+
+              <div class="dropdown_container center" data-dropdown="search">
+                <div class="dropdown search-dropdown">
+                  <form action="/search" class="header_search_form">
+                    {% if settings.search_option != 'everything' %}
+                      <input type="hidden" name="type" value="product" />
+                    {% endif %}
+                    <span class="icon-search search-submit"></span>
+                    <input type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" autocapitalize="off" autocomplete="off" autocorrect="off" class="search-terms" />
+                  </form>
+                </div>
+              </div>
+
           {% endif %}
         {% endcapture %}
 
@@ -327,6 +341,9 @@
               {{ menu_right }}
               {% for link in linklists[section.settings.top_bar_menu].links %}
                 <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                <script type="text/javascript">
+                  console.log("title: ","{{ link.title }}");
+                </script>
               {% endfor %}
             </ul>
           </div>
@@ -345,7 +362,7 @@
         {% endif %}
         {% if section.settings.search_enabled %}
           <div class="dropdown_container center" data-dropdown="search">
-            <div class="dropdown">
+            <div class="dropdown search-dropdown">
               <form action="/search" class="header_search_form">
                 {% if settings.search_option != 'everything' %}
                   <input type="hidden" name="type" value="product" />
@@ -357,13 +374,14 @@
           </div>
         {% endif %}
 
+
+
         {% include 'sub-menu' with section.settings.main_linklist %}
         {% include 'sub-menu' with section.settings.main_linklist2 %}
 
       </div>
     </div>
   </div>
-
 
 
 

@@ -1,3 +1,4 @@
+{% if section.settings.carousel_boolean %}
 <div class="faq-wrapper container">
 
     {%- if section.settings.image-slide-1 -%}
@@ -69,6 +70,8 @@
     </script>
 
 </div>
+
+{% endif %}
 
     <div class="faq-question-wrapper full-width-cgc" style="background-color:{{ section.settings.faq-bg-color }};">
 
@@ -257,6 +260,12 @@
 {
   "name": "FAQ content",
   "settings": [
+  {
+   "type": "checkbox",
+   "id": "carousel_boolean",
+   "default": false,
+   "label": "Enable top image slider"
+  },
   {
     "type":      "color",
     "id":        "faq-bg-color",
