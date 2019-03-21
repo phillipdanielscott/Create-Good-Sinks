@@ -1,14 +1,5 @@
 {% for link in linklists[sub-menu].links %}
 
-      {% for link in linklists[section.settings.main_linklist].links %}
-
-      {% if link.title contains "support" %}
-          <script type="text/javascript">
-            console.log("{{ link.title }}");
-          </script>
-
-      {% endif %}
- {% endfor %}
 
   {% if linklists[link.handle] != empty %}
     {% assign link_count = linklists[link.handle].links | size %}

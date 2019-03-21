@@ -277,6 +277,7 @@
 
         {% assign vertical_menu = section.settings.vertical_menu %}
 
+        {% comment %}
         {% capture menu_left %}
           {% if vertical_menu %}
             {% include 'vertical-menu' with section.settings.main_linklist %}
@@ -284,8 +285,16 @@
             {% include 'menu' with section.settings.main_linklist %}
           {% endif %}
         {% endcapture %}
+        {% endcomment %}
+
+        {% capture menu_left %}
+
+            {% include 'vertical-menu' with section.settings.main_linklist %}
+
+        {% endcapture %}
 
         {% capture menu_right %}
+
           {% if vertical_menu %}
             {% include 'vertical-menu' with section.settings.main_linklist2 %}
           {% else %}
