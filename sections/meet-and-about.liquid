@@ -43,7 +43,7 @@
       {% when 'video-text-side'%}
 
         <div class="video-section-wrapper" style="background-color:{{ block.settings.video-section-bg-color }}">
-          <div class="video-section-container container full-width">
+          <div class="video-section-container container full-width meet-about-video-container">
 
             {% if block.settings.video_text_alignment == "video-right" %}
 
@@ -55,7 +55,7 @@
                   <div class="text-value" style="color:{{ block.settings.video-side-color }}">{{ block.settings.video-section-content }}</div>
                 </div>
               </div>
-              <div class="video-side-content one-half-cgc" style="float: right;">
+              <div class="video-side-content one-half-cgc meet-about-video-side-content" style="float: right;">
                   <!-- Copy & Pasted from YouTube -->
                   <div class="videoWrapper">
                       <iframe width="100%" height="" src="{{ block.settings.video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
@@ -64,7 +64,7 @@
 
             {% else %}
 
-            <div class="video-side-content one-half-cgc">
+            <div class="video-side-content one-half-cgc meet-about-video-side-content">
                 <!-- Copy & Pasted from YouTube -->
                 <div class="videoWrapper">
                     <iframe width="100%" height="" src="{{ block.settings.video-url }}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
