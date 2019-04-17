@@ -230,7 +230,11 @@ input.action_button[type="button"]:active{
 .vertical-menu_submenu li a{
   text-transform: none;
   font-weight: 600;
+  padding-bottom: 5px;
+  letter-spacing: normal;
 }
+
+
 
 .search-dropdown{
   border-bottom: 7px solid #E6E2DD;
@@ -3203,6 +3207,12 @@ p.modal_price{
   }
 }
 
+@media only screen and (max-width:790px){
+  .product_name{
+    font-size: 25px;
+  }
+}
+
 @media only screen and (max-width:425px){
 
   .top-product-title{
@@ -5012,6 +5022,18 @@ font-size: 13px;
     margin-bottom: 80px;
   }
 
+  .faq-question-wrapper h1{
+    font-size: 20px;
+  }
+
+  .faq-content-container{
+     width: 90%;
+  }
+
+  .special-features-container{
+    width: 90%;
+  }
+
 }
 
 @media only screen and (max-width:375px){
@@ -5300,6 +5322,8 @@ input.get-rates.action_button.continue-button{
 
 .instructional-video-container{
   margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  margin: auto;
 }
 
 .installation-tip-content{
@@ -5339,10 +5363,31 @@ input.get-rates.action_button.continue-button{
   border-bottom: 4px solid #E6E2DD;
 }
 
+@media only screen and (max-width: 1680px){
+
+}
+
+@media only screen and (max-width: 1440px){
+ .installation-page-wrapper .video-section-container{
+    width: 70% !important
+ }
+ .tip-text-content p{
+   font-size: 14px;
+ }
+ .installation-tip-container{
+    width: 60%;
+ }
+ .installation-tip-container h4{
+   font-size: 16px;
+   padding-top: 0px;
+ }
+}
+
+
 @media only screen and (max-width:1024px){
-  .installation-tip-container h4{
-    font-size: 18px;
-  }
+  // .installation-tip-container h4{
+  //   font-size: 18px;
+  // }
   // .tip-text-content p{
   //   font-size: 14px;
   // }
@@ -5351,12 +5396,25 @@ input.get-rates.action_button.continue-button{
   }
 }
 
-@media only screen and (max-width:768px){
+@media only screen and (max-width:950px){
   .installation-page-wrapper{
     width: 100%;
   }
   .instruction-link-box{
     padding: 19px;
+  }
+  .installation-tip-content:before{
+    left: -7px;
+    width: 25px;
+  }
+}
+
+@media only screen and (max-width:768px){
+  .installation-tip-container{
+    width: 75%;
+  }
+  .image-instruction-container img{
+    max-width: 70%;
   }
 }
 
@@ -5381,8 +5439,8 @@ input.get-rates.action_button.continue-button{
     font-size: 14px;
   }
   .install-image-description{
-    font-size: 14px;
-    width: 69%;
+    font-size: 12px;
+    width: 80%;
   }
   .installation-tip-container h4{
     padding-bottom: 4px;
@@ -5391,7 +5449,7 @@ input.get-rates.action_button.continue-button{
     padding-top: 5px;
   }
   .image-instruction-container{
-    margin: 50px 0px 80px 0px;
+    margin: 52px 0px 50px 0px;
   }
 
   .installation-tip-content:before{
@@ -5515,7 +5573,11 @@ footer .social_icons{
 }
 
 .footer_credits{
-border-top: 0px;
+  border-top: 0px;
+}
+
+.footer-text-block p{
+  font-size: 12px;
 }
 
 @media only screen and (max-width:768px){
