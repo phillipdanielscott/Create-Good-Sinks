@@ -86,7 +86,7 @@
             <div class="faq-spacer">
               <button class="collapsible"><i class="far fa-question-circle"></i><span class="faq-text-question">{{ block.settings.faq-question }}</span></button>
               <div class="collapsibleContent">
-                <div class="faq-answer">{{ block.settings.faq-answer }}</div>
+                <div class="faq-answer"><p>{{ block.settings.faq-answer }}</p></div>
               </div>
             </div>
 
@@ -310,10 +310,10 @@
      "default":   "This is a placeholder for FAQ question?"
    },
    {
-      "type": "richtext",
+      "type": "textarea",
       "id": "faq-answer",
       "label": "Text",
-      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
    }
     ]
   },
