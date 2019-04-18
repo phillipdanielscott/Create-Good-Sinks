@@ -95,29 +95,29 @@ $(".owl-carousel").owlCarousel({
         </div>
 
 
-    {% elsif block.settings.seam-image-placement == "right" %}
+        {% elsif block.settings.seam-image-placement == "right" %}
 
-    {%- if block.settings.image-item -%}
-      {%- assign image_item = block.settings.image-item | img_url: '1800x' -%}
-    {%- else -%}
-      {%- assign image_item = 'blank.svg' | asset_url -%}
-    {%- endif -%}
+        {%- if block.settings.image-item -%}
+          {%- assign image_item = block.settings.image-item | img_url: '1800x' -%}
+        {%- else -%}
+          {%- assign image_item = 'blank.svg' | asset_url -%}
+        {%- endif -%}
 
-      <div class="image-and-text-container-seam">
-        <div class="text-side-seam" style="background-color:{{ block.settings.background_color }};">
-          <div class="seamless-text-content">
-            <h4>{{ block.settings.seam-section-title }}</h4>
-            <div class="seamless-description">
-              {{ block.settings.seam-section-description }}
+          <div class="image-and-text-container-seam image-and-text-container-seam-right">
+            <div class="text-side-seam text-side-seam-left" style="background-color:{{ block.settings.background_color }};">
+              <div class="seamless-text-content">
+                <h4>{{ block.settings.seam-section-title }}</h4>
+                <div class="seamless-description">
+                  {{ block.settings.seam-section-description }}
+                </div>
+              </div>
+            </div>
+            <div class="image-side-seam image-side-right" style="background-image:url({{ image_item }}); background-position:center; background-repeat: no-repeat; background-size: cover;">
+
             </div>
           </div>
-        </div>
-        <div class="image-side-seam" style="background-image:url({{ image_item }}); background-position:center; background-repeat: no-repeat; background-size: cover;">
 
-        </div>
-      </div>
-
-    {% endif %}
+        {% endif %}
 
 
 
