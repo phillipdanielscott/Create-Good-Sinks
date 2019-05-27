@@ -46,7 +46,26 @@
 
   {% endif %}
 
-  <div class="product-wrap testing">
+
+  <div class="product-wrap testing
+
+
+    {% for tag in product.tags %}
+      {% if tag == 'DLA' %}
+        double-ledge-assc
+      {% endif %}
+    {% endfor %}
+
+
+  ">
+  {% for tag in product.tags %}
+    {% if tag == 'DLA' %}
+      <div class="dla-badge">
+        DL
+      </div>
+    {% endif %}
+  {% endfor %}
+
     <div class="relative product_image swap-{{ settings.collection_secondary_image }}">
       <a href="{{ product.url | within: collection }}" itemprop="url">
         <div class="image__container" style="{% if settings.align_height %} max-width: {{ product_set_width }}px; {% else %} max-width: {{- product.featured_image.width -}}px; {% endif %}">

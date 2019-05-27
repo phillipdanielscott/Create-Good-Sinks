@@ -191,6 +191,26 @@
 
           </div>
 
+            {% when 'single-member-bio' %}
+
+            <!-- Team member one bio image -->
+            {%- if block.settings.single-member-bio-image-one -%}
+              {%- assign single-bio-pic-one = block.settings.single-member-bio-image-one | img_url: '500x' -%}
+            {%- else -%}
+              {%- assign single-bio-pic-one = 'blank.svg' | asset_url -%}
+            {%- endif -%}
+        <div class="four-member-bio-wrapper container full-width">
+          <div class="single-member-container one-fourth-cgc wow fadeInDown" data-wow-delay="0.5s">
+            <div class="team-member-bio-pic" style="background-image:url({{ single-bio-pic-one }})"></div>
+              <p class="member-position">{{ block.settings.single-member-position-one }}</p>
+              <h3 class="member-name">{{ block.settings.single-member-name-one }}</h3>
+              <span class="member-number">{{ block.settings.single-member-number-one }}</span>
+              <span class="member-email">{{ block.settings.single-member-email-one }}</span>
+              <p class="member-description">{{ block.settings.single-member-description-one }}</p>
+            </div>
+          </div>
+
+
 
           {% when 'group-team-photo' %}
 
@@ -541,6 +561,48 @@
        "id": "group-description",
        "label": "Section description",
        "default": "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+    }
+    ]
+  },
+  {
+    "type": "single-member-bio",
+    "name": "Single member bio",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "single-member-bio-image-one",
+      "label": "Team member bio image",
+      "info": "recommended minimal photo size: 1000px"
+    },
+    {
+       "type":    "text",
+       "id":      "single-member-position-one",
+       "label":   "Position title",
+       "default": "member position"
+    },
+    {
+       "type":    "text",
+       "id":      "single-member-name-one",
+       "label":   "Name",
+       "default": "Name"
+    },
+    {
+       "type":    "text",
+       "id":      "single-member-number-one",
+       "label":   "Phone number",
+       "default": "888.888.8888"
+    },
+    {
+       "type":    "text",
+       "id":      "single-member-email-one",
+       "label":   "Email",
+       "default": "email@email.com"
+    },
+    {
+       "type":    "textarea",
+       "id":      "single-member-description-one",
+       "label":   "About description",
+       "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
     ]
   }

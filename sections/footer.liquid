@@ -122,7 +122,7 @@
           {% assign social_media_column = section.settings.social_media_column | plus: 0  %}
 
           {% if block.settings.social_icons_footer %}
-            {% assign social_icons = true %}
+            {% assign social_icons = true %}  
             <div class="footer-social-icons">
               {% include 'social-icons' %}
             </div>
@@ -138,7 +138,7 @@
 
       <div class="sixteen columns row footer_credits">
         <div class="credits">
-         Site Made by <a href="http://phillipcreates.com">{{ 'phillipcreates-logo.svg' | asset_url | img_tag }}</a>
+         Site Made by <a href="http://phillipcreates.com" target="_blank">{{ 'phillipcreates-logo.svg' | asset_url | img_tag }}</a>
        </div>
        <div class="patent">
         US Patent 8214934 | CA Patent 2679883

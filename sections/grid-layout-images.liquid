@@ -45,6 +45,9 @@
 
               <div class="quote-content-half">
                   <p>{{ section.settings.grid-text-content }}</p>
+                  {% if section.settings.learn-more-btn %}
+                    <a href="#"> Learn More </a>
+                  {% endif %}
               </div>
             </div>
 

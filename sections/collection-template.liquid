@@ -29,11 +29,6 @@
           {% if collection.title contains "Sinks" or "sinks" %}
            <h1 class="headline banner-headline">{{ collection.title | replace: 'Sinks', '' }}</h1>
 
-             <div class="section clearfix collection_description desktop">
-               <p style="font-weight: 500;">{{ collection.description }}</p>
-             </div>
-
-
             {% else %}
 
            <h1 class="headline banner-headline">{{ collection.title }}</h1>
@@ -46,9 +41,31 @@
   </header>
 {% endif %}
 
+{% if collection.title == "Accessories" %}
+
+<div class="section clearfix collection_description desktop">
+  <p style="font-weight: 500;">{{ collection.description }}</p>
+  <div class="explanation-text"><a href="#">DL</a> = Accessories labeled "DL" that are able to be used on the Double Ledge sink</div>
+</div>
+
+<div class="section clearfix collection_description mobile">
+  <p style="font-weight: 500;">{{ collection.description }}</p>
+  <div class="explanation-text"><a href="#">DL</a> = Accessories labeled "DL" that are able to be used on the Double Ledge sink</div>
+</div>
+
+  {% else %}
+
+<div class="section clearfix collection_description desktop">
+  <p style="font-weight: 500;">{{ collection.description }}</p>
+</div>
+
 <div class="section clearfix collection_description mobile">
   <p style="font-weight: 500;">{{ collection.description }}</p>
 </div>
+
+{% endif %}
+
+
 
 <a name="pagecontent" id="pagecontent"></a>
 
