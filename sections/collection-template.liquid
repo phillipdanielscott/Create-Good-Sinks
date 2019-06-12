@@ -45,12 +45,12 @@
 
 <div class="section clearfix collection_description desktop">
   <p style="font-weight: 500;">{{ collection.description }}</p>
-  <div class="explanation-text"><a href="#">DL</a> = Accessories labeled "DL" that are able to be used on the Double Ledge sink</div>
+  <div class="explanation-text"><a href="#">DL</a> = {{ section.settings.dl_text }} <a href="{{ section.settings.learn_more_link }}" class="accessorie-link">Learn More <i class="fas fa-caret-right"></i></a></div>
 </div>
 
 <div class="section clearfix collection_description mobile">
   <p style="font-weight: 500;">{{ collection.description }}</p>
-  <div class="explanation-text"><a href="#">DL</a> = Accessories labeled "DL" that are able to be used on the Double Ledge sink</div>
+  <div class="explanation-text"><a href="#">DL</a> = {{ section.settings.dl_text }} <a href="{{ section.settings.learn_more_link }}" class="accessorie-link">Learn More <i class="fas fa-caret-right"></i></a></div>
 </div>
 
   {% else %}
@@ -184,6 +184,18 @@
   "name": "Collection",
   "class": "collection-template-section",
   "settings": [
+    {
+      "type": "textarea",
+      "id": "dl_text",
+      "label": "Double ledge accessorie text",
+      "default": "Text placeholder"
+    },
+    {
+      "type": "textarea",
+      "id": "learn_more_link",
+      "label": "Learn more link url",
+      "default": "https://www.creategoodsinks.com/"
+    },
     {
       "type": "range",
       "id": "products_per_row",

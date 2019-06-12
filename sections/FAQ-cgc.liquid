@@ -149,8 +149,26 @@
             </div>
 
 
+          {% when "faq-one-image"%}
 
-          {% endcase %}
+
+          {%- if block.settings.faq-one-image-one -%}
+            {%- assign faq_image_one_one = block.settings.faq-one-image-one | img_url: '1000x' -%}
+          {%- else -%}
+            {%- assign faq_image_one_one = 'blank.svg' | asset_url -%}
+          {%- endif -%}
+
+          <div class="faq-spacer">
+            <button class="collapsible"><i class="far fa-question-circle"></i><span class="faq-text-question">{{ block.settings.faq-one-image-question }}</span></button>
+            <div class="collapsibleContent">
+              <div class="faq-answer">{{ block.settings.faq-one-image-answer }}</div>
+              <img src="{{ faq_image_one_one }}" alt="">
+            </div>
+          </div>
+
+
+
+        {% endcase %}
         {% endfor %}
       </div>
 
@@ -256,46 +274,48 @@
    }
 </style>
 
+<!-- {
+ "type": "checkbox",
+ "id": "carousel_boolean",
+ "default": false,
+ "label": "Enable top image slider"
+}, -->
+
+<!-- {
+  "type": "image_picker",
+  "id": "image-slide-1",
+  "label": "Image slider one"
+},
+{
+  "type": "image_picker",
+  "id": "image-slide-2",
+  "label": "Image slider two"
+},
+{
+  "type": "image_picker",
+  "id": "image-slide-3",
+  "label": "Image slider three"
+},
+{
+  "type": "image_picker",
+  "id": "image-slide-4",
+  "label": "Image slider four"
+},
+{
+  "type": "image_picker",
+  "id": "image-slide-5",
+  "label": "Image slider five"
+} -->
+
 {% schema %}
 {
   "name": "FAQ content",
   "settings": [
   {
-   "type": "checkbox",
-   "id": "carousel_boolean",
-   "default": false,
-   "label": "Enable top image slider"
-  },
-  {
     "type":      "color",
     "id":        "faq-bg-color",
     "label":     "background color",
     "default":   "#EBECE4"
-  },
-  {
-    "type": "image_picker",
-    "id": "image-slide-1",
-    "label": "Image slider one"
-  },
-  {
-    "type": "image_picker",
-    "id": "image-slide-2",
-    "label": "Image slider two"
-  },
-  {
-    "type": "image_picker",
-    "id": "image-slide-3",
-    "label": "Image slider three"
-  },
-  {
-    "type": "image_picker",
-    "id": "image-slide-4",
-    "label": "Image slider four"
-  },
-  {
-    "type": "image_picker",
-    "id": "image-slide-5",
-    "label": "Image slider five"
   }
   ],
   "blocks": [
@@ -398,6 +418,29 @@
     {
       "type": "image_picker",
       "id": "faq-two-image-two",
+      "label": "FAQ answer image"
+    }
+    ]
+  },
+  {
+    "type": "faq-one-image",
+    "name": "FAQ with one image",
+    "settings": [
+    {
+     "type":      "text",
+     "id":        "faq-one-image-question",
+     "label":     "FAQ question",
+     "default":   "This is a placeholder for FAQ question?"
+    },
+    {
+       "type": "richtext",
+       "id": "faq-one-image-answer",
+       "label": "FAQ answer",
+       "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "faq-one-image-one",
       "label": "FAQ answer image"
     }
     ]
