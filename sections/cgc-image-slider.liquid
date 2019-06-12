@@ -75,7 +75,7 @@
                               <h3 style="color:{{ block.settings.image-slider-text-color }};">{{ block.settings.right-text-title }}</h3>
                               <div class="right-text-contnet" style="color:{{ block.settings.image-slider-text-color }};">{{ block.settings.right-text-content }}</div>
                                 {% if block.settings.enable-slide-button %}
-                                  <button type="button" name="button" class="slide-button" onclick="location.href='{{ block.settings.slide-button-url }}'"> {{ block.settings.button_text }} </button>
+                                  <button type="button" name="button" class="slide-button" onclick="location.href='{{ block.settings.right_button_url }}'"> {{ block.settings.button_text }} </button>
                                 {% endif %}
                             </div>
                           </div>
@@ -351,7 +351,7 @@ var owl = $('.owl-carousel');
     },
     {
        "type": "text",
-       "id": "button_url",
+       "id": "right_button_url",
        "default": "https://www.creategoodsinks.com",
        "label": "Button URL"
     },
