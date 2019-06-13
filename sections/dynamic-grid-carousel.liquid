@@ -78,10 +78,12 @@
                 {% for block in section.blocks %}
                   <div class="item grid-text-item" style="background-color:{{ block.settings.block-color-bg }}">
                     <div class="grid-text">
-                      <p style="color:{{ block.settings.block-text-color }}">{{ block.settings.grid-text-content }}</p>
-                      {% if block.settings.enable_link_text %}
-                        <a href="{{ block.settings.learn-more-url }}" class="dynamic-text-link"> Learn More </a>
-                      {% endif %}
+                      <p style="color:{{ block.settings.block-text-color }}">
+                        {{ block.settings.grid-text-content }}
+                        {% if block.settings.enable_link_text %}
+                          <a href="{{ block.settings.learn-more-url }}" class="dynamic-text-link" style="color:{{ block.settings.block-link-color }}"> {{ block.settings.learn-more-title }} <i class="fas fa-caret-right" style="color:{{ block.settings.block-link-color }}"></i> </a>
+                        {% endif %}
+                      </p>
                     </div>
                   </div>
                 {% endfor %}
@@ -322,9 +324,16 @@ $(syncToFirst).owlCarousel({
       "label": "Enable Learn more link"
     },
     {
+     "id": "learn-more-title",
+     "type": "text",
+     "label": "Link title",
+     "default": "Learn More"
+    },
+    {
      "id": "learn-more-url",
      "type": "text",
-     "label": "Link url"
+     "label": "Link url",
+     "default": "https://www.creategoodsinks.com/"
     },
     {
       "type": "color",
@@ -336,6 +345,12 @@ $(syncToFirst).owlCarousel({
       "type": "color",
       "id": "block-text-color",
       "label": "Block text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "block-link-color",
+      "label": "Block link color",
       "default": "#ffffff"
     },
     {
