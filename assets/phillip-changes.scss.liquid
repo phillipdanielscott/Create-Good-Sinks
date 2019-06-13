@@ -1641,9 +1641,24 @@ button.owl-dot.active span{
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 .larger-image-item,
-.smaller-image-item{
+.smaller-image-item,
+.grid-text{
   height: -moz-available;          /* WebKit-based browsers will ignore this. */
   height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+}
+
+.grid-text p{
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+  text-align: left;
+  margin: 0 auto;
+  letter-spacing: normal;
+  line-height: 1.7;
+  font-size: 19px !important;
 }
 
 

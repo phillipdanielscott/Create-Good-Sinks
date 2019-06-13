@@ -45,7 +45,7 @@
           {%- endif -%}
 
           <div class="item">
-            <div class="larger-image-item" style="background-image:url({{ larger_image }}); background-position:center; background-repeat: no-repeat; background-size: cover;">
+            <div class="larger-image-item" style="background-image:url({{ larger_image }}); background-position:{{ block.settings.bg_image_position }}; background-repeat: no-repeat; background-size: cover;">
 
             </div>
           </div>
@@ -65,21 +65,27 @@
            {%- endif -%}
 
            <div class="item">
-             <div class="smaller-image-item" style="background-image:url({{ smaller_image }}); background-position:center; background-repeat: no-repeat; background-size: cover;">
+             <div class="smaller-image-item" style="background-image:url({{ smaller_image }}); background-position:{{ block.settings.bg_small_image_position }}; background-repeat: no-repeat; background-size: cover;">
              </div>
            </div>
 
            {% endfor %}
-           <!-- <img class="item" data-dots="1" src="http://placehold.it/350x250&text=1" alt="">
-           <img class="item" data-dots="1" src="http://placehold.it/350x250&text=2" alt="">
-           <img class="item" data-dots="1" src="http://placehold.it/350x250&text=3" alt=""> -->
+
          </div>
          <div class="grid-text-content">
-             <div class="owl-carousel owl-theme child">
-               	  <img class="item" data-dots="1" src="http://placehold.it/350x250&text=1" alt="">
-               	  <img class="item" data-dots="1" src="http://placehold.it/350x250&text=2" alt="">
-               	  <img class="item" data-dots="1" src="http://placehold.it/350x250&text=3" alt="">
-              </div>
+
+              <div class="owl-carousel owl-theme child">
+                {% for block in section.blocks %}
+                  <div class="item grid-text-item" style="background-color:{{ block.settings.block-color-bg }}">
+                    <div class="grid-text">
+                      <p style="color:{{ block.settings.block-text-color }}">{{ block.settings.grid-text-content }}</p>
+                      {% if block.settings.enable_link_text %}
+                        <a href="{{ block.settings.learn-more-url }}" class="dynamic-text-link"> Learn More </a>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endfor %}
+             </div>
          </div>
         </div>
 
@@ -219,7 +225,7 @@
 $(".parent").owlCarousel({
     nav: false,
     items: 1,
-    margin:10,
+    // margin:10,
     mouseDrag:false,
     touchDrag:false,
     autoHeight:true,
@@ -229,7 +235,7 @@ var syncToFirst = $(".child");
 $(syncToFirst).owlCarousel({
     nav: false,
     items: 1,
-    margin:10,
+    // margin:10,
     mouseDrag:false,
     touchDrag:false,
     autoHeight:true,
@@ -258,9 +264,84 @@ $(syncToFirst).owlCarousel({
 			"label": "Larger image section background"
 		},
     {
+      "type": "select",
+      "id": "bg_image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default":   "center"
+    },
+    {
       "type": "image_picker",
       "id": "smaller-section-bg",
       "label": "Smaller image section background"
+    },
+    {
+      "type": "select",
+      "id": "bg_small_image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default":   "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_link_text",
+      "label": "Enable Learn more link"
+    },
+    {
+     "id": "learn-more-url",
+     "type": "text",
+     "label": "Link url"
+    },
+    {
+      "type": "color",
+      "id": "block-color-bg",
+      "label": "Block color background",
+      "default": "#D48166"
+    },
+    {
+      "type": "color",
+      "id": "block-text-color",
+      "label": "Block text color",
+      "default": "#ffffff"
+    },
+    {
+     "id": "grid-text-content",
+     "type": "textarea",
+     "label": "Text content"
     }
     ]
     }
