@@ -1646,7 +1646,7 @@ button.owl-dot.active span{
   height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
 }
 
-.grid-text p{
+.grid-text-item .grid-text p{
   // position: relative;
   // top: 50%;
   // transform: perspective(1px) translateY(-50%);
@@ -1654,7 +1654,8 @@ button.owl-dot.active span{
   margin: 0 auto;
   letter-spacing: normal;
   line-height: 1.7;
-  font-size: 19px !important;
+  font-size: 20px;
+  width: 100%;
 }
 
 .grid-text-item{
@@ -1666,18 +1667,55 @@ button.owl-dot.active span{
   position: relative;
   top: 50%;
   transform: perspective(1px) translateY(-50%);
-  width: 95%;
+  width: 80%;
   margin: 0 auto;
 }
 
 .dynamic-text-link{
   font-size: 16px;
+  display: block;
 }
 
 .dynamic-text-link i{
   position: relative;
   top: 1px;
   right: -3px;
+}
+
+@media only screen and (max-width:1680px){
+  .grid-text-item .grid-text p{
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width:1200px){
+  .grid-text-item .grid-text p{
+    font-size: 16px;
+  }
+  .dynamic-text-link{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width:1024px){
+  .grid-text-item .grid-text p{
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (max-width:950px){
+  .smaller-image-container{
+    display: none !important;
+  }
+  .larger-half-images .owl-dots{
+    margin-top: 0px !important;
+  }
+}
+
+@media only screen and (max-width:450px){
+  .grid-layout-container{
+    width: 87%;
+  }
 }
 
 
