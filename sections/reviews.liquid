@@ -1,5 +1,6 @@
 <div class="review-wrapper container">
 <h1>{{ page.title }}</h1>
+
 {% for block in section.blocks %}
   {% case block.type %}
     {% when 'image-carousel'%}
@@ -375,7 +376,7 @@
           $(".testing-carousel").owlCarousel({
             lazyLoad:true,
             loop:true,
-            autoplay:true,
+            autoplay:false,
             autoplayTimeout:10000,
             autoplayHoverPause:true,
             mouseDrag:true,
@@ -397,7 +398,7 @@
                 480 : {
                   lazyLoad:true,
                   loop:true,
-                  autoplay:true,
+                  autoplay:false,
                   autoplayTimeout:10000,
                   autoplayHoverPause:true,
                   mouseDrag:true,
@@ -414,7 +415,7 @@
                 800 : {
                   lazyLoad:true,
                   loop:true,
-                  autoplay:true,
+                  autoplay:false,
                   autoplayTimeout:10000,
                   autoplayHoverPause:true,
                   mouseDrag:true,
@@ -458,7 +459,7 @@
                 <span class="fas fa-star" style="color: gold; font-size: 13px;"></span>
                 <span class="fas fa-star" style="color: gold; font-size: 13px;"></span>
               </div>
-              <a href="https://www.houzz.com/pro/creategood/create-good" class="houzz-review-link" target="_blank">Read More <i class="fas fa-caret-right"></i></a>
+              <!-- <a href="https://www.houzz.com/pro/creategood/create-good" class="houzz-review-link" target="_blank">Read More <i class="fas fa-caret-right"></i></a> -->
             </div>
           </div>
           <div class="media-review-block one-half-cgc wow fadeInUp houzz-review-block" data-wow-delay="0.3s">
@@ -476,7 +477,7 @@
                 <span class="fas fa-star" style="color: gold; font-size: 13px;"></span>
                 <span class="fas fa-star" style="color: gold; font-size: 13px;"></span>
               </div>
-              <a href="https://www.houzz.com/pro/creategood/create-good" class="houzz-review-link" target="_blank">Read More <i class="fas fa-caret-right"></i></a>
+              <!-- <a href="https://www.houzz.com/pro/creategood/create-good" class="houzz-review-link" target="_blank">Read More <i class="fas fa-caret-right"></i></a> -->
             </div>
           </div>
           <div class="media-review-block one-half-cgc wow fadeInUp houzz-review-block" data-wow-delay="0.4s">
@@ -494,7 +495,7 @@
                 <span class="fas fa-star" style="color: gold; font-size: 13px;"></span>
                 <span class="fas fa-star" style="color: gold; font-size: 13px;"></span>
               </div>
-              <a href="https://www.houzz.com/pro/creategood/create-good" class="houzz-review-link" target="_blank">Read More <i class="fas fa-caret-right"></i></a>
+              <!-- <a href="https://www.houzz.com/pro/creategood/create-good" class="houzz-review-link" target="_blank">Read More <i class="fas fa-caret-right"></i></a> -->
             </div>
           </div>
           <div class="media-review-block one-half-cgc wow fadeInUp houzz-review-block" data-wow-delay="0.5s">
@@ -512,9 +513,10 @@
                 <span class="fas fa-star" style="color: gold; font-size: 13px;"></span>
                 <span class="fas fa-star" style="color: gold; font-size: 13px;"></span>
               </div>
-              <a href="https://www.houzz.com/pro/creategood/create-good" class="houzz-review-link" target="_blank">Read More <i class="fas fa-caret-right"></i></a>
+              <!-- <a href="https://www.houzz.com/pro/creategood/create-good" class="houzz-review-link" target="_blank">Read More <i class="fas fa-caret-right"></i></a> -->
             </div>
           </div>
+          <a href="{{ block.settings.houzz-bottom-link-url }}" target="_blank" class="houzz-bottom-link wow fadeInUp" data-wow-delay="0.5s">{{ block.settings.houzz-bottom-link-title }} <i class="fas fa-caret-right"></i></a>
         </div>
 
 
@@ -728,6 +730,18 @@
      "id": "houzz-review-name-four",
      "label": "review customer's name",
      "default": "name here"
+  },
+  {
+     "type": "text",
+     "id": "houzz-bottom-link-title",
+     "label": "Bottom review title",
+     "default": "Read more reviews"
+  },
+  {
+     "type": "text",
+     "id": "houzz-bottom-link-url",
+     "label": "Bottom review url",
+     "default": "https://www.houzz.com/pro/creategood/create-good-sinks"
   }
   ]
   },
