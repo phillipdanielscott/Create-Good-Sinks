@@ -18,7 +18,8 @@
           {{ link.title }} <span class="right icon-down-arrows"><i class="fas fa-caret-down"></i></span>
         </a>
       {% else %}
-        <a data-no-instant href="{{ link.url }}" class="parent-link--true">
+        <!-- <a data-no-instant href="{{ link.url }}" class="parent-link--true"> -->
+         <a data-no-instant href="{{ link.url }}" class="parent-link--false"> 
           {{ link.title }} <span class="right icon-down-arrows"><i class="fas fa-caret-down"></i></span>
         </a>
       {% endif %}

@@ -185,7 +185,10 @@
           </div> -->
 
 
-          <ul class="cgc-tab nav--primary cgc-product-specs">
+
+
+
+        <ul class="cgc-tab nav--primary cgc-product-specs cgc-product-specs-top" id="testing-id-badge">
              <li class="cgc--desc-item nav-item--primary">
                <div class="nav-label">
                  <svg class="nav-indicator" width="16" height="16" viewbox="0 0 26 26">
@@ -212,6 +215,23 @@
                 </ul>
               </li>
             </ul>
+
+            {% for tag in product.tags %}
+
+                      {% if tag contains "accessory" %}
+
+                          <script type="text/javascript">
+                            console.log("I am a accessory");
+                            $('#testing-id-badge').addClass('hide');
+                          </script>
+
+                          {% else %}
+
+                      {% endif %}
+
+             {% endfor %}
+
+
 
 
            <script type="text/javascript">
