@@ -180,6 +180,10 @@ input.action_button[type="button"]:active{
 
  * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+ .sticky_nav{
+   z-index: 99;
+ }
+
  .sticky_nav .cgc-main-nav .CGC-logo{
    top: 11px;
    position: relative;
@@ -1006,8 +1010,6 @@ button.owl-dot.active span{
      width: 65%;
    }
 
-
-
 @media only screen and (max-width:1920px){
 
   .cgc-carousel-wrapper{
@@ -1636,6 +1638,70 @@ button.owl-dot.active span{
   }
 
 }
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+
+               Homepage top slider
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * */
+.owl-carousel .homepage-top-prev-slide,
+.owl-carousel .homepage-top-next-slide{
+  bottom: 50% !important;
+}
+
+.owl-carousel .homepage-top-prev-slide{
+    background: url(nav-icon.png) no-repeat scroll 0 0;
+    left: 35px;
+}
+.owl-carousel .homepage-top-next-slide{
+    background: url(nav-icon.png) no-repeat scroll -24px 0px;
+    right: 52px;
+}
+
+.owl-carousel .homepage-top-angle-left,
+.owl-carousel .homepage-top-angle-right{
+  font-size: 26px;
+  padding: 5px 10px;
+  border: 2px solid white;
+  border-radius: 60%;
+}
+
+.owl-carousel .homepage-top-angle-left:before,
+.owl-carousel .homepage-top-angle-right:before{
+  color: white;
+}
+
+@media only screen and (max-width:1366px){
+  .owl-carousel .homepage-top-prev-slide{
+    left: 23px;
+  }
+  .owl-carousel .homepage-top-next-slide{
+    right: 40px;
+  }
+}
+
+@media only screen and (max-width:1024px){
+  .cgc-carousel-wrapper .owl-carousel .homepage-top-prev-slide{
+    left: 23px;
+  }
+  .cgc-carousel-wrapper .owl-carousel .homepage-top-next-slide{
+    right: 40px;
+  }
+  .owl-carousel .homepage-top-angle-left, .owl-carousel .homepage-top-angle-right{
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width:768px){
+.cgc-carousel-wrapper .owl-carousel .homepage-top-prev-slide,
+.cgc-carousel-wrapper .owl-carousel .homepage-top-next-slide{
+  display: none;
+}
+}
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
 
@@ -2431,7 +2497,7 @@ button.owl-dot.active span{
 }
 
 .grid-text-content{
-  background-color: $deepblue;
+  // background-color: $deepblue;
   margin-top: 30px;
   overflow: hidden;
   position: relative;
@@ -2440,10 +2506,14 @@ button.owl-dot.active span{
 .grid-text-content p{
   font-family: 'Poppins';
   color: white;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 25px;
   margin-bottom: 0px;
   width: 90%;
+}
+
+.dynamic-text-link{
+  font-weight: bold;
 }
 
 .grid-text-content-wrapper{
@@ -5717,9 +5787,9 @@ input.get-rates.action_button.continue-button{
 }
 
 .quality-text-content p{
-  font-weight: 500;
-  line-height: 3;
-  text-align: center;
+    font-weight: 500;
+  line-height: normal;
+  text-align: left;
 }
 
 
