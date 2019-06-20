@@ -50,7 +50,7 @@
                             <h3 style="color:{{ block.settings.image-slider-text-color }};">{{ block.settings.left-text-title }}</h3>
                             <div class="left-text-content" style="color:{{ block.settings.image-slider-text-color }};"> {{ block.settings.left-text-content }} </div>
                               {% if block.settings.enable-slide-button %}
-                                <button type="button" name="button" class="slide-button" onclick="location.href='{{ block.settings.button_url }}'">{{ block.settings.button_text }}</button>
+                                <button type="button" name="button" class="slide-button" onclick="location.href='{{ block.settings.left-button-url }}'">{{ block.settings.button_text }}</button>
                               {% endif %}
                           </div>
                         </div>
@@ -320,6 +320,12 @@ var owl = $('.owl-carousel');
 			"default": "Left text title"
 		},
     {
+      "id": "left-button-url",
+      "type": "text",
+      "label": "Left text URL",
+      "default": "https://www.creategoodsinks.com"
+    },
+    {
 			"id": "left-text-content",
 			"type": "richtext",
 			"label": "Left text content",
@@ -353,7 +359,7 @@ var owl = $('.owl-carousel');
        "type": "text",
        "id": "right_button_url",
        "default": "https://www.creategoodsinks.com",
-       "label": "Button URL"
+       "label": "Right Button URL"
     },
     {
       "type": "checkbox",
