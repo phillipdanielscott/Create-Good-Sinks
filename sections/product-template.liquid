@@ -168,6 +168,12 @@
           {% endcomment %}
 
           {% if product.description != blank %}
+           <div class="description" itemprop="description">
+             {{ product.description | split: '<!-- split -->' | first }}
+           </div>
+         {% endif %}
+
+          {% if product.description != blank %}
            <div class="description cgc-product-description" itemprop="description">
              {{ product.description | split: '<!-- split -->' | first }}
            </div>
@@ -185,8 +191,8 @@
           </div> -->
 
 
-  
-          <span>Accessories sold separately</span>
+
+          <span>**Accessories sold separately</span>
 
         <ul class="cgc-tab nav--primary cgc-product-specs cgc-product-specs-top" id="testing-id-badge">
              <li class="cgc--desc-item nav-item--primary">
@@ -211,7 +217,13 @@
                   <h6>{{ section.settings.customer-promise-title }}</h6>
                 </div>
                 <ul class="cgc-tab nav--secondary">
-                  <p>{{ section.settings.customer-promise }}</p>
+
+                  {% if product.title contains "GRID" %}
+                    <p>{{ section.settings.assc-customer-promise }}</p>
+                  {% else %}
+                    <p>{{ section.settings.customer-promise }}</p>
+                  {% endif %}
+
                 </ul>
               </li>
             </ul>
@@ -418,6 +430,12 @@
       "id": "customer-promise",
       "label": "Customer promise",
       "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "type": "textarea",
+      "id": "assc-customer-promise",
+      "label": "Accessory Customer promise",
+      "default": "Type 304 stainless steel<br>FREE shipping in the continental USA - 3 to 5 business days<br>FREE Limited lifetime warranty - we will replace for as long as you own"
     },
     {
       "type": "header",
